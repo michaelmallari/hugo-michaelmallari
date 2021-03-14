@@ -1,0 +1,442 @@
+/* 
+
+Primary:
+PMS 2028 C #eb3300 (RGB: 235, 51, 0)
+
+Complement:
+PMS 2028 C #eb3300
+PMS 3551 C #00a6c8 (RGB: 0, 166, 200)
+
+Triadic:
+PMS 265 C # (RGB: 144, 99, 205)
+PMS 3501 C # (RGB: 76, 174, 4
+
+
+Monochromatic PMS 433 C:
+PMS 433 C #1d252d (RGB: 29, 37, 45)
+PMS 431 C #5b6770 (RGB: 91, 103, 112)
+PMS 5445 C #b7c9d3 (RGB: 183, 201, 211)
+
+*/
+
+@orange: #eb3300; // PMS 2028 C
+@orange-dark: #ca3604; // PMS 2349 C
+@orange-light: #ff7f41; // PMS 164 C
+
+@blue: #00a6c8; // PMS 3551 C
+@blue-dark: #00587c; // PMS 308 C
+@blue-light: #3ccbda; // PMS 2226 C
+
+@green: rgb(76, 174, 4);
+@green-dark: rgb(37, 114, 38);
+@green-light: rgb(167, 225, 99);
+
+@gray-dark: #1d252d; // PMS 433 C
+@gray-medium: #5b6770; // PMS 431 C
+@gray-light: #b7c9d3; // 5445 C
+
+@white: #fff;
+@off-white: #f5f5f5;
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Martel:200,300,400|Overpass+Mono:400,600,700);
+@import url(https://use.fontawesome.com/releases/v5.5.0/css/all.css);
+.serif {
+  font-family: 'Martel', serif;
+  font-weight: 400;
+  letter-spacing: 0.008rem;
+}
+.sans-serif {
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.008rem;
+}
+
+
+
+* {
+
+}
+*:not(pre),
+*:not(code) {
+
+}
+html {
+  font-size: 15px;
+}
+body {
+  background: @off-white;
+  margin: 0px;
+  min-width: 320px;
+  padding: 0px;
+  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+h1 {
+  .serif();
+  color: @white;
+  font-size: 1.52rem;
+  letter-spacing: 0px;
+  line-height: 2.28rem;
+  margin: 0px;
+}
+h2,
+h2 > span {
+  .serif();
+  font-weight: 300;
+  letter-spacing: 0px;
+  margin: 0px;
+}
+h2 {
+  font-size: 1.24rem;
+  line-height: 1.6rem;
+}
+#content-body > .container h2 {
+  font-size: 1.36rem;
+  margin: 3rem 0rem 1.4rem 0rem !important;
+}
+#content-body > .container h3 {
+  .sans-serif();
+  color: @gray-dark;
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0px;
+  line-height: 1.12rem;
+  margin: 0rem 0rem 2.4rem 0rem;
+}
+p,
+li {
+  .serif();
+  color: @gray-medium;
+  font-size: 0.8rem;
+}
+p {
+  margin: 0rem 0rem 1.8rem 0rem;
+  line-height: 1.6rem;
+}
+a {
+  color: @orange;
+  -moz-text-decoration-color: @gray-light;
+    -webkit-text-decoration-color: @gray-light;
+    text-decoration-color: @gray-light;
+  -moz-text-decoration-style: dotted;
+    -webkit-text-decoration-style: dotted;
+    text-decoration-style: dotted;
+}
+a:hover,
+a:focus {
+  color: @orange-light;
+  -moz-text-decoration-color: @orange-light;
+    -webkit-text-decoration-color: @orange-light;
+    text-decoration-color: @orange-light;
+  -moz-text-decoration-style: solid;
+    -webkit-text-decoration-style: solid;
+    text-decoration-style: solid;
+}
+pre {
+  margin: -1rem 0rem 1.72rem 0rem;
+}
+pre > code,
+pre > code * {
+  font-family: monospace, "Courier New" !important;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0px !important;
+  line-height: 1rem !important;
+}
+pre:not(.julia):not(.python):not(.r) > code,
+pre:not(.julia):not(.python):not(.r) > code * {
+  background: @off-white !important;
+  color: #777 !important;
+  font-style: italic !important;
+}
+p > code {
+  background: #fff;
+  color:#000;
+  font-family: monospace, "Courier New" !important;
+  font-weight: 600;
+  letter-spacing: 0px !important;
+  padding: 0rem 0.2rem;
+}
+.hr-major,
+.hr-minor {
+  display: block;
+  height: 0.36rem;
+  margin: 2.6rem 0rem;
+  width: 3.4rem;
+}
+.hr-major {
+  background: @orange;  
+}
+.hr-minor {
+  background: @blue;
+}
+.container {
+  margin-right: 2.4rem;
+  margin-left: 2.4rem;
+  padding: 0px;
+}
+.full-vw {
+  left: -2.4rem;
+  position: relative;
+  width: 100vw;
+  right: -2.4rem;
+}
+.clearfix {
+  clear: both;
+}
+a.btn {
+  .sans-serif();
+  display: inline-block;
+  border-radius: 25em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: -0.008rem;
+  padding: 0.64rem 1.64rem;
+  text-decoration: none;
+  -moz-transition: background 0.24s ease, color 0.24s ease;
+    -webkit-transition: background 0.24s ease, color 0.24s ease;
+    -o-transition: background 0.24s ease, color 0.24s ease;
+    -ms-transition: background 0.24s ease, color 0.24s ease;
+    transition: background 0.24s ease, color 0.24s ease;
+}
+a.btn-default {
+  background: @gray-dark;
+  color: @white;
+}
+a.btn-default:hover,
+a.btn-default:focus {
+  background: @gray-medium;
+}
+a.btn-primary {
+  background: @blue;
+  color: @white;
+}
+a.btn-primary:hover,
+a.btn-primary:focus {
+  background: @blue-dark;
+}
+
+
+
+
+.disable-scroll {
+  overflow: hidden !important;
+}
+.category {
+  .sans-serif();
+  color: @blue;
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+  padding-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+.clear {
+  clear: both;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 374px) {
+
+}
+@media (min-width: 375px) {
+  html {
+    font-size: 17.8px;
+  }
+}
+@media (min-width: 375px) and (max-width: 413px) {
+
+}
+@media (max-width: 413px) {
+
+}
+@media (min-width: 414px) {
+  html {
+    font-size: 19px;
+  }
+}
+@media (min-width: 414px) and (max-width: 506px) {
+
+}
+@media (max-width: 506px) {
+
+}
+@media (min-width: 507px) {
+  html {
+    font-size: 22px;
+  }
+}
+@media (min-width: 507px) and (max-width: 550px) {
+
+}
+@media (max-width: 550px) {
+
+}
+@media (min-width: 551px) {
+  html {
+    font-size: 17.6px;
+  }
+  .container {
+    margin-right: 4rem;
+    margin-left: 4rem;
+  }
+  .hr-major,
+  .hr-minor {
+    width: 3.6rem;
+  }
+}
+@media (min-width: 551px) and (max-width: 677px) {
+
+}
+@media (max-width: 677px) {
+
+}
+@media (min-width: 678px) {
+  html {
+    font-size: 21px;
+  }
+}
+@media (min-width: 678px) and (max-width: 767px) {
+
+}
+@media (max-width: 767px) {
+
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 23px;
+  }
+  .category {
+    font-size: 0.52rem;
+    letter-spacing: 0.052rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 833px) {
+
+}
+@media (max-width: 833px) {
+
+}
+@media (min-width: 833px) {
+  html {
+    font-size: 25px;
+  }
+}
+@media (min-width: 833px) and (max-width: 991px) {
+
+}
+@media (max-width: 991px) {
+
+}
+@media (min-width: 992px) {
+  html {
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 1.92rem;
+    line-height: 2.6rem;
+  }
+  p {
+    font-size: 0.76rem;
+    line-height: 1.52rem;
+  }
+  .container {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+  .hr-major,
+  .hr-minor {
+    width: 4.2rem;
+  }
+  .category {
+    font-size: 0.56rem;
+    letter-spacing: 0.06rem;
+  }
+}
+@media (min-width: 992px) and (max-width: 1023px)  {
+
+}
+@media (max-width: 1023px) {
+
+}
+@media (min-width: 1024px) {
+
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+
+}
+@media (max-width: 1199px) {
+
+}
+@media (min-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+  .hr-major,
+  .hr-minor {
+    width: 4.8rem;
+  }
+  #page-container {
+    margin: 0rem 4.8rem;
+  }
+}
+@media (min-width: 1400px) {
+  html {
+    font-size: 18.5px;
+  }
+}
+@media (min-width: 1600px) {
+  html {
+    font-size: 21px;
+  }
+}
+@media (min-width: 1800px) {
+  html {
+    font-size: 23.5px;
+  }
+}
+@media (min-width: 2000px) {
+  html {
+    font-size: 26px;
+  }
+}
+@media (min-width: 2200px) {
+  html {
+    font-size: 28.5px;
+  }
+}
+@media (min-width: 2400px) {
+  html {
+    font-size: 31.5px;
+  }
+}
+@media (min-width: 2600px) {
+  html {
+    font-size: 34px;
+  }
+}
+@media (min-width: 2800px) {
+  html {
+    font-size: 36.5px;
+  }
+}
+@media (min-width: 3000px) {
+  html {
+    font-size: 39.5px;
+  }
+}
+
+
+
+
+@import "_header.less";
+@import "_footer.less";
+@import "_content.less";

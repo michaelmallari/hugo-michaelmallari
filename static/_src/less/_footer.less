@@ -1,0 +1,294 @@
+#footer {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+
+
+
+#footer #quote {
+  background: linear-gradient(120deg, @blue, @blue-dark);  /*  PMS 3551 C to 308 C */
+  color: @white;
+  display: block;
+  margin: 0px;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+#footer #quote > div {
+  margin: 0px auto;
+}
+#footer #quote p,
+#footer #quote footer {
+  display: block;
+  margin: 0px;
+}
+#footer #quote p {
+  .serif();
+  color: @white;
+  font-size: 1.12rem;
+  font-weight: 300;
+  line-height: 2rem;
+}
+#footer #quote p::before { 
+  content: "“";
+}
+#footer #quote p::after { 
+  content: "”";
+}
+#footer #quote footer cite {
+  .sans-serif();
+  display: block;
+  font-size: 0.68rem;
+  font-style: normal;
+  letter-spacing: 0.08rem;
+  margin: 3rem 0rem 0rem 0rem;
+  padding: 0px;
+  text-transform: uppercase;
+}
+#footer #quote footer cite::before,
+#footer #quote footer cite::after { 
+  content: "―";
+  font-weight: 400;
+}
+
+
+
+
+#footer #about {
+  padding: 4.8rem 0rem;
+}
+#footer #about .category {
+  display: block;
+  text-align: left;
+}
+#footer #about h2 {
+  text-align: left;
+}
+#footer #about h2 > span {
+  display: block;
+}
+#footer #about p {
+  text-align: left;
+}
+
+
+#footer #brands {
+  display: grid;
+  grid-auto-rows: minmax(6rem, auto);
+  grid-column-gap: 0.2rem;
+  grid-row-gap: 0.2rem;
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+  margin: 0px;
+  padding: 0rem 0rem 2rem 0rem;
+}
+#footer #brands li {
+  background: @white;
+  text-align: center;
+}
+#footer #brands li img {
+  filter: grayscale(100);
+  -moz-transition: filter 0.24s ease;
+    -webkit-transition: filter 0.24s ease;
+    -o-transition: filter 0.24s ease;
+    -ms-transition: filter 0.24s ease;
+    transition: filter 0.24s ease;
+  width: auto;
+}
+#footer #brands li:hover img {
+  filter: none;
+}
+#footer #brands li:nth-child(10) img,
+#footer #brands li:nth-child(12) img {
+  height: 1.6rem;
+}
+#footer #brands li:nth-child(2) img,
+#footer #brands li:nth-child(5) img,
+#footer #brands li:nth-child(9) img {
+  height: 2rem;
+}
+#footer #brands li:nth-child(6) img,
+#footer #brands li:nth-child(9) img {
+  height: 2.4rem;
+}
+#footer #brands li:nth-child(7) img {
+  height: 2.6rem;
+}
+#footer #brands li:nth-child(1) img,
+#footer #brands li:nth-child(3) img {
+  height: 3rem;
+}
+#footer #brands li:nth-child(8) img {
+  height: 3.4rem;
+}
+#footer #brands li:nth-child(4) img,
+#footer #brands li:nth-child(11) img {
+  height: 3.8rem;
+}
+
+
+#footer #about .btn {
+  margin-top: 1.6rem;
+}
+body#landing #footer #about .btn {
+  display: none;
+}
+#footer #hello {
+  .sans-serif();
+  color: @gray-medium;
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+#footer #hello a {
+  .sans-serif();
+}
+body#landing #footer #hello {
+  display: none;
+}
+
+
+body#landing #footer #handcrafted {
+  display: none;
+}
+#footer #handcrafted p,
+#footer #handcrafted p * {
+  .sans-serif();
+  font-size: 0.68rem;
+  margin-bottom: 1.6rem;
+}
+
+
+
+
+
+
+
+@media (max-width: 374px) {
+
+}
+@media (min-width: 375px) {
+
+}
+@media (min-width: 375px) and (max-width: 413px) {
+
+}
+@media (max-width: 413px) {
+
+}
+@media (min-width: 414px) {
+
+}
+@media (min-width: 414px) and (max-width: 506px) {
+
+}
+@media (max-width: 506px) {
+
+}
+@media (min-width: 507px) {
+
+}
+@media (min-width: 507px) and (max-width: 550px) {
+
+}
+@media (max-width: 550px) {
+
+}
+@media (min-width: 551px) {
+  #footer #quote {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  #footer #quote footer cite {
+    font-size: 0.64rem;
+  }
+  #footer #brands {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 551px) and (max-width: 677px) {
+
+}
+@media (max-width: 677px) {
+
+}
+@media (min-width: 678px) {
+
+}
+@media (min-width: 678px) and (max-width: 767px) {
+
+}
+@media (max-width: 767px) {
+
+}
+@media (min-width: 768px) {
+
+}
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+@media (max-width: 991px) {
+
+}
+@media (min-width: 992px) {
+  #footer #quote {
+    background: linear-gradient(140deg, @blue, @blue-dark);  /*  PMS 3551 C to 308 C */
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    text-align: left;
+  }
+  #footer #quote > div {
+    width: 50%;
+  }
+  #footer #quote p {
+    font-size: 1.28rem;
+    line-height: 2.6rem;
+  }
+  #footer #quote footer cite {
+    font-size: 0.64rem;
+    font-weight: 400;
+    margin-top: 4rem;
+  }
+  #footer #quote footer cite::after { 
+    content: "";
+  }
+  #footer #about {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 6rem 0rem !important;
+    width: 50%;
+  }
+  #footer #about h2 {
+    font-size: 1.54rem;
+    line-height: 2.2rem;
+  }
+  #footer #brands {
+    grid-template-columns: repeat(6, 1fr);
+    margin: 0rem -7.4rem;
+  }
+  #footer #handcrafted p,
+  #footer #handcrafted p * {
+    font-size: 0.64rem;
+  }
+}
+@media (min-width: 992px) and (max-width: 1023px)  {
+
+}
+@media (max-width: 1023px) {
+
+}
+@media (min-width: 1024px) {
+
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+
+}
+@media (max-width: 1199px) {
+
+}
+@media (min-width: 1200px) {
+
+}

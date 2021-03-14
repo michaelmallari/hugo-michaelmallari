@@ -1,0 +1,9 @@
+{
+  "name": "www.michaelmallari.com",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "particles.js": "^2.0.0"
+  }
+}

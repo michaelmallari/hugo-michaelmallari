@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en-us" }}">
+
+  {{- partial "head.html" . -}}
+
+  <body id="single" class="theme-michaelmallari template-single thinking michaelmallari">
+
+    {{- partial "header.html" . -}}
+
+        <div class="container">
+
+            {{- .Content -}}
+
+        </div>
+
+    {{- partial "footer.html" . -}}
+
+  </body>
+</html>
