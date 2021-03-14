@@ -2,6 +2,8 @@
 
 ![](https://www.michaelmallari.com/img/og-michaelmallari-com.png)
 
+Hugo theme for data science blogging in Julia, Python, and R.
+
 ## Features:
 
 * Responsive web design
