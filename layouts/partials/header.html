@@ -1,76 +1,76 @@
-{{if ne .Site.BaseURL "http://localhost:1313/"}}
+{{if ne .Site.BaseURL "http://localhost:4321/"}}
 
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVS6JR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVS6JR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
 
 {{ end }}
 
 
-    <div id="page-container">
-      <header id="header">
-        <div class="container">
-          <a href="{{ .Site.BaseURL }}" title="Michael Mallari [michaelmallari.com]"><div id="logo-mm"></div></a>
+        <div id="page-container">
+            <header id="header">
+                <div class="container">
+                    <a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }} | {{ $.Site.Params.author }}, {{ $.Site.Params.suffix }}"><div id="logo-mm"></div></a>
 
 
-          <button id="hamburger-menu" class="toggle-hamburger-menu" role="button">
-            <span></span>
-            <svg id="hamburger-menu-open" width="12px" height="16px" viewBox="0 0 12 16">
-              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g fill="#ffffff">
-                  <path d="M11.41,9 L0.59,9 C0,9 0,8.59 0,8 C0,7.41 0,7 0.59,7 L11.4,7 C11.99,7 11.99,7.41 11.99,8 C11.99,8.59 11.99,9 11.4,9 L11.41,9 Z M11.41,5 L0.59,5 C0,5 0,4.59 0,4 C0,3.41 0,3 0.59,3 L11.4,3 C11.99,3 11.99,3.41 11.99,4 C11.99,4.59 11.99,5 11.4,5 L11.41,5 Z M0.59,11 L11.4,11 C11.99,11 11.99,11.41 11.99,12 C11.99,12.59 11.99,13 11.4,13 L0.59,13 C0,13 0,12.59 0,12 C0,11.41 0,11 0.59,11 L0.59,11 Z" id="Shape"></path>
-                </g>
-              </g>
-            </svg>
-            <svg id="hamburger-menu-close" width="12px" height="16px" viewBox="0 0 12 16">
-              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g fill="#eb3300">
-                  <polygon id="Shape" points="7.48 8 11.23 11.75 9.75 13.23 6 9.48 2.25 13.23 0.77 11.75 4.52 8 0.77 4.25 2.25 2.77 6 6.52 9.75 2.77 11.23 4.25"></polygon>
-                </g>
-              </g>
-            </svg>
-          </button>
+                    <button id="hamburger-menu" class="toggle-hamburger-menu" role="button">
+                        <span></span>
+                        <svg id="hamburger-menu-open" width="12px" height="16px" viewBox="0 0 12 16">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g fill="#ffffff">
+                                    <path d="M11.41,9 L0.59,9 C0,9 0,8.59 0,8 C0,7.41 0,7 0.59,7 L11.4,7 C11.99,7 11.99,7.41 11.99,8 C11.99,8.59 11.99,9 11.4,9 L11.41,9 Z M11.41,5 L0.59,5 C0,5 0,4.59 0,4 C0,3.41 0,3 0.59,3 L11.4,3 C11.99,3 11.99,3.41 11.99,4 C11.99,4.59 11.99,5 11.4,5 L11.41,5 Z M0.59,11 L11.4,11 C11.99,11 11.99,11.41 11.99,12 C11.99,12.59 11.99,13 11.4,13 L0.59,13 C0,13 0,12.59 0,12 C0,11.41 0,11 0.59,11 L0.59,11 Z" id="Shape"></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <svg id="hamburger-menu-close" width="12px" height="16px" viewBox="0 0 12 16">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g fill="#eb3300">
+                                    <polygon id="Shape" points="7.48 8 11.23 11.75 9.75 13.23 6 9.48 2.25 13.23 0.77 11.75 4.52 8 0.77 4.25 2.25 2.77 6 6.52 9.75 2.77 11.23 4.25"></polygon>
+                                </g>
+                            </g>
+                        </svg>
+                    </button>
 
 
-          <nav id="nav" role="navigation">
-            <ul class="nav-primary">
-              <li><a href="{{ .Site.BaseURL }}computational/" title="Computational">
-                <span class="fas fa-square-root-alt"></span>
-                <span>Computational</span>
-              </a></li>
+                    <nav id="nav" role="navigation">
+                        <ul class="nav-primary">
+                            <li><a href="{{ .Site.BaseURL }}computational/" title="Computational">
+                                <span class="fas fa-square-root-alt"></span>
+                                <span>Computational</span>
+                            </a></li>
 
 
-              <li><a href="{{ .Site.BaseURL }}data/" title="Data-Informed">
-                <span class="fas fa-chart-area"></span>
-                <span>Data-Informed</span>
-              </a></li>
+                            <li><a href="{{ .Site.BaseURL }}data/" title="Data-Informed">
+                                <span class="fas fa-chart-area"></span>
+                                <span>Data-Informed</span>
+                            </a></li>
 
-<!--
-              <li><a href="{{ .Site.BaseURL }}design/" title="Design">
-                <span class="fas fa-route"></span>
-                <span>Design</span>
-              </a></li>
--->
+                            <!--
+                            <li><a href="{{ .Site.BaseURL }}design/" title="Design">
+                                <span class="fas fa-route"></span>
+                                <span>Design</span>
+                            </a></li>
+                            -->
 
-              <li><a href="{{ .Site.BaseURL }}product/" title="Product">
-                <span class="fas fa-dolly-flatbed"></span>
-                <span>Product</span>
-              </a></li>
-            </ul>
-          </nav>
+                            <li><a href="{{ .Site.BaseURL }}product/" title="Product">
+                                <span class="fas fa-dolly-flatbed"></span>
+                                <span>Product</span>
+                            </a></li>
+                        </ul>
+                    </nav>
 <!--/#nav -->
-        </div>
-      </header>
+                </div>
+            </header>
 <!--/#header -->
 
 
 {{ if .IsHome | or .IsSection }}
 
-      <main id="content" role="main">
+            <main id="content" role="main">
 
 {{ else }}
 
-      <article id="content" role="main">
+            <article id="content" role="main">
 
 {{ end }}
 

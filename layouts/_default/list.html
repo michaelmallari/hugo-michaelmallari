@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.LanguageCode | default "en-us" }}">
 
-  {{- partial "head.html" . -}}
+{{- partial "head.html" . -}}
+<!--/head -->
 
-  <body id="category" class="theme-michaelmallari template-list thinking michaelmallari">
+    <body id="category" class="theme-michaelmallari template-list thinking michaelmallari">
 
-    {{- partial "header.html" . -}}
+{{- partial "header.html" . -}}
+<!--/header -->
 
-    {{- partial "posts-category.html" . -}}
+{{- partial "posts-category.html" . -}}
+<!--/post-category -->
 
-    {{- partial "footer.html" . -}}
+{{- partial "footer.html" . -}}
+<!--/footer -->
 
-  </body>
+    </body>
 </html>

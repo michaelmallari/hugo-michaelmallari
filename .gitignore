@@ -1,2 +1,6 @@
 .DS_Store
 /.idea
+
+# CodeKit
+/config.codekit
+/config.codekit3

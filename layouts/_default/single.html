@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.LanguageCode | default "en-us" }}">
 
-  {{- partial "head.html" . -}}
+{{- partial "head.html" . -}}
+<!--/head -->
 
-  <body id="single" class="theme-michaelmallari template-single thinking michaelmallari">
+    <body id="single" class="theme-michaelmallari template-single thinking michaelmallari">
 
-    {{- partial "header.html" . -}}
+{{- partial "header.html" . -}}
+<!--/header -->
 
-        <div class="container">
+                    <div class="container">
+                        <div id="byline">
+                            <div class="byline-author">By <a href="https://twitter.com/MichaelMallari" target="_blank">Michael Mallari</a> &nbsp;<i class="fab fa-twitter"></i></div>
+                            
+                            <time class="byline-time">{{ dateFormat "Monday, January 2, 2006" .Params.date }}</time>
+                            
+                            <div class="byline-notes">{{ if .Params.bylineNotes }}{{ .Params.bylineNotes }} {{ if .Params.imageSource }}Photo Credit: <a href="{{ .Params.imageSource }}" target="_blank">{{ .Params.imageSource }}</a>{{ end }}{{ end }}</div>
+                        </div>
 
-            {{- .Content -}}
+{{- .Content -}}
+<!--/content -->
 
-        </div>
+                    </div>
 
-    {{- partial "footer.html" . -}}
+{{- partial "footer.html" . -}}
+<!--/footer -->
 
-  </body>
+    </body>
 </html>
