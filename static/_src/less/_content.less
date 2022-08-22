@@ -9,7 +9,7 @@
     background-size: cover;
     background-position: 25% 50%;
     background-size: auto 100%;
-    min-height: 24rem;
+    min-height: 36rem;
     position: relative;
 }
 #content #masthead .container {
@@ -27,8 +27,8 @@
 #content #masthead p {
     .sans-serif();
     color: @gray-light;
-    font-size: 0.84rem;
-    line-height: 1.72rem;
+    font-size: 0.8rem;
+    line-height: 1.6rem;
     margin: 0px;
 }
 #content #masthead .btn {
@@ -200,25 +200,49 @@ article #content-body h2 {
 @media (max-width: 506px) {
 
 }
+
+
+
+
+
+
+
+
 @media (min-width: 507px) {
 
 }
+@media (min-width: 507px) and (max-width: 991px) {
+    body #content #masthead {
+        min-height: 20rem;
+    }
+    body#home #content #masthead {
+        background-position: 50% 50%;
+        background-size: 175% auto;
+        min-height: 31rem;
+    }
+    #aside {
+        clear: both;
+    }
+    #aside ul {
+        margin: 0.32rem auto 0rem auto;
+        width: 72%;
+    }
+}
 @media (min-width: 507px) and (max-width: 550px) {
-
+    #content #masthead p {
+        font-size: 0.84rem;
+        line-height: 1.4rem;
+    }
 }
 @media (max-width: 550px) {
-    body#home #content #masthead {
-        min-height: 36rem;
-    }
+
 }
 @media (min-width: 551px) {
-    #content #masthead p {
-        font-size: 0.92rem;
-    }
+
 }
 @media (min-width: 551px) and (max-width: 677px) {
     body#home #content #masthead {
-        min-height: 34rem;
+        min-height: 33rem;
     }
 }
 @media (max-width: 677px) {
@@ -229,37 +253,42 @@ article #content-body h2 {
 }
 @media (min-width: 678px) and (max-width: 767px) {
     body#home #content #masthead {
-        min-height: 34rem;
+        min-height: 30rem;
     }
 }
 @media (max-width: 767px) {
 
 }
 @media (min-width: 768px) {
-    #content #masthead {
-        background-position: 50% 50%;
-        background-size: 175% auto;
-        min-height: 28rem;
-    }
-    #content #masthead p {
-        font-size: 0.8rem;
+
+}
+@media (min-width: 768px) and (max-width: 832px) {
+    body#home #content #masthead {
+        min-height: 33rem;
     }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (max-width: 832px) {
+
+}
+@media (min-width: 833px) {
+
+}
+@media (min-width: 833px) and (max-width: 991px) {
     body#home #content #masthead {
-        min-height: 32rem;
-    }
-    #aside {
-        clear: both;
-    }
-    #aside ul {
-        margin: 0.32rem auto 0rem auto;
-        width: 72%;
+        min-height: 30rem;
     }
 }
 @media (max-width: 991px) {
 
 }
+
+
+
+
+
+
+
+
 @media (min-width: 992px) {
     #content-body {
         margin: 0px auto;
@@ -287,16 +316,7 @@ article #content-body h2 {
         line-height: 0.8rem;
     }
 }
-@media (min-width: 992px) and (max-width: 1023px)  {
-
-}
-@media (max-width: 1023px) {
-
-}
-@media (min-width: 1024px) {
-
-}
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1111px) {
     #content #masthead {
         display: block !important;
         min-height: 28rem;
@@ -324,13 +344,23 @@ article #content-body h2 {
         width: 100%;
     }
 }
-@media (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1023px)  {
 
 }
-@media (min-width: 1200px) {
+@media (max-width: 1023px) {
+
+}
+@media (min-width: 1024px) {
+
+}
+@media (max-width: 1111px) {
+
+}
+@media (min-width: 1112px) {
     #content #masthead {
         background-position: 0% 50%;
         background-size: 150% auto;
+        min-height: 26rem;
         padding-left: 0px;
     }
     #content #masthead .container {
@@ -353,5 +383,5 @@ article #content-body h2 {
 
 
 
-@import '_content-posts-sticky.less';
 @import '_content-posts-category.less';
+@import '_content-posts-sticky.less';

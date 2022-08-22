@@ -9,7 +9,7 @@
         <link type="image/x-icon" rel="icon" href="{{ .Site.BaseURL }}img/logo-mm-pms2028c.png" />
 
 
-        <title>{{ if .IsHome }}Hybrid Thinking + Doing{{ else }}{{ .Title | safeHTML }}{{ end }} | {{ $.Site.Params.author }}, {{ if eq .Section "computational" }}BS in Computer Science{{ else if eq .Section "data" }}MS Candidate in Applied Analytics{{ else if eq .Section "design" }}NN/g UX Certified Candidate{{ else if eq .Section "operational" }}MBA, SAFe Agilist, CSM{{ else if eq .Section "product" }}MBA, PMC-III, SAFe POPM, CSPO{{ else }}MBA, MS Candidate{{ end }}</title>
+        <title>{{ if .IsHome }}Hybrid Thinking + Doing{{ else }}{{ .Title | safeHTML }}{{ end }} | {{ $.Site.Params.author }}, {{ if eq .Section "computational" }}BS Computer Science{{ else if eq .Section "data" }}MS Applied Analytics{{ else if eq .Section "design" }}NN/g UX Certified Candidate{{ else if eq .Section "operational" }}MBA, SAFe Agilist, CSM{{ else if eq .Section "product" }}MBA, PMC-III, SAFe POPM, CSPO{{ else }}MS, MBA{{ end }}</title>
         <meta name="description" content="{{ if .Params.summary }}{{ .Params.summary | safeHTML }}{{ else }}{{ .Site.Params.description | safeHTML }}{{ end }}" />
         <link rel="canonical" href="{{ .Permalink }}" />
         <meta name="robots" content="index, follow" />
@@ -55,7 +55,7 @@
                     height: 32rem;
                 }
             }
-            @media (min-width: 992px) and (max-width: 1199px)  {
+            @media (min-width: 992px) and (max-width: 1111px)  {
                 body#home #content #masthead {
                     height: auto;
                     padding-bottom: 2rem !important;
@@ -64,7 +64,7 @@
 
 {{ end }}
 
-            @media (min-width: 1200px) {
+            @media (min-width: 1112px) {
                 body.michaelmallari .nav-primary li:nth-child(1) a span:nth-child(2):after {
                     content: "COMP";
                 }
@@ -97,12 +97,12 @@
 
 {{if ne .Site.BaseURL "http://localhost:4321/"}}
 
-        <script crossorigin>
+        <script>
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-NVS6JR');
+            })(window,document,'script','dataLayer','GTM-WP8NWT7');
         </script>
 
 {{ end }}

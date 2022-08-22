@@ -2,9 +2,6 @@ body#category #content-body {
     padding: 0px;
     width: 100%;
 }
-
-
-
 /*
 #posts-category > article:nth-child(1) a .category::after,
 #posts-category > article:nth-child(2) a .category::after,
@@ -12,6 +9,128 @@ body#category #content-body {
   content: 'Featured Thought';
 }
 */
+
+
+
+
+
+
+
+
+.posts-list {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+.posts-list > article {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+}
+.posts-list a {
+    text-decoration: none !important;
+}
+
+
+
+
+.posts-list > article a .post-thumb {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: 136% auto !important;
+    -moz-transition: background-size 0.24s ease;
+        -webkit-transition: background-size 0.24s ease;
+        -o-transition: background-size 0.24s ease;
+        -ms-transition: background-size 0.24s ease;
+        transition: background-size 0.24s ease;
+    filter: grayscale(60%);
+}
+.posts-list > article a:hover .post-thumb,
+.posts-list > article a:focus .post-thumb {
+    background-color: @white;
+    background-size: 148% auto !important;
+    filter: none !important;
+}
+.posts-list > article a .post-thumb-arrow polygon,
+.posts-list > article a .post-thumb-arrow path {
+    fill: @off-white;
+}
+.posts-list > article:nth-child(2) a .post-thumb-arrow polygon,
+.posts-list > article:nth-child(2) a .post-thumb-arrow path,
+.posts-list > article:nth-child(5) a .post-thumb-arrow polygon,
+.posts-list > article:nth-child(5) a .post-thumb-arrow path,
+.posts-list > article:nth-child(8) a .post-thumb-arrow polygon,
+.posts-list > article:nth-child(8) a .post-thumb-arrow path {
+    fill:@gray-dark;
+}
+.posts-list > article a:hover .post-thumb-arrow polygon,
+.posts-list > article a:hover .post-thumb-arrow path,
+.posts-list > article a:focus .post-thumb-arrow polygon,
+.posts-list > article a:focus .post-thumb-arrow path {
+    fill: @green;
+}
+
+
+
+
+.posts-list > article:nth-child(2) .post-details,
+.posts-list > article:nth-child(5) .post-details,
+.posts-list > article:nth-child(8) .post-details {
+    background: @gray-dark;
+}
+.posts-list > article a:hover .post-details,
+.posts-list > article a:focus .post-details {
+    background: @green;
+}
+.posts-list > article a .post-details.height-auto {
+    height: auto !important;
+}
+.posts-list > article a .category {
+    color: @blue;
+    font-size: 0.6rem;
+    line-height: 0.72rem;
+    margin: 0px;
+    padding: 2.72rem 0rem 0.68rem 0rem;
+    text-decoration: none;
+}
+.posts-list > article a:hover .category,
+.posts-list > article a:focus .category {
+    color: rgba(255, 255, 255, 0.72);
+}
+.posts-list > article a .title {
+    color: @gray-dark;
+    font-size: 1.2rem;
+    letter-spacing: 0.01rem;
+    line-height: 1.68rem;
+    margin: 0rem 0rem 1.6rem 0rem !important;
+}
+.posts-list > article:nth-child(2) a .title,
+.posts-list > article:nth-child(5) a .title,
+.posts-list > article:nth-child(8) a .title {
+    color: @white !important;
+}
+.posts-list > article a:hover .title,
+.posts-list > article a:focus .title {
+    color: @white !important;
+}
+.posts-list > article a .excerpt {
+    .sans-serif();
+    color: rgba(29, 37, 45, 0.6);
+    font-size: 0.76rem;
+    line-height: 1.2rem;
+    margin: 0px;
+    padding: 0rem 0rem 2.32rem 0rem;
+    text-decoration: none;
+}
+.posts-list > article:nth-child(2) a .excerpt,
+.posts-list > article:nth-child(5) a .excerpt,
+.posts-list > article:nth-child(8) a .excerpt {
+    color: rgba(183, 201, 211, 0.52);
+}
+.posts-list > article a:hover .excerpt,
+.posts-list > article a:focus .excerpt {
+    color: rgba(255, 255, 255, 0.72);
+}
 
 
 
@@ -41,7 +160,49 @@ body#category #content-body {
 @media (max-width: 506px) {
 
 }
+
+
+
+
+
+
+
+
 @media (min-width: 507px) {
+
+}
+@media (min-width: 507px) and (max-width: 991px) {
+    .posts-list > article {
+        width: 50%;
+    }
+    .posts-list .container {
+        margin-right: 1.32rem;
+        margin-left: 1.32rem;
+    }
+    .posts-list > article:nth-child(even) {
+        float: right;
+    }
+    .posts-list > article:nth-child(odd) {
+        float: left;
+    }
+    .posts-list > article a .category {
+        font-size: 0.48rem;
+        line-height: 0.68rem;
+        padding: 2rem 0rem 0.72rem 0rem;
+    }
+    .posts-list > article a .title {
+        font-size: 1.04rem;
+        letter-spacing: 0.01rem;
+        line-height: 1.48rem;
+        margin: 0rem 0rem 1.04rem 0rem;
+    }
+    .posts-list > article a .excerpt {
+        font-size: 0.68rem;
+        line-height: 1rem;
+        padding: 0rem;
+    }
+}
+@media (min-width: 507px) and (max-width: 767px) {
 
 }
 @media (min-width: 507px) and (max-width: 550px) {
@@ -63,7 +224,10 @@ body#category #content-body {
 
 }
 @media (min-width: 678px) and (max-width: 767px) {
-
+    .posts-list .container {
+        margin-right: 1.4rem;
+        margin-left: 1.4rem;
+    }
 }
 @media (max-width: 767px) {
 
@@ -72,29 +236,57 @@ body#category #content-body {
 
 }
 @media (min-width: 768px) and (max-width: 991px) {
+    .posts-list .container {
+        margin-right: 2rem !important;
+        margin-left: 2rem !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 832px) {
+    
+}
+@media (max-width: 832px) {
+
+}
+@media (min-width: 833px) {
+
+}
+@media (min-width: 833px) and (max-width: 991px) {
 
 }
 @media (max-width: 991px) {
 
 }
+
+
+
+
+
+
+
+
 @media (min-width: 992px) {
-
-}
-@media (min-width: 992px) and (max-width: 1023px)  {
-
-}
-@media (max-width: 1023px) {
-
-}
-@media (min-width: 1024px) {
-
-}
-@media (min-width: 1024px) and (max-width: 1199px) {
-
-}
-@media (max-width: 1199px) {
-
-}
-@media (min-width: 1200px) {
-
+    .posts-list {
+        text-align: left;
+    }
+    .posts-list > article {
+        float: left;
+        width: 25%;
+    }
+    .posts-list > article:nth-child(1) {
+        margin-left: 25%;
+    }
+    .posts-list > article a .category {
+        font-size: 0.56rem;
+        padding: 2.2rem 0rem 0.76rem 0rem;
+    }
+    .posts-list > article a .title {
+        font-size: 1.04rem;
+        line-height: 1.44rem;
+        margin: 0rem 0rem 1.56rem 0rem;
+    }
+    .posts-list > article a .excerpt {
+        font-size: 0.72rem;
+        line-height: 1.12rem;
+        padding: 0px;
+    }
 }

@@ -15,7 +15,7 @@
             <footer id="footer">
                 <blockquote id="quote">
                     <div><div class="container">
-                        <p>{{ if eq .Section "computational" }}A smart creative [or hybrid thinker and doer] has deep technical knowledge &hellip; likely a computer scientist &hellip; [he or she] doesn't just design concepts, [he or she] builds prototypes.{{ else if eq .Section "data" }}[A smart creative or hybrid thinker and doer] is analytically smart &hellip; comfortable with data and can use it to make decisions.{{ else if eq .Section "design" }}[A smart creative or hybrid thinker and doer] is user smart &hellip; a &lsquo;power user&rsquo;, not just casual but almost obsessive in [his or her] interest.{{ else if eq .Section "operational" }}[A smart creative or hybrid thinker and doer] is always questioning, never satisfied with the status quo, seeing problems to solve everywhere and thinking that [he or she] is just the person to solve them.{{ else if eq .Section "product" }}[A smart creative or hybrid thinker and doer] is business smart &hellip; sees a direct line from technical expertise to product excellence to business success, and understands the value of all three.{{ else }}If you're gonna make connections which are innovative &hellip; you have to not have the same bag of experiences as everyone else does.{{ end }}</p>
+                        <p>{{ if eq .Section "computational" }}A smart creative [or hybrid thinker and doer] has deep technical knowledge &hellip; likely a computer scientist &hellip; [s/he] doesn't just design concepts, [s/he] builds&nbsp;prototypes.{{ else if eq .Section "data" }}[A smart creative or hybrid thinker and doer] is analytically smart &hellip; comfortable with data and can use it to make&nbsp;decisions.{{ else if eq .Section "design" }}[A smart creative or hybrid thinker and doer] is user smart &hellip; a &lsquo;power user&rsquo;, not just casual but almost obsessive in [his or her]&nbsp;interest.{{ else if eq .Section "operational" }}[A smart creative or hybrid thinker and doer] is always questioning, never satisfied with the status quo, seeing problems to solve everywhere and thinking that [s/he] is just the person to solve*nbsp;them.{{ else if eq .Section "product" }}[A smart creative or hybrid thinker and doer] is business smart &hellip; sees a direct line from technical expertise to product excellence to business success, and understands the value of all&nbsp;three.{{ else }}If you're gonna make connections which are innovative &hellip; you have to not have the same bag of experiences as everyone else&nbsp;does.{{ end }}</p>
 
                         <footer><cite>{{ if .IsHome }}Steve Jobs{{ else }}Eric Schmidt &amp; Jonathan Rosenberg in <em>How&nbsp;Google&nbsp;Works</em>{{ end }}</cite></footer>
                     </div></div>
@@ -53,44 +53,48 @@
 {{ end }}
 
                         </div>
-                        <h2>{{ $.Site.Params.author }}, <span>{{ if eq .Section "computational" }}BS in Computer Science{{ else if eq .Section "data" }}MS Candidate in Applied Analytics{{ else if eq .Section "design" }}NN/g UX Certified Candidate{{ else if eq .Section "operational" }}MBA, SAFe Agilist, CSM{{ else if eq .Section "product" }}MBA, PMC-III, SAFe POPM, CSPO{{ else }}MBA, MS Candidate{{ end }}</span></h2>
+
+                        <h2>{{ $.Site.Params.author }}, <span>{{ if eq .Section "computational" }}BS Computer Science{{ else if eq .Section "data" }}MS Applied Analytics{{ else if eq .Section "design" }}NN/g UX Certified Candidate{{ else if eq .Section "operational" }}MBA, SAFe Agilist, CSM{{ else if eq .Section "product" }}MBA, PMC-III, SAFe POPM, CSPO{{ else }}MS, MBA{{ end }}</span></h2>
 
                         <span class="hr-major"></span>
 
-                        <p>Michael is a hybrid thinker and doer&mdash;a byproduct of being a <a href="https://news.gallup.com/businessjournal/694/learner.aspx" target="_blank">CliftonStrengths "Learner"</a> over time. With 20+ years of hands-on engineering, design, and product experience, he helps organizations identify market needs, mobilize internal and external resources, and deliver delightful customer experiences that align with business goals. He has been entrusted with problem-solving for brands&mdash;ranging from Fortune 500 companies to early-stage startups to not-for-profit organizations&mdash;including the following:</p>
+                        <p>Michael is a hybrid thinker and doer&mdash;a byproduct of being a <a href="https://news.gallup.com/businessjournal/694/learner.aspx" target="_blank">CliftonStrengths "Learner"</a> over time. With 20+ years of hands-on engineering, design, and product experience, he helps organizations identify market needs, mobilize internal and external resources, and deliver delightful customer experiences that align with business goals. He has been entrusted with problem-solving for brands&mdash;ranging from Fortune 500 companies to early-stage startups to not-for-profit organizations&mdash;including the&nbsp;following:</p>
 
                         <ul id="brands">
-                            <li><img src="{{ .Site.BaseURL }}img/logo-amex.png" alt="American Express" class="vertical-middle" /></li>
+                            <li><img src="{{ .Site.BaseURL }}img/logo-amex.png" alt="American Express" title="American Express" class="vertical-middle" /></li>
+                            <!--<li><img src="{{ .Site.BaseURL }}img/logo-schwab.png" alt="Charles Schwab" title="Charles Schwab" class="vertical-middle" /></li>-->
                             <li><img src="{{ .Site.BaseURL }}img/logo-discovery.png" alt="Discovery Communications" title="Discovery Communications" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-gap.png" alt="Gap" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-hasbro.png" alt="Hasbro" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-lincoln.png" alt="Lincoln Motor Company" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-marriott.png" alt="Marriott" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-marvel.png" alt="Marvel" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-mayoclinic.png" alt="Mayo Clinic" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-nasdaq.png" alt="Nasdaq" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-polo.png" alt="Polo Ralph Lauren" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-rockefeller.png" alt="Rockefeller University" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-verizon.png" alt="Verizon" class="vertical-middle" /></li>
+                            <li><img src="{{ .Site.BaseURL }}img/logo-gap.png" alt="Gap" title="Gap" class="vertical-middle" /></li>
+                            <li><img src="{{ .Site.BaseURL }}img/logo-hasbro.png" alt="Hasbro" title="Hasbro" class="vertical-middle" /></li>
+                            <li><img src="{{ .Site.BaseURL }}img/logo-lincoln.png" alt="Lincoln Motor Company" title="Lincoln Motor Company" class="vertical-middle" /></li>
+                            <li><img src="{{ .Site.BaseURL }}img/logo-marriott.png" alt="Marriott" title="Marriott" class="vertical-middle" /></li>
+                            <li><img src="{{ .Site.BaseURL }}img/logo-marvel.png" alt="Marvel" title="Marvel" class="vertical-middle" /></li>
+                            <li><img src="{{ .Site.BaseURL }}img/logo-mayoclinic.png" alt="Mayo Clinic" title="Mayo Clinic" class="vertical-middle" /></li>
+                            <li><img src="{{ .Site.BaseURL }}img/logo-nasdaq.png" alt="Nasdaq" title="Nasdaq" class="vertical-middle" /></li>
+                            <li><img src="{{ .Site.BaseURL }}img/logo-polo.png" alt="Polo Ralph Lauren" title="Polo Ralph Lauren" class="vertical-middle" /></li>
+                            <li><img src="{{ .Site.BaseURL }}img/logo-verizon.png" alt="Verizon" title="Verizon" class="vertical-middle" /></li>
+                            <li><img src="{{ .Site.BaseURL }}img/logo-yahoo.png" alt="Yahoo" title="Yahoo" class="vertical-middle" /></li>
                         </ul>
 
-                        <p>Michael earned his BS in Computer Science from New York Institute of Technology and his MBA from the University of Maryland, College Park. He is also a candidate to receive his MS in Applied Analytics from Columbia University.</p>
+                        <p>Michael earned his MS in Applied Analytics from Columbia University, MBA from the University of Maryland, College Park, and BS in Computer Science from New York Institute of&nbsp;Technology.</p>
 
-                        <a href="https://www.patreon.com/michaelmallari" target="_blank" class="btn btn-default">Partner with Michael</a> <span id="hello">or <a href="https://www.linkedin.com/in/mmallari/" target="_blank">say hello on LinkedIn</a></span>
+                        <a href="https://koalendar.com/e/30-min-career-coaching-consultation-with-michael" target="_blank" class="btn btn-default">Schedule a free career coaching consultation</a> <span id="hello">or <a href="https://www.linkedin.com/in/mmallari/" target="_blank">say hello on LinkedIn</a></span>
                     </div>
                 </section>
 
 
                 <section id="handcrafted">
                     <div class="container">
-                        <p><a href="https://dribbble.com/michaelmallari/projects/2017578-www-michaelmallari-com" target="_blank">Designed</a> and <a href="https://github.com/sponsors/michaelmallari" target="_blank">built</a> by Michael Mallari</p>
+                        <p><a href="https://dribbble.com/michaelmallari/projects/2017578-www-michaelmallari-com" target="_blank">Designed</a> and <a href="https://github.com/michaelmallari/hugo-michaelmallari" target="_blank">built</a> by Michael Mallari</p>
                     </div>
                 </section>
             </footer>
         </div>
-
-
-
+        <div id="banner">
+            <div class="container">
+                <p><a href="https://koalendar.com/e/30-min-career-coaching-consultation-with-michael" target="_blank"><span>Need help getting your resume noticed in your job search?</span> <strong>Schedule a free consultation&nbsp;&raquo;</strong></a></p>
+            </div>
+        </div>
 
 
 
@@ -98,7 +102,9 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin></script>
         <script src="{{ .Site.BaseURL }}js/functions.min.js"></script>
-        {{ if .IsHome }}<script src="{{ .Site.BaseURL }}js/posts-sticky.min.js"></script>{{ else if .IsSection }}<script src="{{ .Site.BaseURL }}js/posts-category.min.js"></script>{{ end }}
+        {{ if .IsHome }}<script src="{{ .Site.BaseURL }}js/posts-category.min.js"></script>{{ end }}
+        {{ if .IsSection }}<script src="{{ .Site.BaseURL }}js/posts-category.min.js"></script>{{ end }}
+        {{ if .IsHome }}<script src="{{ .Site.BaseURL }}js/posts-sticky.min.js"></script>{{ end }}
         <script type="text/javascript">
             $(document).ready(function() {
                 {{ if .IsHome }}UpdatePostsStickyLayout(){{ else if .IsSection }}UpdatePostsCategoryLayout(){{ end }}

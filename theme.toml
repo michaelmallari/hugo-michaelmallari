@@ -4,11 +4,11 @@
 name = "michaelmallari.com"
 license = ""
 licenselink = ""
-description = "Hugo theme for data science blogging in Julia, Python, and R."
+description = "Hugo theme for data science & engineering blogging in Julia, Python, and R."
 homepage = "https://www.michaelmallari.com"
-tags = ["blog", "data science", "responsive web design"]
+tags = ["blog", "data science", "data engineering", "responsive web design"]
 features = []
-min_version = "0.80.0"
+min_version = "0.89.4"
 
 [author]
   name = "Michael Mallari"

@@ -2,7 +2,7 @@
 
 ![](https://www.michaelmallari.com/img/og-michaelmallari-com.png)
 
-Hugo theme for data science blogging in Julia, Python, and R.
+Hugo theme for data science & engineering blogging in Julia, Python, and R.
 
 ## Features:
 
@@ -18,5 +18,6 @@ Hugo theme for data science blogging in Julia, Python, and R.
 
 * [**Main Blog** (www.michaelmallari.com)](https://www.michaelmallari.com)
 * [**Applied Computing** (michaelmallari.github.io)](https://michaelmallari.github.io)
+* [**Applied Data & AI Product Management** (michaelmallari.bitbucket.io)](https://michaelmallari.bitbucket.io)
 * [**Applied Data Science & Analytics** (www.columbia.edu/~mm5470)](http://www.columbia.edu/~mm5470)
-* [**Applied Product Management** (michaelmallari.bitbucket.io)](https://michaelmallari.bitbucket.io)
+* [**Applied UX on Data & AI Products** (michaelmallari.tumblr.io)](https://michaelmallari.tumblr.com)
