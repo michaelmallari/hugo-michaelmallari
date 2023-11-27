@@ -9,8 +9,11 @@
     background-size: cover;
     background-position: 25% 50%;
     background-size: auto 100%;
-    min-height: 36rem;
+    min-height: 24rem;
     position: relative;
+}
+body#home #content #masthead {
+    min-height: 36rem;
 }
 #content #masthead .container {
     display: inline-block;
@@ -29,7 +32,7 @@
     color: @gray-light;
     font-size: 0.8rem;
     line-height: 1.6rem;
-    margin: 0px;
+    margin: 0rem 0rem 1rem 0rem;
 }
 #content #masthead .btn {
     margin: 3rem 0rem 0rem 0rem;
@@ -51,10 +54,11 @@
 }
 #byline > .byline-time {
     display: block;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
 }
 #byline > .byline-notes {
-    font-size: 0.68rem;
+    font-size: 0.6rem;
+    line-height: 0.84rem;
 }
 
 
@@ -99,6 +103,59 @@ article #content-body h2 {
 #content-body tr:hover {
     background-color: @gray-dark;
     color: @white;
+}
+#content-body .language-tabs {
+    display: flex;
+    flex-wrap: wrap;
+}
+#content-body .language-tabs input[type="radio"] {
+    display: none;
+}
+#content-body .language-tabs .language-output {
+    display: none;
+    padding: 1rem 0rem 0rem 0rem; 
+    order: 1;
+    width: 100%;
+}
+#content-body .language-tabs input[type="radio"]:checked + label + .language-output {
+    display: block;
+}
+#content-body .language-tabs label {
+    .sans-serif();
+    background: @gray-light;
+    border-top: solid 0.2rem @gray-light;
+    font-size: 0.72rem;
+    font-weight: 700;
+    margin-right: 0.12rem;
+    padding: 0.32rem 0rem 0.52rem 0rem;
+    text-align: center;
+    width: 4rem;
+}
+#content-body .language-tabs input[type="radio"]:checked + label {
+    background: #002b36;  /*  From highlight.js  */
+    border-top: solid 0.2rem @green;
+    color: @white;
+}
+#content-body #references h2 {
+    .sans-serif();
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+#content-body #references ul {
+    margin: 0px;
+    padding: 0px;
+}
+#content-body #references ul {
+    list-style: none;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+#content-body #references li {
+    font-size: 0.6rem;
+    line-height: 1rem;
+    margin: 0rem 0rem 0.6rem 0rem;
+    padding: 0px;
 }
 #content-body .footnotes ol {
     margin: 0px;
@@ -211,7 +268,7 @@ article #content-body h2 {
 @media (min-width: 507px) {
 
 }
-@media (min-width: 507px) and (max-width: 991px) {
+@media (min-width: 507px) and (max-width: 980px) {
     body #content #masthead {
         min-height: 20rem;
     }
@@ -219,6 +276,9 @@ article #content-body h2 {
         background-position: 50% 50%;
         background-size: 175% auto;
         min-height: 31rem;
+    }
+    #content #masthead p {
+        margin: 0rem 0rem 1.4rem 0rem;
     }
     #aside {
         clear: both;
@@ -262,23 +322,21 @@ article #content-body h2 {
 @media (min-width: 768px) {
 
 }
-@media (min-width: 768px) and (max-width: 832px) {
+@media (min-width: 768px) and (max-width: 980px) {
     body#home #content #masthead {
         min-height: 33rem;
     }
 }
-@media (max-width: 832px) {
+@media (max-width: 819px) {
 
 }
-@media (min-width: 833px) {
+@media (min-width: 820px) {
 
 }
-@media (min-width: 833px) and (max-width: 991px) {
-    body#home #content #masthead {
-        min-height: 30rem;
-    }
+@media (min-width: 820px) and (max-width: 980px) {
+
 }
-@media (max-width: 991px) {
+@media (max-width: 980px) {
 
 }
 
@@ -289,7 +347,7 @@ article #content-body h2 {
 
 
 
-@media (min-width: 992px) {
+@media (min-width: 981px) {
     #content-body {
         margin: 0px auto;
         padding: 3.93rem 0rem;
@@ -316,13 +374,16 @@ article #content-body h2 {
         line-height: 0.8rem;
     }
 }
-@media (min-width: 992px) and (max-width: 1111px) {
+@media (min-width: 981px) and (max-width: 1111px) {
     #content #masthead {
         display: block !important;
         min-height: 28rem;
         padding: 0px !important;
         position: relative !important;
         width: 100%;
+    }
+    body#home #content #masthead {
+        min-height: 30rem;
     }
     #content #masthead .container {
         display: block !important;
@@ -344,7 +405,7 @@ article #content-body h2 {
         width: 100%;
     }
 }
-@media (min-width: 992px) and (max-width: 1023px)  {
+@media (min-width: 981px) and (max-width: 1023px)  {
 
 }
 @media (max-width: 1023px) {
@@ -362,6 +423,12 @@ article #content-body h2 {
         background-size: 150% auto;
         min-height: 26rem;
         padding-left: 0px;
+    }
+    body#home #content #masthead {
+        min-height: 30rem;
+    }
+    #content #masthead p {
+        margin: 0rem 0rem 4.8rem 0rem;
     }
     #content #masthead .container {
         margin: 0rem 0rem 0rem 4.8rem;

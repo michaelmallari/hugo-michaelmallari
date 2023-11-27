@@ -63,8 +63,8 @@ function UpdatePostsCategoryLayout() {
     // alert("Window width >= 507");
         
     }
-    if ($(window).width() >= 507 && $(window).width() <= 991) {
-    // alert("Window width >= 507 + <= 991");
+    if ($(window).width() >= 507 && $(window).width() <= 980) {
+    // alert("Window width >= 507 + <= 980");
         $('.posts-list > article a .post-details').removeClass('height-auto');
         $('.posts-list > article a .post-details').addClass('height-full-width');
     }
@@ -104,24 +104,24 @@ function UpdatePostsCategoryLayout() {
     // alert("Window width >= 768");
       
     }
-    if ($(window).width() >= 768 && $(window).width() <= 882) {
-    // alert("Window width >= 768 + <= 882");
+    if ($(window).width() >= 768 && $(window).width() <= 819) {
+    // alert("Window width >= 768 + <= 883");
 
     }
-    if ($(window).width() <= 882) {
-    // alert("Window width <= 882");
+    if ($(window).width() <= 819) {
+    // alert("Window width <= 883");
 
     }
-    if ($(window).width() >= 883) {
-    // alert("Window width >= 883");
+    if ($(window).width() >= 820) {
+    // alert("Window width >= 884");
       
     }
-    if ($(window).width() >= 883 && $(window).width() <= 991) {
-    // alert("Window width >= 883 + <= 991");
+    if ($(window).width() >= 820 && $(window).width() <= 980) {
+    // alert("Window width >= 820 + <= 980");
 
     }
-    if ($(window).width() <= 991) {
-    // alert("Window width <= 991");
+    if ($(window).width() <= 980) {
+    // alert("Window width <= 980");
         $('.posts-list > article a .post-details').removeClass('height-onehalf-width');
         $('.posts-list > article a .post-details').removeClass('height-half-width');
     }
@@ -133,13 +133,13 @@ function UpdatePostsCategoryLayout() {
 
 
 
-    if ($(window).width() >= 992) {
-    // alert("Window width >= 992");
+    if ($(window).width() >= 981) {
+    // alert("Window width >= 981");
         $('.posts-list > article a .post-details').removeClass('height-auto');
         $('.posts-list > article a .post-details').addClass('height-full-width');
     }
-    if ($(window).width() >= 992 && $(window).width() <= 1023) {
-    // alert("Window width >= 992 + <= 1199");
+    if ($(window).width() >= 981 && $(window).width() <= 1023) {
+    // alert("Window width >= 981 + <= 1199");
 
     }
     if ($(window).width() <= 1023) {

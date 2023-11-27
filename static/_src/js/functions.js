@@ -106,23 +106,23 @@ function UpdateLayout() {
     // alert("Window width >= 768");
 
     }
-    if ($(window).width() >= 768 && $(window).width() <= 991) {
-    // alert("Window width >= 768 + <= 991");
+    if ($(window).width() >= 768 && $(window).width() <= 980) {
+    // alert("Window width >= 768 + <= 980");
 
     }
-    if ($(window).width() <= 991) {
-    // alert("Window width <= 991");
+    if ($(window).width() <= 980) {
+    // alert("Window width <= 980");
 
     }
-    if ($(window).width() >= 992) {
-    // alert("Window width >= 992");
+    if ($(window).width() >= 981) {
+    // alert("Window width >= 981");
         $('#aside').css({
             'width' : function() { return $("#content").width() * 0.25; },
             'top' : function() { return $("#masthead").outerHeight() * 0.88; }
         });
     }
-    if ($(window).width() >= 992 && $(window).width() <= 1023) {
-    // alert("Window width >= 992 + <= 1199");
+    if ($(window).width() >= 981 && $(window).width() <= 1023) {
+    // alert("Window width >= 981 + <= 1199");
 
     }
     if ($(window).width() <= 1023) {
@@ -268,20 +268,36 @@ $(window).scroll(function() {
     // alert("Window width >= 768");
 
     }
-    if ($(window).width() >= 768 && $(window).width() <= 991) {
-    // alert("Window width >= 768 + <= 991");
+    if ($(window).width() >= 768 && $(window).width() <= 980) {
+    // alert("Window width >= 768 + <= 980");
 
     }
-    if ($(window).width() <= 991) {
-    // alert("Window width <= 991");
+    if ($(window).width() >= 768 && $(window).width() <= 819) {
+    // alert("Window width >= 768 + <= 819");
+    
+    }
+    if ($(window).width() <= 819) {
+    // alert("Window width <= 819");
+    
+    }
+    if ($(window).width() >= 820) {
+    // alert("Window width >= 820");
+    
+    }
+    if ($(window).width() >= 820 && $(window).width() <= 980) {
+    // alert("Window width >= 820 + <= 980");
+        
+    }
+    if ($(window).width() <= 980) {
+    // alert("Window width <= 980");
 
     }
-    if ($(window).width() >= 992) {
+    if ($(window).width() >= 981) {
     // alert("Window width >= 992");
 
     }
-    if ($(window).width() >= 992 && $(window).width() <= 1023) {
-    // alert("Window width >= 992 + <= 1199");
+    if ($(window).width() >= 981 && $(window).width() <= 1023) {
+    // alert("Window width >= 981 + <= 1199");
 
     }
     if ($(window).width() <= 1023) {

@@ -59,8 +59,8 @@ function UpdatePostsStickyLayout() {
     // alert("Window width >= 507");
 
     }
-    if ($(window).width() >= 507 && $(window).width() <= 991) {
-        // alert("Window width >= 507 + <= 991");
+    if ($(window).width() >= 507 && $(window).width() <= 980) {
+        // alert("Window width >= 507 + <= 980");
         $('#posts-sticky > article a .post-details').removeClass('height-auto');
         $('#posts-sticky > article a .post-details').addClass('height-full-width');
         $('#posts-sticky > article:nth-child(3) a .post-details').removeClass('height-full-width');
@@ -102,24 +102,24 @@ function UpdatePostsStickyLayout() {
     // alert("Window width >= 768");
 
     }
-    if ($(window).width() >= 768 && $(window).width() <= 991) {
-    // alert("Window width >= 768 + <= 991");
+    if ($(window).width() >= 768 && $(window).width() <= 980) {
+    // alert("Window width >= 768 + <= 980");
 
     }
-    if ($(window).width() >= 768 && $(window).width() <= 832) {
-    // alert("Window width >= 768 + <= 991");
+    if ($(window).width() >= 768 && $(window).width() <= 819) {
+    // alert("Window width >= 768 + <= 819");
 
     }
-    if ($(window).width() <= 832) {
-    // alert("Window width <= 832");
+    if ($(window).width() <= 819) {
+    // alert("Window width <= 819");
 
     }
-    if ($(window).width() >= 833) {
-        // alert("Window width >= 833");
+    if ($(window).width() >= 820) {
+        // alert("Window width >= 820");
     
     }
-    if ($(window).width() >= 833 && $(window).width() <= 991) {
-    // alert("Window width >= 833 + <= 991");
+    if ($(window).width() >= 834 && $(window).width() <= 980) {
+    // alert("Window width >= 820 + <= 980");
 
     }
 
@@ -129,8 +129,8 @@ function UpdatePostsStickyLayout() {
 
 
 
-    if ($(window).width() >= 992) {
-    // alert("Window width >= 992");
+    if ($(window).width() >= 981) {
+    // alert("Window width >= 981");
         $('#posts-sticky > article a .post-details').removeClass('height-auto');
         $('#posts-sticky > article:nth-child(3) a .post-details').removeClass('height-half-width');
         $('#posts-sticky > article:nth-child(5) a .post-details').removeClass('height-full-width');
@@ -146,8 +146,8 @@ function UpdatePostsStickyLayout() {
         $('#posts-sticky > article:nth-child(8) a .post-details').addClass('height-onehalf-width');
         $('#posts-sticky > article:nth-child(9) a .post-details').addClass('height-half-width');
     }
-    if ($(window).width() >= 992 && $(window).width() <= 1023) {
-    // alert("Window width >= 992 + <= 1199");
+    if ($(window).width() >= 981 && $(window).width() <= 1023) {
+    // alert("Window width >= 981 + <= 1199");
 
     }
     if ($(window).width() <= 1023) {

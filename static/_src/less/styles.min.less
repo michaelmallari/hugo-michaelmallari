@@ -40,7 +40,8 @@ PMS 5445 C #b7c9d3 (RGB: 183, 201, 211)
 
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Martel:200,300,400|Overpass+Mono:400,600,700);
-@import url(https://use.fontawesome.com/releases/v5.5.0/css/all.css);
+// @import url(https://use.fontawesome.com/releases/v5.5.0/css/all.css);
+@import url(https://use.fontawesome.com/releases/v6.4.2/css/all.css);
 .serif {
     font-family: 'Martel', serif;
     font-weight: 400;
@@ -96,27 +97,21 @@ h2 {
 }
 #content-body > .container h3 {
     .sans-serif();
-    color: @gray-dark;
-    font-size: 1.04rem;
-    font-weight: 400;
+    color: @green-dark;
+    font-size: 0.96rem;
+    font-weight: 700;
     letter-spacing: 0px !important;
-    line-height: 1.12rem;
+    line-height: 1.4rem;
     margin: 0rem 0rem 1.8rem 0rem;
 }
 #content-body > .container h4 {
     .sans-serif();
-    border-left: solid @green 0.36rem;
-    color: @green;
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 700;
+    color: @green-dark;
+    font-size: 0.92rem;
+    font-weight: 600;
     letter-spacing: 0px !important;
-    line-height: 1rem;
+    line-height: 1.4rem;
     margin: 0rem 0rem 1.8rem 0rem;
-    padding-left: 0.48rem;
-}
-#content-body > .container h4::after {
-    content: " >";
 }
 p,
 li {
@@ -158,8 +153,8 @@ pre > code * {
     letter-spacing: 0px !important;
     line-height: 1rem !important;
 }
-pre:not(.julia):not(.python):not(.r):not(.html):not(.javascript):not(.gherkin) > code,
-pre:not(.julia):not(.python):not(.r):not(.html):not(.javascript):not(.gherkin) > code * {
+pre:not(.julia):not(.python):not(.r):not(.sql):not(.html):not(.javascript):not(.js):not(.css):not(.gherkin) > code,
+pre:not(.julia):not(.python):not(.r):not(.sql):not(.html):not(.javascript):not(.js):not(.css):not(.gherkin) > code * {
     background: @off-white !important;
     color: #777 !important;
     font-style: italic !important;
@@ -357,26 +352,26 @@ a.btn-primary:focus {
 @media (min-width: 768px) {
 
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 980px) {
 
 }
-@media (min-width: 768px) and (max-width: 832px) {
+@media (min-width: 768px) and (max-width: 819px) {
     html {
         font-size: 24px;
     }
 }
-@media (max-width: 832px) {
+@media (max-width: 819px) {
 
 }
-@media (min-width: 833px) {
+@media (min-width: 820px) {
 
 }
-@media (min-width: 833px) and (max-width: 991px) {
+@media (min-width: 820px) and (max-width: 980px) {
     html {
-        font-size: 25px;
+        font-size: 25.75px;
     }
 }
-@media (max-width: 991px) {
+@media (max-width: 980px) {
 
 }
 
@@ -387,7 +382,7 @@ a.btn-primary:focus {
 
 
 
-@media (min-width: 992px) {
+@media (min-width: 981px) {
     html {
         font-size: 15px;
     }
@@ -396,7 +391,7 @@ a.btn-primary:focus {
         line-height: 2.6rem;
     }
     h2 {
-        font-size: 1.32rem;
+        font-size: 1.4rem;
         line-height: 2rem;
     }
     p {
@@ -416,7 +411,7 @@ a.btn-primary:focus {
         letter-spacing: 0.06rem;
     }
 }
-@media (min-width: 992px) and (max-width: 1023px)  {
+@media (min-width: 981px) and (max-width: 1023px)  {
 
 }
 @media (max-width: 1023px) {

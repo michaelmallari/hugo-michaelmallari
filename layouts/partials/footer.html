@@ -15,70 +15,44 @@
             <footer id="footer">
                 <blockquote id="quote">
                     <div><div class="container">
-                        <p>{{ if eq .Section "computational" }}A smart creative [or hybrid thinker and doer] has deep technical knowledge &hellip; likely a computer scientist &hellip; [s/he] doesn't just design concepts, [s/he] builds&nbsp;prototypes.{{ else if eq .Section "data" }}[A smart creative or hybrid thinker and doer] is analytically smart &hellip; comfortable with data and can use it to make&nbsp;decisions.{{ else if eq .Section "design" }}[A smart creative or hybrid thinker and doer] is user smart &hellip; a &lsquo;power user&rsquo;, not just casual but almost obsessive in [his or her]&nbsp;interest.{{ else if eq .Section "operational" }}[A smart creative or hybrid thinker and doer] is always questioning, never satisfied with the status quo, seeing problems to solve everywhere and thinking that [s/he] is just the person to solve*nbsp;them.{{ else if eq .Section "product" }}[A smart creative or hybrid thinker and doer] is business smart &hellip; sees a direct line from technical expertise to product excellence to business success, and understands the value of all&nbsp;three.{{ else }}If you're gonna make connections which are innovative &hellip; you have to not have the same bag of experiences as everyone else&nbsp;does.{{ end }}</p>
-
-                        <footer><cite>{{ if .IsHome }}Steve Jobs{{ else }}Eric Schmidt &amp; Jonathan Rosenberg in <em>How&nbsp;Google&nbsp;Works</em>{{ end }}</cite></footer>
+                        <p>AI [is] an amplifier of human intelligence.  And when people are smarter, better things happen: people are more productive, happier, [and the] economy strives.</p>
+                        
+                        <footer><cite>Yann LeCun, ACM Turing Award Laureate, NYU Professor, and Meta Chief AI Scientist</cite></footer>
                     </div></div>
                 </blockquote>
 
 
                 <section id="boilerplate">
                     <div class="container">
-                        <div class="category">
+                        <div class="category">{{ $.Site.Params.focus }}</div>
 
-{{ if eq .Section "computational" }}
-
-                            Computational Thinker + Doer
-
-{{ else if eq .Section "data" }}
-
-                            Data-Informed Thinker + Doer
-
-{{ else if eq .Section "design" }}
-
-                            Design Thinker + Doer
-
-{{ else if eq .Section "operational" }}
-
-                            Operational Thinker + Doer
-
-{{ else if eq .Section "product" }}
-
-                            Product Thinker + Doer
-
-{{ else }}
-
-                            Hybrid Thinker + Doer
-
-{{ end }}
-
-                        </div>
-
-                        <h2>{{ $.Site.Params.author }}, <span>{{ if eq .Section "computational" }}BS Computer Science{{ else if eq .Section "data" }}MS Applied Analytics{{ else if eq .Section "design" }}NN/g UX Certified Candidate{{ else if eq .Section "operational" }}MBA, SAFe Agilist, CSM{{ else if eq .Section "product" }}MBA, PMC-III, SAFe POPM, CSPO{{ else }}MS, MBA{{ end }}</span></h2>
+                        <h2>{{ $.Site.Params.author }}, <span>{{ $.Site.Params.suffix }}</span></h2>
 
                         <span class="hr-major"></span>
 
-                        <p>Michael is a hybrid thinker and doer&mdash;a byproduct of being a <a href="https://news.gallup.com/businessjournal/694/learner.aspx" target="_blank">CliftonStrengths "Learner"</a> over time. With 20+ years of hands-on engineering, design, and product experience, he helps organizations identify market needs, mobilize internal and external resources, and deliver delightful customer experiences that align with business goals. He has been entrusted with problem-solving for brands&mdash;ranging from Fortune 500 companies to early-stage startups to not-for-profit organizations&mdash;including the&nbsp;following:</p>
+                        <p>Michael is a computer scientist and analytical leader.  With his blend of technical and business skills, he helps organizations discover, define, and deliver next-gen solutions in this <em>AI-first</em>&nbsp;era&mdash;while sustaining the required change that follows.</p>
+                            
+                        <p>As a problem-solver, he has helped Fortune 500 companies, startups, and not-for-profit organizations&mdash;including the&nbsp;following:</p>
 
                         <ul id="brands">
-                            <li><img src="{{ .Site.BaseURL }}img/logo-amex.png" alt="American Express" title="American Express" class="vertical-middle" /></li>
-                            <!--<li><img src="{{ .Site.BaseURL }}img/logo-schwab.png" alt="Charles Schwab" title="Charles Schwab" class="vertical-middle" /></li>-->
-                            <li><img src="{{ .Site.BaseURL }}img/logo-discovery.png" alt="Discovery Communications" title="Discovery Communications" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-gap.png" alt="Gap" title="Gap" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-hasbro.png" alt="Hasbro" title="Hasbro" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-lincoln.png" alt="Lincoln Motor Company" title="Lincoln Motor Company" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-marriott.png" alt="Marriott" title="Marriott" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-marvel.png" alt="Marvel" title="Marvel" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-mayoclinic.png" alt="Mayo Clinic" title="Mayo Clinic" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-nasdaq.png" alt="Nasdaq" title="Nasdaq" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-polo.png" alt="Polo Ralph Lauren" title="Polo Ralph Lauren" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-verizon.png" alt="Verizon" title="Verizon" class="vertical-middle" /></li>
-                            <li><img src="{{ .Site.BaseURL }}img/logo-yahoo.png" alt="Yahoo" title="Yahoo" class="vertical-middle" /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-amex.png" alt="American Express" title="American Express" class="vertical-middle" crossorigin /></li>
+                            <!--<li><img src="https://www.michaelmallari.com/img/logo-schwab.png" alt="Charles Schwab" title="Charles Schwab" class="vertical-middle" crossorigin /></li>-->
+                            <li><img src="https://www.michaelmallari.com/img/logo-discovery.png" alt="Discovery Communications" title="Discovery Communications" class="vertical-middle" crossorigin /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-gap.png" alt="Gap" title="Gap" class="vertical-middle" crossorigin /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-hasbro.png" alt="Hasbro" title="Hasbro" class="vertical-middle" crossorigin /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-lincoln.png" alt="Lincoln Motor Company" title="Lincoln Motor Company" class="vertical-middle" crossorigin /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-marriott.png" alt="Marriott" title="Marriott" class="vertical-middle" crossorigin /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-marvel.png" alt="Marvel" title="Marvel" class="vertical-middle" crossorigin /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-mayoclinic.png" alt="Mayo Clinic" title="Mayo Clinic" class="vertical-middle" crossorigin /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-nasdaq.png" alt="Nasdaq" title="Nasdaq" class="vertical-middle" crossorigin /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-polo.png" alt="Polo Ralph Lauren" title="Polo Ralph Lauren" class="vertical-middle" crossorigin /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-verizon.png" alt="Verizon" title="Verizon" class="vertical-middle" crossorigin /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-yahoo.png" alt="Yahoo"  title="Yahoo" class="vertical-middle" crossorigin /></li>
                         </ul>
 
                         <p>Michael earned his MS in Applied Analytics from Columbia University, MBA from the University of Maryland, College Park, and BS in Computer Science from New York Institute of&nbsp;Technology.</p>
 
-                        <a href="https://koalendar.com/e/30-min-career-coaching-consultation-with-michael" target="_blank" class="btn btn-default">Schedule a free career coaching consultation</a> <span id="hello">or <a href="https://www.linkedin.com/in/mmallari/" target="_blank">say hello on LinkedIn</a></span>
+                        <a href="https://twitter.com/MichaelMallari" target="_blank" class="btn btn-default">Follow his latest posts <i class="fa-brands fa-x-twitter"></i></a> <span id="hello">or <a href="https://www.linkedin.com/in/mmallari/" target="_blank">say hello on LinkedIn</a> <i class="fa-brands fa-linkedin"></i></span>
                     </div>
                 </section>
 
@@ -92,7 +66,7 @@
         </div>
         <div id="banner">
             <div class="container">
-                <p><a href="https://koalendar.com/e/30-min-career-coaching-consultation-with-michael" target="_blank"><span>Need help getting your resume noticed in your job search?</span> <strong>Schedule a free consultation&nbsp;&raquo;</strong></a></p>
+                <p><a href="https://michaelmallari.substack.com/" target="_blank"><span>Looking for an advantage from seminal AI research?</span> <strong>Subscribe&nbsp;to&nbsp;newsletter&nbsp;&raquo;</strong></a></p>
             </div>
         </div>
 
@@ -100,74 +74,44 @@
 
 
 
+
+
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin></script>
-        <script src="{{ .Site.BaseURL }}js/functions.min.js"></script>
-        {{ if .IsHome }}<script src="{{ .Site.BaseURL }}js/posts-category.min.js"></script>{{ end }}
-        {{ if .IsSection }}<script src="{{ .Site.BaseURL }}js/posts-category.min.js"></script>{{ end }}
-        {{ if .IsHome }}<script src="{{ .Site.BaseURL }}js/posts-sticky.min.js"></script>{{ end }}
+        <script src="https://www.michaelmallari.com/js/functions.min.js" crossorigin></script>
+        {{ if .IsHome }}<script src="https://www.michaelmallari.com/js/posts-sticky.min.js" crossorigin></script>{{ else if .IsSection }}<script src="https://www.michaelmallari.com/js/posts-category.min.js" crossorigin></script>{{ end }}
         <script type="text/javascript">
             $(document).ready(function() {
                 {{ if .IsHome }}UpdatePostsStickyLayout(){{ else if .IsSection }}UpdatePostsCategoryLayout(){{ end }}
 
-{{ if .IsHome }}
-
-                rssFeed = "/index.xml";
-
-{{ else if eq .Section "computational" }}
-
-                rssFeed = "https://michaelmallari.github.io/index.xml";
-
-{{ else if eq .Section "data" }}
-
-                rssFeed = "/rss/columbia.xml";
-
-{{ else if eq .Section "design" }}
-
-                rssFeed = "https://michaelmallari.heroku.com/index.xml";
-
-{{ else if eq .Section "operational" }}
-
-                rssFeed = "https://michaelmallari.gitlab.io/index.xml";
-
-{{ else if eq .Section "product" }}
-
-                rssFeed = "https://michaelmallari.bitbucket.io/index.xml";
-
-{{ end }}
+                rssFeed = "https://www.michaelmallari.com/data/index.xml";
 
                 fetch(rssFeed)
                     .then(response => response.text())
                     .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
                     .then(data => {
                         console.log(data);
-                        const items = data.querySelectorAll("item");
+                        const items = Array.from(data.querySelectorAll("item"));        
+                        // Shuffle the array of items
+                        for (let i = items.length - 1; i > 0; i--) {
+                            const j = Math.floor(Math.random() * (i + 1));
+                            [items[i], items[j]] = [items[j], items[i]];
+                        }
+                        // Take the first 3 items
+                        const selectedItems = items.slice(0, 3);
                         let html = ``;
-                        items.forEach(el => {
+                        selectedItems.forEach(el => {
                             html += `
                                 <li><a href="${el.querySelector("link").innerHTML}">${el.querySelector("title").innerHTML}</a></li>
                             `;
                         });
                         document.getElementById("aside-posts-recent").insertAdjacentHTML("afterbegin", html);
-                    });
+                });
             });
-
 
             $(window).resize(function() {
                 {{ if .IsHome }}UpdatePostsStickyLayout(){{ else if .IsSection }}UpdatePostsCategoryLayout(){{ end }}
             }).resize();
         </script>
-
-{{ if .IsHome }}
-
-        <script src="{{ .Site.BaseURL }}js/node_modules/particles.js/particles.js"></script>
-        <script type="text/javascript">
-            particlesJS.load('masthead', '/js/particlesjs-config.json', function() {
-                console.log('particles.js config loaded');
-            });
-        </script>
-
-{{ end }}
-
-        <script src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" crossorigin></script>
-        <script src="{{ .Site.BaseURL }}js/highlight/highlight.pack.js"></script>
+        <script src="https://www.michaelmallari.com/js/highlight/highlight.pack.js" crossorigin></script>
         <script type="text/javascript">hljs.initHighlightingOnLoad();</script>

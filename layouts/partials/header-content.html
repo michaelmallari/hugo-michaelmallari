@@ -1,60 +1,20 @@
-{{if .IsHome }}
 
-                <header id="masthead" style="background-image: linear-gradient(120deg, rgba(29, 37, 45, 1), rgba(0, 88, 124, 0.2));">
-
-{{ else }}
-
-                <header id="masthead" style="background-image: linear-gradient(120deg, rgba(29, 37, 45, 1), rgba(0, 88, 124, 0.8)), url('{{ .Site.BaseURL }}img/{{ if .Params.image }}{{ .Params.image }}{{ else }}feature-img-treemap.png{{ end }}');">
-
-{{ end }}
+                <header id="masthead" style="background-image: linear-gradient(120deg, rgba(29, 37, 45, 1), rgba(0, 88, 124, 0.8)), url('{{ .Site.BaseURL }}img/{{ if .Params.image }}{{ .Params.image }}{{ else }}og-julia-code.jpg{{ end }}');">
 
                     <div class="container">
-                        <div class="category">
-
-{{ if .IsHome }}
-
-                            The Value of a Hybrid Thinker + Doer
-
-{{ else if .IsSection }}
-
-                            Attribute of a Hybrid Thinker + Doer
-
-{{ else }}
-    {{ if eq .Section "computational" }}
-
-                            Computational Thinking + Doing
-
-    {{ else if eq .Section "data" }}
-
-                            Data-Informed Thinking + Doing
-
-    {{ else if eq .Section "design" }}
-
-                            Design Thinking + Doing
-
-    {{ else if eq .Section "operational" }}
-
-                            Operational Thinking + Doing
-
-    {{ else if eq .Section "product" }}
-
-                            Product Thinking + Doing
-
-    {{ else }}
-
-                            Hybrid Thinking + Doing
-
-    {{ end }}
-{{ end }}
-
-                        </div>
-                        <h1 class="title">{{ if .IsHome }}Holistically Surfacing and Solving the Interconnected Unknowns{{ else }}{{ .Title | safeHTML }}{{ end }}</h1>
+                        <div class="category">{{ if .IsPage }}{{ .Section | safeHTML }}{{ else if .IsHome}}{{ $.Site.Params.focus | safeHTML }}{{ else }}{{ .Site.Title | safeHTML }}{{ end }}</div>
+                        <h1 class="title">{{ .Title | safeHTML }}</h1>
                         <span class="hr-minor"></span>
                         <p class="excerpt">{{ if .Params.summary }}{{ .Params.summary | safeHTML }}{{ else }}{{ .Site.Params.description | safeHTML }}{{ end }}</p>
                     </div>
                 </header>
 
 
-
-
                 <div id="content-body">
+
+
+
+
+
+
+

@@ -1,8 +1,8 @@
 # Hugo Theme: michaelmallari.com
 
-![](https://www.michaelmallari.com/img/og-michaelmallari-com.png)
+![](http://www.columbia.edu/~mm5470/img/og-columbia-edu.png)
 
-Hugo theme for data science & engineering blogging in Julia, Python, and R.
+Hugo theme for data science & engineering blogging.
 
 ## Features:
 
@@ -16,8 +16,8 @@ Hugo theme for data science & engineering blogging in Julia, Python, and R.
 
 ## Theme for the following Hugo instances:
 
-* [**Main Blog** (www.michaelmallari.com)](https://www.michaelmallari.com)
-* [**Applied Computing** (michaelmallari.github.io)](https://michaelmallari.github.io)
-* [**Applied Data & AI Product Management** (michaelmallari.bitbucket.io)](https://michaelmallari.bitbucket.io)
-* [**Applied Data Science & Analytics** (www.columbia.edu/~mm5470)](http://www.columbia.edu/~mm5470)
-* [**Applied UX on Data & AI Products** (michaelmallari.tumblr.io)](https://michaelmallari.tumblr.com)
+* [**Hybrid Thinking + Doing by Michael Mallari** (www.michaelmallari.com)](https://www.michaelmallari.com)
+* [**Applied Advanced Analytics and AI/ML in Sports by Michael Mallari** (www.columbia.edu/~mm5470)](http://www.columbia.edu/~mm5470)
+* [**AI-First Technical Product Management by Michael Mallari** (michaelmallari.bitbucket.io)](https://michaelmallari.bitbucket.io)
+* [**Applied Computing by Michael Mallari** (michaelmallari.github.io)](https://michaelmallari.github.io)
+* [**Applied Data & Analytics Translation and Storytelling** (michaelmallari.tumblr.io)](https://michaelmallari.tumblr.com)

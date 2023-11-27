@@ -1,113 +1,30 @@
-
                     <section id="posts-sticky" class="posts-list">
-                        <article><a href="{{ .Site.BaseURL }}computational/nosql-graph-databases/">
-                            <div class="post-thumb height-half-width" style="background-image: url('/img/og-youve-got-mail.jpg');">
+
+{{ range (.Paginator 9).Pages }}
+
+                        <article><a class="title" href="{{ .Params.ExternalLink | default .RelPermalink }}">
+                            <div class="post-thumb height-half-width" style="background-image: url('{{ .Site.BaseURL }}img/{{ if .Params.image }}{{ .Params.image }}{{ else }}og-julia-code.jpg{{ end }}');">
                                 <div class="container height-parent"><svg class="post-thumb-arrow" width="40px" height="16px"><polygon points="20,0 39.978,16 0.023,16" fill="#ffffff"></svg></div>
                             </div>
                             <div class="post-details">
                                 <div class="container">
-                                    <div class="category">Computational Thinking + Doing</div>
-                                    <h2 class="title">NoSQL Graph Databases</h2>
-                                    <p class="excerpt">Managing graph relationships of movies and actors—using Amazon Neptune, Azure CosmosDB, and GCP JanusGraph/Cloud Bigtable.</p>
+                                    <div class="category">
+{{ if eq .Section "baseball" }}
+                                        Baseball Analytics
+{{ else if eq .Section "basketball" }}
+                                        Basketball Analytics
+{{ else if eq .Section "football" }}
+                                        Football Analytics
+{{ end }}
+                                    </div>
+                                    <h2 class="title">{{ .Title | safeHTML }}</h2>
+                                    <p class="excerpt">{{ .Params.summary | safeHTML }}</p>
                                 </div>
                             </div>
                         </a></article>
-                        <article><a href="{{ .Site.BaseURL }}data/topic-classification-language-models/">
-                            <div class="post-thumb height-half-width" style="background-image: url('/img/og-hamilton-bill.jpg');">
-                                <div class="container height-parent"><svg class="post-thumb-arrow" width="40px" height="16px"><polygon points="20,0 39.978,16 0.023,16" fill="#ffffff"></svg></div>
-                            </div>
-                            <div class="post-details">
-                                <div class="container">
-                                    <div class="category">Data-Informed Thinking + Doing</div>
-                                    <h2 class="title">Topic Classification Using Language Models</h2>
-                                    <p class="excerpt">Categorizing the topics of the Federalist Papers (by Alexander Hamilton et al.)—using BERT, RoBERTa, and XLNet.</p>
-                                </div>
-                            </div>
-                        </a></article>
-                        <article><a href="{{ .Site.BaseURL }}product/product-feature-mix-kano-model/">
-                            <div class="post-thumb height-half-width" style="background-image: url('/img/og-sjobs-iphone.jpg');">
-                                <div class="container height-parent"><svg class="post-thumb-arrow" width="40px" height="16px"><polygon points="20,0 39.978,16 0.023,16" fill="#ffffff"></svg></div>
-                            </div>
-                            <div class="post-details">
-                                <div class="container">
-                                    <div class="category">Product Thinking + Doing</div>
-                                    <h2 class="title">Product Feature Mix Based on the Kano Model</h2>
-                                    <p class="excerpt">Prioritizing features objectively based on how important a feature is to customers and the level of satisfaction it would create.</p>
-                                </div>
-                            </div>
-                        </a></article>
-                        <article><a href="{{ .Site.BaseURL }}computational/repetition-logic/">
-                            <div class="post-thumb height-half-width" style="background-image: url('/img/og-maryland-mbb-2002.jpg');">
-                                <div class="container height-parent"><svg class="post-thumb-arrow" width="40px" height="16px"><polygon points="20,0 39.978,16 0.023,16" fill="#ffffff"></svg></div>
-                            </div>
-                            <div class="post-details">
-                                <div class="container">
-                                    <div class="category">Computational Thinking + Doing</div>
-                                    <h2 class="title">Repetition Logic</h2>
-                                    <p class="excerpt">Executing a set of statements in Julia, Python, and R for a specified number of times or while a condition is true.</p>
-                                </div>
-                            </div>
-                        </a></article>
-                        <article><a href="{{ .Site.BaseURL }}data/graphical-exploratory-data-analysis/">
-                            <div class="post-thumb height-half-width" style="background-image: url('/img/og-marvel-xmen.jpg');">
-                                <div class="container height-parent"><svg class="post-thumb-arrow" width="40px" height="16px"><polygon points="20,0 39.978,16 0.023,16" fill="#ffffff"></svg></div>
-                            </div>
-                            <div class="post-details">
-                                <div class="container">
-                                    <div class="category">Data-Informed Thinking + Doing</div>
-                                    <h2 class="title">Graphical Exploratory Data Analysis</h2>
-                                    <p class="excerpt">Visualizing the Marvel Comics universe dataset—using Gadfly for Julia, plotnine for Python, and ggplot2 for R.</p>
-                                </div>
-                            </div>
-                        </a></article>
-                        <article><a href="{{ .Site.BaseURL }}product/data-products-age-well-over-time/">
-                            <div class="post-thumb height-half-width" style="background-image: url('/img/og-wine-flights.jpg');">
-                                <div class="container height-parent"><svg class="post-thumb-arrow" width="40px" height="16px"><polygon points="20,0 39.978,16 0.023,16" fill="#ffffff"></svg></div>
-                            </div>
-                            <div class="post-details">
-                                <div class="container">
-                                    <div class="category">Product Thinking + Doing</div>
-                                    <h2 class="title">Data Products That Age Well Over Time</h2>
-                                    <p class="excerpt">Urgency and patience to balance data product R&D and product-market fit.</p>
-                                </div>
-                            </div>
-                        </a></article>
-                        <article><a href="{{ .Site.BaseURL }}computational/web-scraping/">
-                            <div class="post-thumb height-half-width" style="background-image: url('/img/og-caesars-sportsbook.jpg');">
-                                <div class="container height-parent"><svg class="post-thumb-arrow" width="40px" height="16px"><polygon points="20,0 39.978,16 0.023,16" fill="#ffffff"></svg></div>
-                            </div>
-                            <div class="post-details">
-                                <div class="container">
-                                    <div class="category">Computational Thinking + Doing</div>
-                                    <h2 class="title">Web Scraping</h2>
-                                    <p class="excerpt">Retrieving and parsing sports betting data from websites—using scrapy for Python.</p>
-                                </div>
-                            </div>
-                        </a></article>
-                        <article><a href="{{ .Site.BaseURL }}data/cluster-analysis-hierarchical-kmeans-clustering/">
-                            <div class="post-thumb height-half-width" style="background-image: url('/img/og-soccer.jpg');">
-                                <div class="container height-parent"><svg class="post-thumb-arrow" width="40px" height="16px"><polygon points="20,0 39.978,16 0.023,16" fill="#ffffff"></svg></div>
-                            </div>
-                            <div class="post-details">
-                                <div class="container">
-                                    <div class="category">Data-Informed Thinking + Doing</div>
-                                    <h2 class="title">Cluster Analysis Using Hierarchical and K-Means Clustering</h2>
-                                    <p class="excerpt">Applying two commonly used clustering methods—to find groups within the FIFA soccer data—using Julia, Python, and R.</p>
-                                </div>
-                            </div>
-                        </a></article>
-                        <article><a href="{{ .Site.BaseURL }}product/product-requirements-industrial-internet-of-things/">
-                            <div class="post-thumb height-half-width" style="background-image: url('/img/og-smart-factories.png');">
-                                <div class="container height-parent"><svg class="post-thumb-arrow" width="40px" height="16px"><polygon points="20,0 39.978,16 0.023,16" fill="#ffffff"></svg></div>
-                            </div>
-                            <div class="post-details">
-                                <div class="container">
-                                    <div class="category">Product Thinking + Doing</div>
-                                    <h2 class="title">Product Requirements for Industrial Internet of Things</h2>
-                                    <p class="excerpt">Optimizing manufacturing output and efficiency through descriptive, inquisitive, predictive, prescriptive, and preemptive IIoT analytics.</p>
-                                </div>
-                            </div>
-                        </a></article>
+
+{{ end }}
+
                         <div style="clear: both;"></div>
                     </section>
 <!--/#posts-sticky -->
