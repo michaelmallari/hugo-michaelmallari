@@ -20,4 +20,4 @@ Hugo theme for data science & engineering blogging.
 * [**Applied Advanced Analytics and AI/ML in Sports by Michael Mallari** (www.columbia.edu/~mm5470)](http://www.columbia.edu/~mm5470)
 * [**AI-First Technical Product Management by Michael Mallari** (michaelmallari.bitbucket.io)](https://michaelmallari.bitbucket.io)
 * [**Applied Computing by Michael Mallari** (michaelmallari.github.io)](https://michaelmallari.github.io)
-* [**Applied Data & Analytics Translation and Storytelling** (michaelmallari.tumblr.io)](https://michaelmallari.tumblr.com)
+* [**Applied Data & Analytics Translation and Storytelling** (michaelmallari.tumblr.com)](https://michaelmallari.tumblr.com)
