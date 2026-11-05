@@ -39,6 +39,7 @@
             @media (max-width: 991px) {
 
             }
+            /*
             @media (min-width: 1112px) {
                 body.columbia  .nav-primary li:nth-child(1) a span:nth-child(2):after {
                     content: "BB";
@@ -50,6 +51,18 @@
                     content: "FB";
                 }
             }
+                */
+            {{ with .Site.Params.nav }}
+            @media (min-width: 1112px) {
+                {{- range $i, $item := . }}
+                 .nav-primary li:nth-child({{ add $i 1 }}) a span:nth-child(2):after {
+                    content: "{{ $item.short }}";
+                }
+                {{- end }}
+            }
+            {{ end }}
+           </style>
+   {{ end }}
         </style>
 
 {{ if .OutputFormats.Get "RSS" }}{{ with .OutputFormats.Get "RSS" }}
