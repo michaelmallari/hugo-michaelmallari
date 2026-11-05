@@ -30,7 +30,7 @@
                         </svg>
                     </button>
 
-
+<!--
                     <nav id="nav" role="navigation">
                         <ul class="nav-primary">
                             <li><a href="{{ .Site.BaseURL }}baseball/" title="Baseball Analytics">
@@ -47,6 +47,19 @@
                             </a></li>
                         </ul>
                     </nav>
+-->
+
+                    <nav id="nav" role="navigation">
+                        <ul class="nav-primary">
+                            {{ range .Site.Params.nav }}
+                            <li><a href="{{ $.Site.BaseURL }}{{ .url }}" title="{{ .title }}">
+                                <span class="{{ .icon }}"></span>
+                                <span>{{ .title }}</span>
+                            </a></li>
+                            {{ end }}
+                        </ul>
+                    </nav>
+
 <!--/#nav -->
                 </div>
             </header>
