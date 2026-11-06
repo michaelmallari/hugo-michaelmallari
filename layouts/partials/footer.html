@@ -1,7 +1,7 @@
 
 {{- partial "footer-content.html" . -}}
 
-{{ if .IsHome | or .IsSection }}
+{{ if .IsHome | or .IsSection | or .IsNode }}
 
             </main>
 
@@ -15,9 +15,9 @@
             <footer id="footer">
                 <blockquote id="quote">
                     <div><div class="container">
-                        <p>AI [is] an amplifier of human intelligence.  And when people are smarter, better things happen: people are more productive, happier, [and the] economy strives.</p>
-                        
-                        <footer><cite>Yann LeCun, ACM Turing Award Laureate, NYU Professor, and Meta Chief AI Scientist</cite></footer>
+                        <p>AI is just at the beginning of the S-curve [with enormous near- and long-term opportunities ahead].</p>
+
+                        <footer><cite>Satya Nadella (Microsoft CEO), circa&nbsp;2023</em></cite></footer>
                     </div></div>
                 </blockquote>
 
@@ -25,48 +25,82 @@
                 <section id="boilerplate">
                     <div class="container">
                         <div class="category">{{ $.Site.Params.focus }}</div>
-
+                        
                         <h2>{{ $.Site.Params.author }}, <span>{{ $.Site.Params.suffix }}</span></h2>
 
                         <span class="hr-major"></span>
 
-                        <p>Michael is a computer scientist and analytical leader.  With his blend of technical and business skills, he helps organizations discover, define, and deliver next-gen solutions in this <em>AI-first</em>&nbsp;era&mdash;while sustaining the required change that follows.</p>
+                        <p>A computer scientist-by-trade and an MBA, Michael leads teams in building solutions that (1) customers love and (2) are supported by the business—having created and captured value with AI, 5G, messaging, fintech, martech, mobile, and even Web 1.0 (at the start of his career). He maximizes ROI by de-risking opportunities for market desirability (or value), product usability, engineering feasibility, and business&nbsp;viability.</p>
                             
-                        <p>As a problem-solver, he has helped Fortune 500 companies, startups, and not-for-profit organizations&mdash;including the&nbsp;following:</p>
-
+                        <p>For 20+ years, Michael has been entrusted by Fortune 500 companies (see below) to leverage his background in software engineering, product design, product management, and data science, in order to discover opportunities with clarity & confidence, and deliver meaningful outcomes&nbsp;(iteratively).</p>
+                        
                         <ul id="brands">
-                            <li><img src="https://www.michaelmallari.com/img/logo-amex.png" alt="American Express" title="American Express" class="vertical-middle" crossorigin /></li>
-                            <!--<li><img src="https://www.michaelmallari.com/img/logo-schwab.png" alt="Charles Schwab" title="Charles Schwab" class="vertical-middle" crossorigin /></li>-->
-                            <li><img src="https://www.michaelmallari.com/img/logo-discovery.png" alt="Discovery Communications" title="Discovery Communications" class="vertical-middle" crossorigin /></li>
-                            <li><img src="https://www.michaelmallari.com/img/logo-gap.png" alt="Gap" title="Gap" class="vertical-middle" crossorigin /></li>
-                            <li><img src="https://www.michaelmallari.com/img/logo-hasbro.png" alt="Hasbro" title="Hasbro" class="vertical-middle" crossorigin /></li>
-                            <li><img src="https://www.michaelmallari.com/img/logo-lincoln.png" alt="Lincoln Motor Company" title="Lincoln Motor Company" class="vertical-middle" crossorigin /></li>
-                            <li><img src="https://www.michaelmallari.com/img/logo-marriott.png" alt="Marriott" title="Marriott" class="vertical-middle" crossorigin /></li>
-                            <li><img src="https://www.michaelmallari.com/img/logo-marvel.png" alt="Marvel" title="Marvel" class="vertical-middle" crossorigin /></li>
-                            <li><img src="https://www.michaelmallari.com/img/logo-mayoclinic.png" alt="Mayo Clinic" title="Mayo Clinic" class="vertical-middle" crossorigin /></li>
-                            <li><img src="https://www.michaelmallari.com/img/logo-nasdaq.png" alt="Nasdaq" title="Nasdaq" class="vertical-middle" crossorigin /></li>
-                            <li><img src="https://www.michaelmallari.com/img/logo-polo.png" alt="Polo Ralph Lauren" title="Polo Ralph Lauren" class="vertical-middle" crossorigin /></li>
-                            <li><img src="https://www.michaelmallari.com/img/logo-verizon.png" alt="Verizon" title="Verizon" class="vertical-middle" crossorigin /></li>
-                            <li><img src="https://www.michaelmallari.com/img/logo-yahoo.png" alt="Yahoo"  title="Yahoo" class="vertical-middle" crossorigin /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-amex.png" alt="American Express" title="American Express" class="vertical-middle logo-amex" /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-schwab.png" alt="Charles Schwab" title="Charles Schwab" class="vertical-middle logo-schwab" /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-discovery.png" alt="Discovery Communications" title="Discovery Communications" class="vertical-middle logo-discovery" /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-gap.png" alt="Gap" title="Gap" class="vertical-middle logo-gap" /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-hasbro.png" alt="Hasbro" title="Hasbro" class="vertical-middle logo-hasbro" /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-lincoln.png" alt="Lincoln Motor Company" title="Lincoln Motor Company" class="vertical-middle logo-lincoln" /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-marriott.png" alt="Marriott" title="Marriott" class="vertical-middle logo-marriott" /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-marvel.png" alt="Marvel" title="Marvel" class="vertical-middle logo-marvel" /></li>
+                            <!-- <li><img src="https://www.michaelmallari.com/img/logo-mayoclinic-2.png" alt="Mayo Clinic" title="Mayo Clinic" class="vertical-middle logo-mayoclinic" /></li> -->
+                            <li><img src="https://www.michaelmallari.com/img/logo-nasdaq.png" alt="Nasdaq" title="Nasdaq" class="vertical-middle logo-nasdaq" /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-polo.png" alt="Polo Ralph Lauren" title="Polo Ralph Lauren" class="vertical-middle logo-polo" /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-verizon-2.png" alt="Verizon" title="Verizon" class="vertical-middle logo-verizon" /></li>
+                            <li><img src="https://www.michaelmallari.com/img/logo-yahoo.png" alt="Yahoo" title="Yahoo" class="vertical-middle logo-yahoo" /></li>
                         </ul>
 
-                        <p>Michael earned his MS in Applied Analytics from Columbia University, MBA from the University of Maryland, College Park, and BS in Computer Science from New York Institute of&nbsp;Technology.</p>
+                        <p>Michael earned his MS in Applied Analytics from Columbia University, MBA from the University of Maryland, College Park, and BS in Computer Science from New York Institute of Technology. He is cloud and AI certified in AWS, Azure, GCP, and OCI, and also serves as an adjunct faculty member at Columbia—shaping the next generation of AI&nbsp;leaders.</p>
 
-                        <a href="https://twitter.com/MichaelMallari" target="_blank" class="btn btn-default">Follow his latest posts <i class="fa-brands fa-x-twitter"></i></a> <span id="hello">or <a href="https://www.linkedin.com/in/mmallari/" target="_blank">say hello on LinkedIn</a> <i class="fa-brands fa-linkedin"></i></span>
+                        <a href="https://michaelmallari.substack.com/?utm_source=michaelmallari.bitbucket.io&utm_medium=microsite&utm_campaign=footer&showWelcomeOnShare=true" class="btn btn-secondary">Access locked content on Substack &nbsp;<i class="fa-substack-white"></i></a>
+                        
+                        <!-- <a href="https://www.linkedin.com/mynetwork/discovery-see-all/?usecase=PEOPLE_FOLLOWS&followMember=mmallari" target="_blank" class="btn btn-default">Connect on LinkedIn &nbsp;<i class="fa-brands fa-linkedin"></i></a> -->
+                        
+                        <!-- <span id="hello">or <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7318327852691595265" target="_blank">LinkedIn newsletter</a> &nbsp;<i class="fa-brands fa-linkedin"></i></span> -->
+                        
+                        <span id=hello>Need to future-proof your business? <a href=https://calendar.app.google/UVb1s43LATjHAkra8 target=_blank>Book&nbsp;a&nbsp;private&nbsp;discovery&nbsp;session.</a></span>
                     </div>
                 </section>
 
 
+
+                <section id="badges">
+                    <div class="container">
+                        <ul>
+                            <li><a href="https://www.credly.com/badges/7eee2fba-b29a-4c9f-bac9-064f71ef98c7/public_url" target="_blank"><img src="https://www.michaelmallari.com/img/badge-aws-certified-ai-practitioner.png" alt="AWS Certified AI Practitioner" title="AWS Certified AI Practitioner"></a></li>
+                            <li><a href="https://www.credly.com/badges/e6acdd66-2941-4451-a62c-472605e51bb3/public_url" target="_blank"><img src="https://www.michaelmallari.com/img/badge-aws-certified-cloud-practitioner.png" alt="AWS Certified Cloud Practitioner" title="AWS Certified Cloud Practitioner"></a></li>
+                            <li><a href="https://learn.microsoft.com/en-us/users/michaelmallari/credentials/f67e0308314e5458/" target="_blank"><img src="https://www.michaelmallari.com/img/badge-msft-certified-azure-ai-fundamentals.png" alt="Microsoft Certified: Azure AI Fundamentals" title="Microsoft Certified: Azure AI Fundamentals"></a></li>
+                            <li><a href="https://learn.microsoft.com/en-us/users/michaelmallari/credentials/46247b46d01fe2d1/" target="_blank"><img src="https://www.michaelmallari.com/img/badge-msft-certified-azure-data-fundamentals.png" alt="Microsoft Certified: Azure Data Fundamentals" title="Microsoft Certified: Azure Data Fundamentals"></a></li>
+                            <li><a href="https://learn.microsoft.com/en-us/users/michaelmallari/credentials/828f119dd82d9d08/" target="_blank"><img src="https://www.michaelmallari.com/img/badge-msft-certified-azure-fundamentals.png" alt="Microsoft Certified: Azure Fundamentals" title="Microsoft Certified: Azure Fundamentals"></a></li>
+                            <li><a href="https://www.credly.com/badges/64330118-0078-4381-b0eb-49947625467d/public_url" target="_blank"><img src="https://www.michaelmallari.com/img/badge-gcp-generative-ai-leader.png" alt="Google Cloud Certified Generative AI Leader" title="Google Cloud Certified Generative AI Leader"></a></li>
+                            <li><a href="https://www.credly.com/badges/82fcccb8-9b3f-4706-ac8a-cee74a762e03/public_url" target="_blank"><img src="https://www.michaelmallari.com/img/badge-gcp-cloud-digital-leader.png" alt="Google Cloud Certified Cloud Digital Leader" title="Google Cloud Certified Cloud Digital Leader"></a></li>
+                            <li><a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=F67264BED635C65E838C7EE6EEAB1AA8A78717F6C99DD489021398971DA4C77E" target="_blank"><img src="https://www.michaelmallari.com/img/badge-oci-ai-certified-foundations-associate.png" alt="Oracle Cloud Infrastructure 2023 AI Certified Foundations Associate" title="Oracle Cloud Infrastructure 2023 AI Certified Foundations Associate"></a></li>
+                            <li><a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=D3BB05571AEDD24142A6346F23B2A36467B46BCFE36AF5BC4EC81BC992E74E7C" target="_blank"><img src="https://www.michaelmallari.com/img/badge-oci-data-mgmt-certified-foundations-associate.png" alt="Oracle Cloud Data Management 2023 Certified Foundations Associate" title="Oracle Cloud Data Management 2023 Certified Foundations Associate"></a></li>
+                            <li><a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=C9067970B5C6D5D5DC39807B72275BD262DCF76A14740C93A2E0E1F7F090954F" target="_blank"><img src="https://www.michaelmallari.com/img/badge-oci-ai-certified-foundations-associate.png" alt="Oracle Cloud Infrastructure 2023 Certified Foundations Associate" title="Oracle Cloud Infrastructure 2023 Certified Foundations Associate"></a></li>
+                        </ul>
+                    </div>
+                </section>
+
+
+
                 <section id="handcrafted">
                     <div class="container">
-                        <p><a href="https://dribbble.com/michaelmallari/projects/2017578-www-michaelmallari-com" target="_blank">Designed</a> and <a href="https://github.com/michaelmallari/hugo-michaelmallari" target="_blank">built</a> by Michael Mallari</p>
+                        <p>
+                            <!-- <a href="#" onClick="UC_UI.showSecondLayer();">Privacy settings</a> &nbsp;|&nbsp; -->
+                            <!--
+                            <a href="https://dribbble.com/michaelmallari/projects/2017578-www-michaelmallari-com" target="_blank">Designed</a> and 
+                            <a href="https://github.com/michaelmallari/hugo-michaelmallari" target="_blank">built</a> by Michael Mallari
+                            -->
+                            Designed and built by Michael&nbsp;Mallari.<br />
+                            JAMstack powered by AWS (Amazon) and&nbsp;Bitbucket&nbsp;(Atlassian).
+                        </p>
                     </div>
                 </section>
             </footer>
         </div>
         <div id="banner">
             <div class="container">
-                <p><a href="https://michaelmallari.substack.com/" target="_blank"><span>Looking for an advantage from seminal AI research?</span> <strong>Subscribe&nbsp;to&nbsp;newsletter&nbsp;&raquo;</strong></a></p>
+                <p><a href="https://michaelmallari.substack.com/subscribe?utm_source=michaelmallari.bitbucket.io&utm_medium=microsite&utm_campaign=banner&showWelcomeOnShare=true"><span>Get new AI case studies sent to your inbox. Go from informed to first-mover&mdash;fast!</span> <strong>Subscribe &#187;</strong></a></p>
             </div>
         </div>
 
@@ -79,12 +113,13 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin></script>
         <script src="https://www.michaelmallari.com/js/functions.min.js" crossorigin></script>
-        {{ if .IsHome }}<script src="https://www.michaelmallari.com/js/posts-sticky.min.js" crossorigin></script>{{ else if .IsSection }}<script src="https://www.michaelmallari.com/js/posts-category.min.js" crossorigin></script>{{ end }}
+        {{ if .IsHome }}<script src="https://www.michaelmallari.com/js/posts-sticky.min.js" crossorigin></script>{{ else if .IsSection }}<script src="https://www.michaelmallari.com/js/posts-category.min.js" crossorigin></script>{{ else if .IsNode }}<script src="https://www.michaelmallari.com/js/posts-tag.min.js" crossorigin></script>{{ end }}
         <script type="text/javascript">
             $(document).ready(function() {
-                {{ if .IsHome }}UpdatePostsStickyLayout(){{ else if .IsSection }}UpdatePostsCategoryLayout(){{ end }}
+                {{ if .IsHome }}UpdatePostsStickyLayout(){{ else if .IsSection }}UpdatePostsCategoryLayout(){{ else if .IsNode }}UpdatePostsTagLayout(){{ end }}
 
-                rssFeed = "https://www.michaelmallari.com/data/index.xml";
+                // rssFeed = "https://www.michaelmallari.com/product/index.xml";
+                rssFeed = "/tags/free/index.xml";
 
                 fetch(rssFeed)
                     .then(response => response.text())
@@ -97,20 +132,24 @@
                             const j = Math.floor(Math.random() * (i + 1));
                             [items[i], items[j]] = [items[j], items[i]];
                         }
-                        // Take the first 3 items
-                        const selectedItems = items.slice(0, 3);
+                        // Take the first 4 items
+                        const selectedItems = items.slice(0, 4);
                         let html = ``;
                         selectedItems.forEach(el => {
+                            let originalUrl = el.querySelector("link").innerHTML;
+                            let updatedUrl = originalUrl.replace("https://michaelmallari.bitbucket.io/case-study/", "https://michaelmallari.substack.com/p/");
                             html += `
-                                <li><a href="${el.querySelector("link").innerHTML}">${el.querySelector("title").innerHTML}</a></li>
+                                <li><a href="${updatedUrl}?utm_source=michaelmallari.bitbucket.io&utm_medium=microsite&utm_campaign=aside">${el.querySelector("title").innerHTML}</a></li>
                             `;
+                            // <li><a href="${el.querySelector("link").innerHTML}">${el.querySelector("title").innerHTML}</a></li>
                         });
                         document.getElementById("aside-posts-recent").insertAdjacentHTML("afterbegin", html);
                 });
             });
 
+
             $(window).resize(function() {
-                {{ if .IsHome }}UpdatePostsStickyLayout(){{ else if .IsSection }}UpdatePostsCategoryLayout(){{ end }}
+                {{ if .IsHome }}UpdatePostsStickyLayout(){{ else if .IsSection }}UpdatePostsCategoryLayout(){{ else if .IsNode }}UpdatePostsTagLayout(){{ end }}
             }).resize();
         </script>
         <script src="https://www.michaelmallari.com/js/highlight/highlight.pack.js" crossorigin></script>
