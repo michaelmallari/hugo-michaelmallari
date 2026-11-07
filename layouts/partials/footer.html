@@ -41,13 +41,13 @@
                         {{ with .Site.Params.footer.paragraph1 }}
                         <p>{{ . }}</p>
                         {{ else }}
-                        <p>A computer scientist-by-trade and an MBA, Michael leads teams in building solutions that (1) customers love and (2) are supported by the business—having created and captured value with AI, 5G, messaging, fintech, martech, mobile, and even Web 1.0 (at the start of his career). He maximizes ROI by de-risking opportunities for market desirability (or value), product usability, engineering feasibility, and business&nbsp;viability.</p>
+                        <p>[Placeholder]</p>
                         {{ end }}
 
                         {{ with .Site.Params.footer.paragraph2 }}
                         <p>{{ . }}</p>
                         {{ else }}
-                        <p>For 20+ years, Michael has been entrusted by Fortune 500 companies (see below) to leverage his background in software engineering, product design, product management, and data science, in order to discover opportunities with clarity &amp; confidence, and deliver meaningful outcomes&nbsp;(iteratively).</p>
+                        <p>[Placeholder]</p>
                         {{ end }}
                         
                         <ul id="brands">
@@ -66,20 +66,21 @@
                             <li><img src="https://www.michaelmallari.com/img/logo-yahoo.png" alt="Yahoo" title="Yahoo" class="vertical-middle logo-yahoo" /></li>
                         </ul>
 
-                        <p>Michael earned his MS in Applied Analytics from Columbia University, MBA from the University of Maryland, College Park, and BS in Computer Science from New York Institute of Technology.
-                        {{ with .Site.Params.footer.finalSentence }}
-                        {{ . }}
+                        {{ with .Site.Params.footer.paragraph3 }}
+                        <p>{{ . }}</p>
                         {{ else }}
-                        He is cloud and AI certified in AWS, Azure, GCP, and OCI, and also serves as an adjunct faculty member at Columbia—shaping the next generation of AI&nbsp;leaders.
-                        {{ end }}</p>
+                        <p>[Placeholder]</p>
+                        {{ end }}
 
-                        <a href="https://michaelmallari.substack.com/?utm_source=michaelmallari.bitbucket.io&utm_medium=microsite&utm_campaign=footer&showWelcomeOnShare=true" class="btn btn-secondary">Access locked content on Substack &nbsp;<i class="fa-substack-white"></i></a>
+                        {{ with .Site.Params.footer.ctaUrl }}
+                        <a href="{{ . }}" class="btn btn-secondary">{{ with .Site.Params.footer.ctaCopy }}{{ . }}{{ end }}{{ with .Site.Params.footer.ctaIcon }} &nbsp;<i class="{{ . }}></i>{{ end }}"</a>
+                        {{ end }}
                         
                         <!-- <a href="https://www.linkedin.com/mynetwork/discovery-see-all/?usecase=PEOPLE_FOLLOWS&followMember=mmallari" target="_blank" class="btn btn-default">Connect on LinkedIn &nbsp;<i class="fa-brands fa-linkedin"></i></a> -->
                         
                         <!-- <span id="hello">or <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7318327852691595265" target="_blank">LinkedIn newsletter</a> &nbsp;<i class="fa-brands fa-linkedin"></i></span> -->
                         
-                        <span id=hello>Need to future-proof your business? <a href=https://calendar.app.google/UVb1s43LATjHAkra8 target=_blank>Book&nbsp;a&nbsp;private&nbsp;discovery&nbsp;session.</a></span>
+                        <span id="hello">Need to future-proof your business? <a href=https://calendar.app.google/UVb1s43LATjHAkra8 target=_blank>Book&nbsp;a&nbsp;private&nbsp;discovery&nbsp;session.</a></span>
                     </div>
                 </section>
 
