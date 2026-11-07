@@ -149,8 +149,11 @@
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin></script>
-        <script src="https://www.michaelmallari.com/js/functions.min.js" crossorigin></script>
-        {{ if .IsHome }}<script src="https://www.michaelmallari.com/js/posts-sticky.min.js" crossorigin></script>{{ else if .IsSection }}<script src="https://www.michaelmallari.com/js/posts-category.min.js" crossorigin></script>{{ else if .IsNode }}<script src="https://www.michaelmallari.com/js/posts-tag.min.js" crossorigin></script>{{ end }}
+        <script src="{{ "js/functions.min.js" | relURL }}"></script>
+        {{ if .IsHome }}<script src="{{ "js/posts-sticky.min.js" | relURL }}"></script>
+        {{ else if .IsSection }}<script src="{{ "js/posts-category.min.js" | relURL }}"></script>
+        {{ else if .IsNode }}<script src="{{ "js/posts-tag.min.js" | relURL }}"></script>
+        {{ end }}
         <script type="text/javascript">
             $(document).ready(function() {
                 {{ if .IsHome }}UpdatePostsStickyLayout(){{ else if .IsSection }}UpdatePostsCategoryLayout(){{ else if .IsNode }}UpdatePostsTagLayout(){{ end }}
