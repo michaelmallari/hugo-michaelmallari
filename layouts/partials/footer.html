@@ -73,7 +73,10 @@
                         {{ end }}
 
                         {{ with .Site.Params.footer.ctaUrl }}
-                        <a href="{{ . }}" class="btn btn-secondary">{{ with .Site.Params.footer.ctaCopy }}{{ . }}{{ end }}{{ with .Site.Params.footer.ctaIcon }} &nbsp;<i class="{{ . }}></i>{{ end }}"</a>
+                        <a href="{{ . }}" class="btn btn-secondary">
+                            {{ with $.Site.Params.footer.ctaCopy }}{{ . }}{{ end }}
+                            {{ with $.Site.Params.footer.ctaIcon }}&nbsp;<i class="{{ . }}"></i>{{ end }}
+                        </a>
                         {{ end }}
                         
                         <!-- <a href="https://www.linkedin.com/mynetwork/discovery-see-all/?usecase=PEOPLE_FOLLOWS&followMember=mmallari" target="_blank" class="btn btn-default">Connect on LinkedIn &nbsp;<i class="fa-brands fa-linkedin"></i></a> -->
