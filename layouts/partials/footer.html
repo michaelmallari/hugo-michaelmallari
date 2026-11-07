@@ -72,18 +72,30 @@
                         <p>[Placeholder]</p>
                         {{ end }}
 
-                        {{ with .Site.Params.footer.cta[1].url }}
-                        <a href="{{ . }}" class="btn btn-secondary">
-                            {{ with $.Site.Params.footer.cta.copy }}{{ . }}{{ end }}
-                            {{ with $.Site.Params.footer.cta[1].icon }}&nbsp;<i class="{{ . }}"></i>{{ end }}
-                        </a>
+                        {{ with .Site.Params.footer.cta }}
+                            {{ if ge (len .) 1 }}
+                                {{ $cta := index . 0 }}
+                                {{ with $cta.url }}
+                                <a href="{{ . }}" class="btn btn-secondary">
+                                    {{ $cta.copy }}
+                                    {{ with $cta.icon }}&nbsp;<i class="{{ . }}"></i>{{ end }}
+                                </a>
+                                {{ end }}
+                            {{ end }}
                         {{ end }}
                         
                         <!-- <a href="https://www.linkedin.com/mynetwork/discovery-see-all/?usecase=PEOPLE_FOLLOWS&followMember=mmallari" target="_blank" class="btn btn-default">Connect on LinkedIn &nbsp;<i class="fa-brands fa-linkedin"></i></a> -->
                         
                         <!-- <span id="hello">or <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7318327852691595265" target="_blank">LinkedIn newsletter</a> &nbsp;<i class="fa-brands fa-linkedin"></i></span> -->
                         
-                        <span id="hello">{{ with $.Site.Params.footer.cta[2].preCopy }}{{ . }}{{ end }} <a href="{{ with $.Site.Params.footer.cta[2].url }}{{ . }}{{ end }}" target=_blank>{{ with $.Site.Params.footer.cta[2].copy }}{{ . }}{{ end }}</a></span>
+                        {{ with .Site.Params.footer.cta }}
+                            {{ if ge (len .) 2 }}
+                                {{ $cta := index . 1 }}
+                                {{ with $cta.url }}
+                                <span id="hello">{{ $cta.preCopy }} <a href="{{ . }}" target="_blank" rel="noopener">{{ $cta.copy }}</a></span>
+                                {{ end }}
+                            {{ end }}
+                        {{ end }}
                     </div>
                 </section>
 
