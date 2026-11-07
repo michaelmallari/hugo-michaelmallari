@@ -15,9 +15,17 @@
             <footer id="footer">
                 <blockquote id="quote">
                     <div><div class="container">
-                        <p>AI is just at the beginning of the S-curve [with enormous near- and long-term opportunities ahead].</p>
+                        {{ with .Site.Params.footer.quote }}
+                        <p>{{ . }}</p
+                        {{ else }}
+                        <p>[Placeholder]</p>
+                        {{ end }}
 
-                        <footer><cite>Satya Nadella (Microsoft CEO), circa&nbsp;2023</em></cite></footer>
+                        {{ with .Site.Params.footer.quoteCitation }}
+                        <footer><cite>{{ . }}</cite></footer>
+                        {{ else }}
+                        <footer><cite>[Placeholder]</cite></footer>
+                        {{ end }}
                     </div></div>
                 </blockquote>
 
