@@ -192,5 +192,5 @@
                 {{ if .IsHome }}UpdatePostsStickyLayout(){{ else if .IsSection }}UpdatePostsCategoryLayout(){{ else if .IsNode }}UpdatePostsTagLayout(){{ end }}
             }).resize();
         </script>
-        <script src="{{ 'js/highlight/highlight.pack.js' | relURL }}" crossorigin></script>
+        <script src="{{ "js/highlight/highlight.pack.js" | relURL }}" crossorigin></script>
         <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
