@@ -6,13 +6,13 @@
 
 
 
-                </div>
+				</div>
 <!--/#content-body -->
 
 
-                <div id="aside">
-                    <div class="container">
-                        <span class="category">Back to Basics</span>
-                        <ul id="aside-posts-recent" />
-                    </div>
-                </div>
+				<div id="aside">
+					<div class="container">
+						<span class="category">{{ with .Site.Params.aside }}{{ . }}{{ end }}</span>
+						<ul id="aside-posts-recent" />
+					</div>
+				</div>

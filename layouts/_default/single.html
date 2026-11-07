@@ -4,26 +4,26 @@
 {{- partial "head.html" . -}}
 <!--/head -->
 
-    <body id="single" class="theme-michaelmallari template-single doing columbia">
+	<body id="single" class="theme-michaelmallari template-single">
 
 {{- partial "header.html" . -}}
 <!--/header -->
 
-                    <div class="container">
-                        <div id="byline">
-                            <div class="byline-author">By <a href="https://www.threads.net/@MichaelMallari" target="_blank">Michael Mallari</a> <i class="fa-brands fa-threads"></i></div>
-                            
-                            <time class="byline-time">{{ dateFormat "Monday, January 2, 2006" .Params.date }}</time>
-                            
-                            <div class="byline-notes">{{ if .Params.bylineNotes }}{{ .Params.bylineNotes }}{{ end }} {{ if .Params.imageSource }}Photo Credit: <a href="{{ .Params.imageSource }}" target="_blank">{{ .Params.imageSource }}</a>{{ end }}</div>
-                        </div>
+					<div class="container">
+						<div id="byline">
+							<div class="byline-author">By <a href="https://www.threads.net/@MichaelMallari" target="_blank">Michael Mallari</a> <i class="fa-brands fa-threads"></i></div>
+							
+							<time class="byline-time">{{ dateFormat "Monday, January 2, 2006" .Params.date }}</time>
+							
+							<div class="byline-notes">{{ if .Params.bylineNotes }}{{ .Params.bylineNotes }}{{ end }} {{ if .Params.imageSource }}Photo Credit: <a href="{{ .Params.imageSource }}" target="_blank">{{ .Params.imageSource }}</a>{{ end }}</div>
+						</div>
 
 {{- .Content -}}
 <!--/content -->
-                    </div>
+					</div>
 
 {{- partial "footer.html" . -}}
 <!--/footer -->
 
-    </body>
+	</body>
 </html>

@@ -1,88 +1,76 @@
 
-    <head prefix="og: http://ogp.me/ns/{{ if .IsPage }}article{{ else }}website{{ end }}#">
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <link rel="apple-touch-icon-precomposed" href="{{ .Site.BaseURL }}img/logo-mm-pms2028c.png" />
-        <link rel="apple-touch-icon" href="{{ .Site.BaseURL }}img/logo-mm-pms2028c.png" />
-        <meta name="msapplication-TileImage" content="{{ .Site.BaseURL }}img/logo-mm-pms2028c.png" />
-        <link rel="shortcut icon" type="image/png" href="{{ .Site.BaseURL }}img/icon-mm-transparent.png" />
-        <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}img/icon-mm-transparent.png" />
+	<head prefix="og: http://ogp.me/ns/{{ if .IsPage }}article{{ else }}website{{ end }}#">
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<link rel="apple-touch-icon-precomposed" href="{{ .Site.BaseURL }}img/logo-mm-pms2028c.png" />
+		<link rel="apple-touch-icon" href="{{ .Site.BaseURL }}img/logo-mm-pms2028c.png" />
+		<meta name="msapplication-TileImage" content="{{ .Site.BaseURL }}img/logo-mm-pms2028c.png" />
+		<link rel="shortcut icon" type="image/png" href="{{ .Site.BaseURL }}img/icon-mm-transparent.png" />
+		<link rel="icon" type="image/png" href="{{ .Site.BaseURL }}img/icon-mm-transparent.png" />
 
 
-        <title>{{ if .IsHome }}{{ .Site.Title | safeHTML }} by {{ $.Site.Params.author }}{{ else }}{{ .Title | safeHTML }} | {{ .Site.Title | safeHTML }} by {{ $.Site.Params.author }}{{ end }}</title>
-        <meta name="description" content="{{ if .Params.summary }}{{ .Params.summary | safeHTML }}{{ else }}{{ .Site.Params.description | safeHTML }}{{ end }}" />
-        <meta name="author" content="{{ $.Site.Params.author }}" />
-        <link rel="canonical" href="{{ .Permalink }}" />
-        <meta name="robots" content="index, follow" />
+		<title>{{ if .IsHome }}{{ .Site.Title | safeHTML }} by {{ $.Site.Params.author }}{{ else }}{{ .Title | safeHTML }} | {{ .Site.Title | safeHTML }} by {{ $.Site.Params.author }}{{ end }}</title>
+		<meta name="description" content="{{ if .Params.summary }}{{ .Params.summary | safeHTML }}{{ else }}{{ .Site.Params.description | safeHTML }}{{ end }}" />
+		<meta name="author" content="{{ $.Site.Params.author }}" />
+		<link rel="canonical" href="{{ .Permalink }}" />
+		<meta name="robots" content="index, follow" />
 
-        
-        {{ if .IsPage }}<meta property="article:published_time" content='{{ .PublishDate.Format "2006-01-02" }}' />{{ end }}
-        <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
-        <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title | safeHTML }} by {{ $.Site.Params.author }}{{ else }}{{ .Title | safeHTML }}{{ end }}" />
-        <meta property="og:description" content="{{ if .Params.summary }}{{ .Params.summary | html }}{{ else }}{{ .Site.Params.description | safeHTML }}{{ end }}" />
-        <meta property="og:url" content="{{ .Permalink }}" />
-        <meta property="og:img" content="{{ .Site.BaseURL }}img/{{ if .IsHome}}og-michaelmallari-columbia.png{{ else }}{{ if .Params.image }}{{ .Params.image }}{{ else }}og-julia-code.jpg{{ end }}{{ end }}" />
-
-
-        <meta name="twitter:card" content="{{ if .Params.twitterCard }}{{ .Params.twitterCard }}{{ else }}summary_large_image{{ end }}" />
-        <meta name="twitter:site" content="@MichaelMallari" />
-        <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title | safeHTML }} by {{ $.Site.Params.author }}{{ else }}{{ .Title | safeHTML }}{{ end }}" />
-        <meta name="twitter:description" content="{{ if .Params.summary }}{{ .Params.summary | safeHTML }}{{ else }}{{ .Site.Params.description | safeHTML }}{{ end }}" />
-        <meta name="twitter:image" content="{{ .Site.BaseURL }}img/{{ if .IsHome}}og-michaelmallari-columbia.png{{ else }}{{ if .Params.image }}{{ .Params.image }}{{ else }}og-julia-code.jpg{{ end }}{{ end }}" />
+		
+		{{ if .IsPage }}<meta property="article:published_time" content='{{ .PublishDate.Format "2006-01-02" }}' />{{ end }}
+		<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+		<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title | safeHTML }} by {{ $.Site.Params.author }}{{ else }}{{ .Title | safeHTML }}{{ end }}" />
+		<meta property="og:description" content="{{ if .Params.summary }}{{ .Params.summary | html }}{{ else }}{{ .Site.Params.description | safeHTML }}{{ end }}" />
+		<meta property="og:url" content="{{ .Permalink }}" />
+		<meta property="og:img" content="{{ .Site.BaseURL }}img/{{ if .IsHome}}og-michaelmallari-columbia.png{{ else }}{{ if .Params.image }}{{ .Params.image }}{{ else }}og-julia-code.jpg{{ end }}{{ end }}" />
 
 
-        <link type="text/css" rel="stylesheet" href="https://www.michaelmallari.com/css/styles.min.css" crossorigin />
-        <link type="text/css" rel="stylesheet" href="https://www.michaelmallari.com/js/highlight/styles/solarized-dark.css" crossorigin />
-        <style type="text/css">
-            @media (max-width: 991px) {
+		<meta name="twitter:card" content="{{ if .Params.twitterCard }}{{ .Params.twitterCard }}{{ else }}summary_large_image{{ end }}" />
+		<meta name="twitter:site" content="@MichaelMallari" />
+		<meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title | safeHTML }} by {{ $.Site.Params.author }}{{ else }}{{ .Title | safeHTML }}{{ end }}" />
+		<meta name="twitter:description" content="{{ if .Params.summary }}{{ .Params.summary | safeHTML }}{{ else }}{{ .Site.Params.description | safeHTML }}{{ end }}" />
+		<meta name="twitter:image" content="{{ .Site.BaseURL }}img/{{ if .IsHome}}og-michaelmallari-columbia.png{{ else }}{{ if .Params.image }}{{ .Params.image }}{{ else }}og-julia-code.jpg{{ end }}{{ end }}" />
 
-            }
-            /*
-            @media (min-width: 1112px) {
-                body.columbia  .nav-primary li:nth-child(1) a span:nth-child(2):after {
-                    content: "BB";
-                }
-                body.columbia  .nav-primary li:nth-child(2) a span:nth-child(2):after {
-                    content: "BKB";
-                }
-                body.columbia .nav-primary li:nth-child(3) a span:nth-child(2):after {
-                    content: "FB";
-                }
-            }
-                */
-            {{ with .Site.Params.nav }}
-            @media (min-width: 1112px) {
-                {{- range $i, $item := . }}
-                 .nav-primary li:nth-child({{ add $i 1 }}) a span:nth-child(2):after {
-                    content: "{{ $item.short }}";
-                }
-                {{- end }}
-            }
-            {{ end }}
-        </style>
+
+		<link type="text/css" rel="stylesheet" href="{{ "css/styles.min.js" | relURL }}" crossorigin />
+		<link type="text/css" rel="stylesheet" href="{{ "js/highlight/styles/solarized-dark.css" | relURL }}" crossorigin />
+		<style type="text/css">
+			@media (max-width: 991px) {
+
+			}
+
+			{{ with .Site.Params.nav }}
+			@media (min-width: 1112px) {
+				{{- range $i, $item := . }}
+				.nav-primary li:nth-child({{ add $i 1 }}) a span:nth-child(2):after {
+					content: "{{ $item.short }}";
+				}
+				{{- end }}
+			}
+			{{ end }}
+		</style>
 
 {{ if .OutputFormats.Get "RSS" }}{{ with .OutputFormats.Get "RSS" }}
 
-        <link type="application/rss+xml" rel="alternate" title="{{ if $.IsHome}}{{ $.Site.Title | safeHTML }}{{ else }}{{ $.Title | safeHTML }}{{ end }}" href="{{ .RelPermalink }}" />
-        <link type="application/rss+xml" rel="feed" title="{{ if $.IsHome}}{{ $.Site.Title | safeHTML }}{{ else }}{{ $.Title | safeHTML }}{{ end }}" href="{{ .RelPermalink }}" />
+		<link type="application/rss+xml" rel="alternate" title="{{ if $.IsHome}}{{ $.Site.Title | safeHTML }}{{ else }}{{ $.Title | safeHTML }}{{ end }}" href="{{ .RelPermalink }}" />
+		<link type="application/rss+xml" rel="feed" title="{{ if $.IsHome}}{{ $.Site.Title | safeHTML }}{{ else }}{{ $.Title | safeHTML }}{{ end }}" href="{{ .RelPermalink }}" />
 
 {{ end }}{{ end }}
 
-{{if eq .Site.BaseURL "http://www.columbia.edu/~mm5470/"}}
-
-        <script crossorigin>
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-W75SWRC');
-        </script>
-
+{{ with .Site.Params.gtm }}
+	{{ if and .id .baseURL (eq (printf "%s" $.Site.BaseURL) .baseURL) }}
+		<script crossorigin>
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','{{ .id }}');
+		</script>
+	{{ end }}
 {{ end }}
 
-    </head>
+	</head>
 
 
 
