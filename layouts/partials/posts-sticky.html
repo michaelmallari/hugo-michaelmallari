@@ -1,24 +1,38 @@
-                    <section id="posts-sticky" class="posts-list">
+{{- /*
+  Home page post cards.
 
-{{ range (.Paginator 9).Pages }}
+  Site config (all optional):
+    params.mainSections = ["sec-a", "sec-b"]   # default: Hugo's site.MainSections
+    [params.home]
+      random = true   # every visit shows a random `count` posts (default false: newest first, paginated)
+      count  = 9      # default 9
 
-                        <article><a class="title" href="{{ .Params.ExternalLink | default .RelPermalink }}">
-                            <div class="post-thumb height-half-width" style="background-image: url('{{ .Site.BaseURL }}img/{{ if .Params.image }}{{ .Params.image }}{{ else }}og-julia-code.jpg{{ end }}');">
+  Random mode renders every eligible post (so crawlers see all links, and
+  visitors without JavaScript get the newest `count`), then a script shuffles
+  them and removes the rest before UpdatePostsStickyLayout() runs.
+*/ -}}
+{{- $home := site.Params.home | default dict -}}
+{{- $count := $home.count | default 9 -}}
+{{- $random := $home.random | default false -}}
+{{- $sections := site.Params.mainSections | default site.MainSections -}}
+{{- $pages := where site.RegularPages "Section" "in" $sections -}}
+{{- $list := $pages -}}
+{{- if not $random -}}
+  {{- $list = (.Paginate $pages $count).Pages -}}
+{{- end -}}
+                    <section id="posts-sticky" class="posts-list" data-count="{{ $count }}">
+
+{{ range $i, $p := $list }}
+
+                        <article{{ if ge $i $count }} hidden{{ end }}><a class="title" href="{{ $p.Params.ExternalLink | default $p.RelPermalink }}">
+                            <div class="post-thumb height-half-width" style="background-image: url('{{ site.BaseURL }}img/{{ if $p.Params.image }}{{ $p.Params.image }}{{ else }}og-julia-code.jpg{{ end }}');">
                                 <div class="container height-parent"><svg class="post-thumb-arrow" width="40px" height="16px"><polygon points="20,0 39.978,16 0.023,16" fill="#ffffff"></svg></div>
                             </div>
                             <div class="post-details">
                                 <div class="container">
-                                    <div class="category">
-{{ if eq .Section "baseball" }}
-                                        Baseball Analytics
-{{ else if eq .Section "basketball" }}
-                                        Basketball Analytics
-{{ else if eq .Section "football" }}
-                                        Football Analytics
-{{ end }}
-                                    </div>
-                                    <h2 class="title">{{ .Title | safeHTML }}</h2>
-                                    <p class="excerpt">{{ .Params.summary | safeHTML }}</p>
+                                    <div class="category">{{ with $p.Params.topic }}{{ . | safeHTML }}{{ else }}{{ $p.CurrentSection.Title }}{{ end }}</div>
+                                    <h2 class="title">{{ $p.Title | safeHTML }}</h2>
+                                    <p class="excerpt">{{ $p.Params.summary | safeHTML }}</p>
                                 </div>
                             </div>
                         </a></article>
@@ -27,4 +41,22 @@
 
                         <div style="clear: both;"></div>
                     </section>
+{{- if $random }}
+                    <script>
+                        (function () {
+                            var section = document.getElementById("posts-sticky");
+                            var count = parseInt(section.getAttribute("data-count"), 10) || 9;
+                            var cards = Array.prototype.slice.call(section.querySelectorAll(":scope > article"));
+                            for (var i = cards.length - 1; i > 0; i--) {
+                                var j = Math.floor(Math.random() * (i + 1));
+                                var t = cards[i]; cards[i] = cards[j]; cards[j] = t;
+                            }
+                            var end = section.querySelector(":scope > div");
+                            cards.forEach(function (card, k) {
+                                if (k < count) { card.hidden = false; section.insertBefore(card, end); }
+                                else { card.remove(); }
+                            });
+                        })();
+                    </script>
+{{- end }}
 <!--/#posts-sticky -->
