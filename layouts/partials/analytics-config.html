@@ -1,0 +1,21 @@
+{{- /*
+  Analytics settings, shared by head.html (scripts) and header.html (GTM noscript).
+
+  Site config:
+    [params.analytics]
+      gtmId     = "GTM-XXXXXXX"   # Google Tag Manager container (GA4 is configured inside it)
+      clarityId = "xxxxxxxxxx"    # Microsoft Clarity project ID
+
+  Tags load only in Hugo's production environment (`hugo` builds), never under
+  `hugo server` (development), so local previews don't send analytics.
+
+  Older configs using [params.gtm] with id still work (their baseURL is ignored).
+
+  Returns a dict: gtmId, clarityId, enabled.
+*/ -}}
+{{- $a := site.Params.analytics | default dict -}}
+{{- $legacy := site.Params.gtm | default dict -}}
+{{- $gtmId := $a.gtmId | default $legacy.id -}}
+{{- $clarityId := $a.clarityId -}}
+{{- $enabled := hugo.IsProduction -}}
+{{- return dict "gtmId" $gtmId "clarityId" $clarityId "enabled" $enabled -}}
