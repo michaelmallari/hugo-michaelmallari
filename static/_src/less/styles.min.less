@@ -27,30 +27,67 @@ PMS 5445 C #b7c9d3 (RGB: 183, 201, 211)
 @blue-dark: #00587c; // PMS 308 C
 @blue-light: #3ccbda; // PMS 2226 C
 
-@green: rgb(76, 174, 4);
-@green-dark: rgb(37, 114, 38);
-@green-light: rgb(167, 225, 99);
+@green: #4cae04; // PMS 3501 C
+@green-dark: #257226; // PMS 2273 C
+@green-light: #a7e163; // PMS 2283 C
 
 @gray-dark: #1d252d; // PMS 433 C
 @gray-medium: #5b6770; // PMS 431 C
 @gray-light: #b7c9d3; // 5445 C
 
+@highlighter: #fdff32;
+
 @white: #fff;
 @off-white: #f5f5f5;
 
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Martel:200,300,400|Overpass+Mono:400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Martel:200,300,400,700|Overpass+Mono:400,600,700);
 // @import url(https://use.fontawesome.com/releases/v5.5.0/css/all.css);
-@import url(https://use.fontawesome.com/releases/v6.4.2/css/all.css);
+// @import url(https://use.fontawesome.com/releases/v6.4.2/css/all.css);
+@import url(https://use.fontawesome.com/releases/v6.7.2/css/all.css);
+.fa-hugging-face {
+	aspect-ratio: 1 / 1;
+	background: url('/img/icon-huggingface.svg') 0% 120% no-repeat;
+	display: inline-block;
+	position: relative;
+	top: 1px;
+	width: 0.84rem;
+}
+.fa-substack {
+	aspect-ratio: 1 / 1;
+	background: url('/img/icon-substack.svg') 0% 120% no-repeat;
+	display: inline-block;
+	position: relative;
+	top: 1px;
+	width: 0.64rem;
+}
+.fa-substack-white {
+	aspect-ratio: 1 / 1;
+	background: url('/img/icon-substack-white.svg') 0% 120% no-repeat;
+	display: inline-block;
+	position: relative;
+	top: 1px;
+	width: 0.64rem;
+}
+.fa-beehiiv {
+	aspect-ratio: 1 / 1;
+	background: url('/img/icon-beehiiv.svg') 0% 120% no-repeat;
+	display: inline-block;
+	position: relative;
+	top: 1px;
+	width: 0.64rem;
+}
+
+
 .serif {
-    font-family: 'Martel', serif;
-    font-weight: 400;
-    letter-spacing: 0.008rem;
+	font-family: 'Martel', serif;
+	font-weight: 400;
+	letter-spacing: 0.008rem;
 }
 .sans-serif {
-    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.008rem;
+	font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-weight: 400;
+	letter-spacing: 0.008rem;
 }
 
 
@@ -63,121 +100,159 @@ PMS 5445 C #b7c9d3 (RGB: 183, 201, 211)
 
 }
 html {
-    font-size: 15px;
+	font-size: 15px;
 }
 body {
-    background: @off-white;
-    margin: 0px;
-    min-width: 320px;
-    padding: 0px;
-    -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
+	background: @off-white;
+	margin: 0px;
+	min-width: 320px;
+	padding: 0px;
+	-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
 }
 h1 {
-    .serif();
-    color: @white;
-    font-size: 1.52rem;
-    letter-spacing: 0px;
-    line-height: 2.28rem;
-    margin: 0px;
+	.serif();
+	color: @white;
+	font-size: 1.52rem;
+	letter-spacing: 0px;
+	line-height: 2.28rem;  // Font size * 1.5
+	margin: 0px;
 }
 h2,
-h2 > span {
-    .serif();
-    font-weight: 300;
-    letter-spacing: 0px;
-    margin: 0px;
+h2 > span,
+h3,
+h3 > span {
+	.serif();
+	font-weight: 300;
+	letter-spacing: 0px;
+	margin: 0px;
 }
 h2 {
-    font-size: 1.24rem;
-    line-height: 1.88rem;
+	font-size: 1.28rem;
+	line-height: 1.92rem;  // Font size * 1.5
 }
 #content-body > .container h2 {
-    margin: 3rem 0rem 1.4rem 0rem !important;
+	margin: 3rem 0rem 1.92rem 0rem !important;
+}
+h3 {
+	font-size: 1.04rem;
+	line-height: 1.56rem;  // Font size * 1.5
 }
 #content-body > .container h3 {
-    .sans-serif();
-    color: @green-dark;
-    font-size: 0.96rem;
-    font-weight: 700;
-    letter-spacing: 0px !important;
-    line-height: 1.4rem;
-    margin: 0rem 0rem 1.8rem 0rem;
+	margin: 0rem 0rem 1.56rem 0rem !important;
+}
+h4,
+h4 > span,
+h5,
+h5 > span {
+	.sans-serif();
+	// color: @green-dark;
+	font-weight: 400;
+	letter-spacing: 0px !important;
 }
 #content-body > .container h4 {
-    .sans-serif();
-    color: @green-dark;
-    font-size: 0.92rem;
-    font-weight: 600;
-    letter-spacing: 0px !important;
-    line-height: 1.4rem;
-    margin: 0rem 0rem 1.8rem 0rem;
+	font-size: 1.04rem;
+	line-height: 1.56rem;  // Font size * 1.5
+	margin: 0rem 0rem 1.56rem 0rem;
+}
+#content-body > .container h5 {
+	font-size: 0.88rem;
+	line-height: 1.32rem;  // Font size * 1.5
+	margin: 0rem 0rem 1.32rem 0rem;
 }
 p,
 li {
-    .serif();
-    color: @gray-medium;
-    font-size: 0.8rem;
+	.serif();
+	color: @gray-medium;
+	font-size: 0.8rem;
 }
 p {
-    margin: 0rem 0rem 1.8rem 0rem;
-    line-height: 1.6rem;
+	line-height: 1.6rem;
+	margin: 0rem 0rem 1.8rem 0rem;
 }
 a {
-    color: @orange;
-    -moz-text-decoration-color: @gray-light;
-        -webkit-text-decoration-color: @gray-light;
-        text-decoration-color: @gray-light;
-    -moz-text-decoration-style: dotted;
-        -webkit-text-decoration-style: dotted;
-        text-decoration-style: dotted;
+	color: @orange;
+	-moz-text-decoration-color: @gray-light;
+		-webkit-text-decoration-color: @gray-light;
+		text-decoration-color: @gray-light;
+	-moz-text-decoration-style: dotted;
+		-webkit-text-decoration-style: dotted;
+		text-decoration-style: dotted;
 }
 a:hover,
 a:focus {
-    color: @orange-light;
-    -moz-text-decoration-color: @orange-light;
-        -webkit-text-decoration-color: @orange-light;
-        text-decoration-color: @orange-light;
-    -moz-text-decoration-style: solid;
-        -webkit-text-decoration-style: solid;
-        text-decoration-style: solid;
+	color: @orange-light;
+	-moz-text-decoration-color: @orange-light;
+		-webkit-text-decoration-color: @orange-light;
+		text-decoration-color: @orange-light;
+	-moz-text-decoration-style: solid;
+		-webkit-text-decoration-style: solid;
+		text-decoration-style: solid;
 }
 pre {
-    margin: -1rem 0rem 1rem 0rem;
+	margin: -1rem 0rem 1rem 0rem;
 }
 pre > code,
 pre > code * {
-    font-family: monospace, "Courier New" !important;
-    font-size: 0.72rem;
-    font-weight: 400;
-    letter-spacing: 0px !important;
-    line-height: 1rem !important;
+	font-family: monospace, "Courier New" !important;
+	font-size: 0.72rem;
+	font-weight: 400;
+	letter-spacing: 0px !important;
+	line-height: 1rem !important;
 }
 pre:not(.julia):not(.python):not(.r):not(.sql):not(.html):not(.javascript):not(.js):not(.css):not(.gherkin) > code,
 pre:not(.julia):not(.python):not(.r):not(.sql):not(.html):not(.javascript):not(.js):not(.css):not(.gherkin) > code * {
-    background: @off-white !important;
-    color: #777 !important;
-    font-style: italic !important;
+	background: @off-white !important;
+	color: #777 !important;
+	font-style: italic !important;
 }
 p > code {
-    background: #fff;
-    color:#000;
-    font-family: monospace, "Courier New" !important;
-    font-weight: 600;
-    letter-spacing: 0px !important;
-    padding: 0rem 0.2rem;
+	background: #fff;
+	font-family: monospace, "Courier New" !important;
+	letter-spacing: 0px !important;
+	padding: 0rem 0.2rem;
+}
+.highlight {
+	background: @highlighter;
+	color: @gray-dark;
+}
+.content-cta {
+	background: @white;
+	color: @gray-medium;
+	font-size: 1rem;
+	line-height: 1.6rem;
+	padding: 1.2rem 2rem;
+	text-align: center;
+}
+.content-cta a {
+	display: block;
+	margin-top: 2rem;
+}
+p > code,
+.highlight code {
+	color:#000 !important;
+}
+aside {
+	.sans-serif();
+	background: @white;
+	color: @gray-dark;
+	font-size: 0.72rem;
+	line-height: 1.2rem;
+	margin: 2.2rem 0rem;
+	padding: 1rem 1.8rem;
+	text-align: center;
 }
 .hr-major,
 .hr-minor {
-    display: block;
-    height: 0.36rem;
-    margin: 2.6rem 0rem;
-    width: 3.4rem;
+	display: block;
+	height: 0.36rem;
+	margin: 2.6rem 0rem;
+	width: 3.4rem;
 }
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-addition {
-    color: @green !important;
+	color: @green !important;
 }
 .hljs-number,
 .hljs-string,
@@ -185,82 +260,174 @@ p > code {
 .hljs-literal,
 .hljs-doctag,
 .hljs-regexp {
-    color: @blue !important;
+	color: @blue !important;
 }
 .hljs-built_in,
 .hljs-deletion {
-    color: @orange !important;
+	color: @orange !important;
 }
 .hr-major {
-    background: @orange;  
+	background: @orange;  
 }
 .hr-minor {
-    background: @blue;
+	background: @blue;
 }
 .container {
-    margin-right: 2.4rem;
-    margin-left: 2.4rem;
-    padding: 0px;
+	margin-right: 2.4rem;
+	margin-left: 2.4rem;
+	padding: 0px;
 }
 .full-vw {
-    left: -2.4rem;
-    position: relative;
-    width: 100vw;
-    right: -2.4rem;
+	left: -2.4rem;
+	position: relative;
+	width: 100vw;
+	right: -2.4rem;
 }
 .clearfix {
-    clear: both;
+	clear: both;
 }
-a.btn {
-    .sans-serif();
-    display: inline-block;
-    border-radius: 25em;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: -0.008rem;
-    padding: 0.64rem 1.64rem;
-    text-decoration: none;
-    -moz-transition: background 0.24s ease, color 0.24s ease;
-        -webkit-transition: background 0.24s ease, color 0.24s ease;
-        -o-transition: background 0.24s ease, color 0.24s ease;
-        -ms-transition: background 0.24s ease, color 0.24s ease;
-        transition: background 0.24s ease, color 0.24s ease;
+a.btn,
+button.btn {
+	.sans-serif();
+	cursor: pointer;
+	display: inline-block;
+	border-radius: 25em;
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: -0.008rem;
+	padding: 0.64rem 1.64rem;
+	text-decoration: none;
+	-moz-transition: background 0.24s ease, color 0.24s ease;
+		-webkit-transition: background 0.24s ease, color 0.24s ease;
+		-o-transition: background 0.24s ease, color 0.24s ease;
+		-ms-transition: background 0.24s ease, color 0.24s ease;
+		transition: background 0.24s ease, color 0.24s ease;
 }
-a.btn-default {
-    background: @gray-dark;
-    color: @white;
+a.btn-default,
+button.btn-default {
+	background: @gray-dark;
+	color: @white;
 }
 a.btn-default:hover,
-a.btn-default:focus {
-    background: @gray-medium;
+a.btn-default:focus,
+button.btn-default:hover,
+button.btn-default:focus {
+	background: @gray-medium;
 }
-a.btn-primary {
-    background: @blue;
-    color: @white;
+a.btn-primary,
+button.btn-primary {
+	background: @orange;
+	color: @white;
 }
 a.btn-primary:hover,
-a.btn-primary:focus {
-    background: @blue-dark;
+a.btn-primary:focus,
+button.btn-primary:hover,
+button.btn-primary:focus {
+	background: @orange-light;
+}
+a.btn-secondary,
+button.btn-secondary {
+	background: @blue;
+	color: @white;
+}
+a.btn-secondary:hover,
+a.btn-secondary:focus,
+button.btn-secondary:hover,
+button.btn-secondary:focus {
+	background: @blue-light;
 }
 
 
 
 
 .disable-scroll {
-    overflow: hidden !important;
+	overflow: hidden !important;
 }
 .category {
-    .sans-serif();
-    color: @blue;
-    display: inline-block;
-    font-size: 0.6rem;
-    font-weight: 600;
-    letter-spacing: 0.08rem;
-    padding-bottom: 0.6rem;
-    text-transform: uppercase;
+	.sans-serif();
+	color: @blue;
+	display: inline-block;
+	font-size: 0.6rem;
+	font-weight: 600;
+	letter-spacing: 0.08rem;
+	padding-bottom: 0.6rem;
+	text-transform: uppercase;
 }
 .clear {
-    clear: both;
+	clear: both;
+}
+
+
+
+
+
+		
+
+.overlay {
+	--color-cmp-overlay: @gray-dark !important;
+	--feature-overlay-opacity: 0.77 !important;
+}
+#usercentrics-cmp-ui {
+	background: @off-white !important;
+	border: none !important;   
+} 
+#usercentrics-cmp-ui .cmp-wrapper,
+#usercentrics-cmp-ui .cmp,
+#usercentrics-cmp-ui .modal-wrapper,
+.cmp-wrapper,
+.cmp,
+.modal-wrapper {
+	direction: ltr;
+	--color-main-primary: @blue !important;
+	--color-main-text: @gray-dark !important;
+	--color-links-anchor: @orange !important;
+	--color-cmp-background: @white !important;
+	--color-cmp-background-rgb: 245, 245, 245;
+	--color-tabs-container-background: @white !important;
+	--color-tabs-tab-active: @blue !important;;
+	--color-tabs-tab-inactive: @gray-dark !important;
+	--color-main-border: @white !important;
+	--color-cookiebot-logo: @gray-light !important;
+	--color-cookiebot-powered-by: @gray-light !important;
+	--color-cmp-scrollbar-thumb: @gray-light !important;
+	--color-buttons-deny-background: @gray-dark !important;
+	--color-buttons-deny-text: @gray-light !important;
+	--color-buttons-accept-background: @green !important;
+	--color-buttons-accept-text: @white !important;
+	--color-buttons-save-background: @gray-light !important;
+	--color-buttons-save-text: @gray-dark !important;
+	--color-buttons-more-background: @white !important;
+	--color-buttons-more-text: @gray-dark !important;
+	--color-buttons-ok-background: @gray-light !important;
+	--color-buttons-ok-text: @gray-dark !important;
+	--color-toggle-background-active: @blue !important;
+	--color-toggle-handle-active: @white !important;
+	--color-toggle-background-inactive: @gray-light !important;
+	--color-toggle-handle-inactive: @white !important;
+	--color-toggle-background-disabled: @gray-medium !important;
+	--color-toggle-handle-disabled: @white !important;
+	--spacing-xxs: 4px;
+	--spacing-xs: 8px;
+	--spacing-sm: 12px;
+	--spacing-md: 16px;
+	--spacing-lg: 20px;
+	--spacing-xl: 24px;
+	--spacing-xxl: 28px;
+	--spacing-xxxl: 32px;
+	--spacing-xxxxl: 36px;
+	--layout-border-radius: 0px;
+	--layout-border-width: 0px;
+	--layout-border-color: ;
+	--element-buttons-border-radius: 50px !important;
+	--typography-font: 'Open Sans', 'Helvetica Neue', sans-serif,Arial,sans-serif !important;
+	--typography-size: 12px !important;
+	--typography-size-title: 1.125em;
+	--typography-size-text: 1em;
+	--typography-size-label: 0.75em;
+	--typography-size-link: 0.875em;
+	--typography-size-cb: 1.071em;
+	--color-cmp-overlay: @gray-dark !important;
+	--feature-overlay-opacity: 0.77 !important;
 }
 
 
@@ -269,28 +436,54 @@ a.btn-primary:focus {
 
 
 
-
+/*  iPhone 4, 5 (320 px)  */
 @media (max-width: 374px) {
 
 }
+/*  iPhone 6, 7, 8, SE, X (375 px)  */
 @media (min-width: 375px) {
 
 }
-@media (min-width: 375px) and (max-width: 413px) {
-    html {
-        font-size: 17.4px;
-    }
+@media (min-width: 375px) and (max-width: 389px) {
+	html {
+		font-size: 17.4px;
+	}
+}
+@media (max-width: 389px) {
+
+}
+/*  iPhone 12 Pro  */
+@media (min-width: 390px) {
+
+}
+@media (min-width: 390px) and (max-width: 413px) {
+	html {
+		font-size: 17.4px;
+	}
 }
 @media (max-width: 413px) {
 
 }
+/*  iPhone 6+, 7+, 8+, XR (320 px)  */
 @media (min-width: 414px) {
 
 }
-@media (min-width: 414px) and (max-width: 506px) {
-    html {
-        font-size: 18px;
-    }
+@media (min-width: 414px) and (max-width: 429px) {
+	html {
+		font-size: 18px;
+	}
+}
+@media (max-width: 429px) {
+
+}
+/*  iPhone 14 Pro Max (430 px)  */
+@media (min-width: 430px) {
+
+}
+@media (min-width: 430px) and (max-width: 506px) {
+	html {
+		font-size: 18px;
+	}
 }
 @media (max-width: 506px) {
 
@@ -302,27 +495,26 @@ a.btn-primary:focus {
 
 
 
-
 @media (min-width: 507px) {
-    .hr-major,
-    .hr-minor {
-        width: 3.6rem;
-    }
+	.hr-major,
+	.hr-minor {
+		width: 3.6rem;
+	}
 }
 @media (min-width: 507px) and (max-width: 991px) {
-    .container {
-        margin-right: 3.6rem;
-        margin-left: 3.6rem;
-    }
+	.container {
+		margin-right: 3.6rem;
+		margin-left: 3.6rem;
+	}
 }
 @media (min-width: 507px) and (max-width: 550px) {
-    html {
-        font-size: 15px;
-    }
-    .category {
-        font-size: 0.52rem;
-        letter-spacing: 0.052rem;
-    }
+	html {
+		font-size: 15px;
+	}
+	.category {
+		font-size: 0.52rem;
+		letter-spacing: 0.052rem;
+	}
 }
 @media (max-width: 550px) {
 
@@ -331,9 +523,9 @@ a.btn-primary:focus {
 
 }
 @media (min-width: 551px) and (max-width: 677px) {
-    html {
-        font-size: 17.8px;
-    }
+	html {
+		font-size: 17.8px;
+	}
 }
 @media (max-width: 677px) {
 
@@ -342,9 +534,9 @@ a.btn-primary:focus {
 
 }
 @media (min-width: 678px) and (max-width: 767px) {
-    html {
-        font-size: 18px;
-    }
+	html {
+		font-size: 18px;
+	}
 }
 @media (max-width: 767px) {
 
@@ -356,9 +548,9 @@ a.btn-primary:focus {
 
 }
 @media (min-width: 768px) and (max-width: 819px) {
-    html {
-        font-size: 24px;
-    }
+	html {
+		font-size: 24px;
+	}
 }
 @media (max-width: 819px) {
 
@@ -367,9 +559,9 @@ a.btn-primary:focus {
 
 }
 @media (min-width: 820px) and (max-width: 980px) {
-    html {
-        font-size: 25.75px;
-    }
+	html {
+		font-size: 25.75px;
+	}
 }
 @media (max-width: 980px) {
 
@@ -383,33 +575,44 @@ a.btn-primary:focus {
 
 
 @media (min-width: 981px) {
-    html {
-        font-size: 15px;
-    }
-    h1 {
-        font-size: 1.92rem;
-        line-height: 2.6rem;
-    }
-    h2 {
-        font-size: 1.4rem;
-        line-height: 2rem;
-    }
-    p {
-        font-size: 0.76rem;
-        line-height: 1.52rem;
-    }
-    .container {
-        margin-right: 2rem;
-        margin-left: 2rem;
-    }
-    .hr-major,
-    .hr-minor {
-        width: 4.2rem;
-    }
-    .category {
-        font-size: 0.56rem;
-        letter-spacing: 0.06rem;
-    }
+	html {
+		font-size: 15px;
+	}
+	h1 {
+		font-size: 1.92rem;
+		line-height: 2.88rem;
+	}
+	h2 {
+		font-size: 1.4rem;
+		line-height: 2.1rem;
+	}
+	h3 {
+		font-size: 1.16rem;
+		line-height: 1.74rem;
+	}
+	h4,
+	h4 > span,
+	h5,
+	h5 > span {
+		.sans-serif();
+		font-weight: 400;
+	}
+	p {
+		font-size: 0.76rem;
+		line-height: 1.52rem;
+	}
+	.container {
+		margin-right: 2rem;
+		margin-left: 2rem;
+	}
+	.hr-major,
+	.hr-minor {
+		width: 4.2rem;
+	}
+	.category {
+		font-size: 0.56rem;
+		letter-spacing: 0.06rem;
+	}
 }
 @media (min-width: 981px) and (max-width: 1023px)  {
 
@@ -427,76 +630,76 @@ a.btn-primary:focus {
 
 }
 @media (min-width: 1112px) {
-    html {
-        font-size: 14.75px;
-    }
-    .hr-major,
-    .hr-minor {
-        width: 4.8rem;
-    }
-    #page-container {
-        margin: 0rem 4.8rem;
-    }
+	html {
+		font-size: 14.75px;
+	}
+	.hr-major,
+	.hr-minor {
+		width: 4.8rem;
+	}
+	#page-container {
+		margin: 0rem 4.8rem;
+	}
 }
 @media (min-width: 1200px) {
-    html {
-        font-size: 16px;
-    }
+	html {
+		font-size: 16px;
+	}
 }
 @media (min-width: 1366px) {
-    html {
-        font-size: 17.75px;
-    }
+	html {
+		font-size: 17.75px;
+	}
 }
 @media (min-width: 1400px) {
-    html {
-        font-size: 18.25px;
-    }
+	html {
+		font-size: 18.25px;
+	}
 }
 @media (min-width: 1600px) {
-    html {
-        font-size: 21px;
-    }
+	html {
+		font-size: 21px;
+	}
 }
 @media (min-width: 1800px) {
-    html {
-        font-size: 24px;
-    }
+	html {
+		font-size: 24px;
+	}
 }
 @media (min-width: 1920px) {
-    html {
-        font-size: 25px;
-    }
+	html {
+		font-size: 25px;
+	}
 }
 @media (min-width: 2000px) {
-    html {
-        font-size: 26px;
-    }
+	html {
+		font-size: 26px;
+	}
 }
 @media (min-width: 2200px) {
-    html {
-        font-size: 28px;
-    }
+	html {
+		font-size: 28px;
+	}
 }
 @media (min-width: 2400px) {
-    html {
-        font-size: 31px;
-    }
+	html {
+		font-size: 31px;
+	}
 }
 @media (min-width: 2600px) {
-    html {
-        font-size: 34px;
-    }
+	html {
+		font-size: 34px;
+	}
 }
 @media (min-width: 2800px) {
-    html {
-        font-size: 36px;
-    }
+	html {
+		font-size: 36px;
+	}
 }
 @media (min-width: 3000px) {
-    html {
-        font-size: 39px;
-    }
+	html {
+		font-size: 39px;
+	}
 }
 
 

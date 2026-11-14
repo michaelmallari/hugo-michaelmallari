@@ -1,206 +1,246 @@
 #footer {
-    display: block;
-    margin: 0px;
-    padding: 0px;
-    text-align: center;
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
 }
-
-
-
-
 #footer #quote {
-    background: linear-gradient(120deg, @blue, @blue-dark);  /*  PMS 3551 C to 308 C */
-    color: @white;
-    display: block;
-    margin: 0px;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+	background: linear-gradient(120deg, @blue, @blue-dark);  /*  PMS 3551 C to 308 C */
+	color: @white;
+	display: block;
+	margin: 0px;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
 }
 #footer #quote > div {
-    margin: 0px auto;
+	margin: 0px auto;
 }
 #footer #quote p,
 #footer #quote footer {
-    display: block;
-    margin: 0px;
+	display: block;
+	margin: 0px;
 }
 #footer #quote p {
-    .serif();
-    color: @white;
-    font-size: 1.12rem;
-    font-weight: 300;
-    line-height: 2rem;
+	.serif();
+	color: @white;
+	font-size: 1.12rem;
+	font-weight: 300;
+	line-height: 2rem;
 }
 #footer #quote p::before { 
-    content: "“";
+	content: "“";
 }
 #footer #quote p::after { 
-    content: "”";
+	content: "”";
 }
 #footer #quote footer cite {
-    .sans-serif();
-    display: block;
-    font-size: 0.68rem;
-    font-style: normal;
-    letter-spacing: 0.08rem;
-    margin: 3rem 0rem 0rem 0rem;
-    padding: 0px;
-    text-transform: uppercase;
+	.sans-serif();
+	display: block;
+	font-size: 0.68rem;
+	font-style: normal;
+	letter-spacing: 0.08rem;
+	margin: 3rem 0rem 0rem 0rem;
+	padding: 0px;
+	text-transform: uppercase;
 }
 #footer #quote footer cite::before,
 #footer #quote footer cite::after { 
-    content: "―";
-    font-weight: 400;
+	content: "―";
+	font-weight: 400;
 }
 
 
 
 
 #footer #boilerplate {
-    padding: 4.8rem 0rem;
+	padding: 4.8rem 0rem;
 }
 #footer #boilerplate .category {
-    display: block;
-    text-align: left;
+	display: block;
+	text-align: left;
 }
 #footer #boilerplate h2 {
-    font-size: 1.44rem;
-    text-align: left;
+	font-size: 1.44rem;
+	text-align: left;
 }
 #footer #boilerplate h2 > span {
-    display: block;
+	display: block;
 }
 #footer #boilerplate p {
-    text-align: left;
+	text-align: left;
 }
 #footer #boilerplate i {
-    color: @blue;
+	color: @blue;
 }
 
 
 #footer #brands {
-    display: grid;
-    grid-auto-rows: minmax(6rem, auto);
-    grid-column-gap: 0.2rem;
-    grid-row-gap: 0.2rem;
-    grid-template-columns: repeat(2, 1fr);
-    list-style: none;
-    margin: 0px;
-    padding: 0rem 0rem 2rem 0rem;
+	display: grid;
+	grid-auto-rows: minmax(6rem, auto);
+	grid-column-gap: 0.2rem;
+	grid-row-gap: 0.2rem;
+	grid-template-columns: repeat(2, 1fr);
+	list-style: none;
+	margin: 0px;
+	padding: 0rem 0rem 2rem 0rem;
 }
 #footer #brands li {
-    background: @white;
-    text-align: center;
+	background: @white;
+	text-align: center;
 }
 #footer #brands li img {
-    filter: grayscale(100);
-    -moz-transition: filter 0.24s ease;
-        -webkit-transition: filter 0.24s ease;
-        -o-transition: filter 0.24s ease;
-        -ms-transition: filter 0.24s ease;
-        transition: filter 0.24s ease;
-    width: auto;
+	filter: grayscale(100);
+	-moz-transition: filter 0.24s ease;
+		-webkit-transition: filter 0.24s ease;
+		-o-transition: filter 0.24s ease;
+		-ms-transition: filter 0.24s ease;
+		transition: filter 0.24s ease;
+	width: auto;
 }
 #footer #brands li:hover img {
-    filter: none;
+	filter: none;
 }
-#footer #brands li:nth-child(12) img {
-    height: 1.36rem;
+
+
+.logo-verizon {
+	height: 1.48rem;
 }
-#footer #brands li:nth-child(10) img {
-    height: 1.48rem;
+.logo-yahoo {
+	height: 1.52rem;
 }
-#footer #brands li:nth-child(11) img {
-    height: 1.6rem;
+.logo-polo {
+	height: 1.72rem;
 }
-#footer #brands li:nth-child(2) img {
-    height: 1.8rem;
+.logo-davita {
+	height: 1.92rem;
 }
-#footer #brands li:nth-child(5) img {
-    height: 2rem;
+.logo-discovery {
+	height: 2.12rem;
 }
-#footer #brands li:nth-child(6) img {
-    height: 2.2rem;
+.logo-lincoln,
+.logo-marriott {
+	height: 2.4rem;
 }
-#footer #brands li:nth-child(9) img {
-    height: 2.4rem;
+.logo-marvel,
+.logo-nasdaq {
+	height: 2.64rem;
 }
-#footer #brands li:nth-child(7) img {
-    height: 2.6rem;
+.logo-amex,
+.logo-gap,
+.logo-schwab {
+	height: 3rem;
 }
-#footer #brands li:nth-child(1) img,
-#footer #brands li:nth-child(3) img {
-    height: 2.8rem;
+.logo-mayoclinic {
+	height: 3.32rem;
 }
-#footer #brands li:nth-child(8) img {
-    height: 3.2rem;
+.logo-hasbro {
+	height: 4.08rem;
 }
-#footer #brands li:nth-child(4) img {
-    height: 3.8rem;
+
+
+
+
+
+
+
+
+#footer #badges ul {
+	display: display;
+	list-style: none;
+	margin: 0rem 0rem 0.8rem 0rem;
+	padding: 0rem;
 }
+#footer #badges ul li {
+	display: inline-block;
+	margin: 0rem 0.2rem;
+	text-align: center;
+}
+#footer #badges ul li img {
+	filter: grayscale(100);
+	-moz-transition: filter 0.24s ease;
+		-webkit-transition: filter 0.24s ease;
+		-o-transition: filter 0.24s ease;
+		-ms-transition: filter 0.24s ease;
+		transition: filter 0.24s ease;
+	height: 2.4rem;
+	width: auto;
+}
+#footer #badges ul li:hover img {
+	filter: none;
+}
+
+
+
+
+
+
 
 
 #footer #boilerplate .btn {
-    margin-top: 1.6rem;
+	margin-top: 1.6rem;
 }
 body#landing #footer #boilerplate .btn {
-    display: none;
+	display: none;
 }
 #footer #hello {
-    .sans-serif();
-    color: @gray-medium;
-    display: block;
-    font-size: 0.8rem;
-    margin-top: 1rem;
-    text-align: center;
+	.sans-serif();
+	color: @gray-medium;
+	display: block;
+	font-size: 0.72rem;
+	margin-top: 2rem;
+	text-align: center;
 }
 #footer #hello a {
-    .sans-serif();
+	.sans-serif();
 }
 body#landing #footer #hello {
-    display: none;
+	display: none;
 }
 
 
 body#landing #footer #handcrafted {
-    display: none;
+	display: none;
 }
 #footer #handcrafted p,
 #footer #handcrafted p * {
-    .sans-serif();
-    font-size: 0.6rem;
-    line-height: 0.84rem;
-    margin-bottom: 1.6rem;
+	.sans-serif();
+	font-size: 0.6rem;
+	line-height: 0.84rem;
+	margin-bottom: 1.6rem;
 }
 #banner {
-    background: linear-gradient(120deg, @green, @green-dark);
-    box-shadow: 0rem 0.2rem 1rem rgba(29, 37, 45, 0.4);
-    display: block;
-    position: fixed;
-    top: -200px;
-    -moz-transition: top 0.6s ease;
-        -webkit-transition: top 0.6s ease;
-        -o-transition: top 0.6s ease;
-        -ms-transition: top 0.6s ease;
-        transition: top 0.6s ease;
-    z-index: 98;
+	background: linear-gradient(120deg, @green, @green-dark);
+	box-shadow: 0rem 0.2rem 1rem rgba(29, 37, 45, 0.4);
+	display: block;
+	position: fixed;
+	top: -200px;
+	-moz-transition: top 0.6s ease;
+		-webkit-transition: top 0.6s ease;
+		-o-transition: top 0.6s ease;
+		-ms-transition: top 0.6s ease;
+		transition: top 0.6s ease;
+	z-index: 98;
+}
+#banner .container {
+	margin-right: 1.4rem;
+	margin-left: 1.4rem;
 }
 #banner.expanded {
-    top: 0px !important;
+	top: 0px !important;
 }
 #banner p {
-    .sans-serif();
-    color: @white;
-    display: block;
-    font-size: 0.72rem;
-    line-height: 0.96rem;
-    margin: 0px;
-    padding: 0.88rem 0rem;
+	.sans-serif();
+	color: @white;
+	display: block;
+	font-size: 0.72rem;
+	line-height: 0.96rem;
+	margin: 0px;
+	padding: 0.88rem 0rem;
 }
 #banner p a,
 #banner p a:hover {
-    color: @white !important;
-    text-decoration: none !important;
+	color: @white !important;
+	text-decoration: none !important;
 }
 
 
@@ -240,26 +280,68 @@ body#landing #footer #handcrafted {
 @media (min-width: 507px) {
 
 }
-@media (min-width: 507px) and (max-width: 767px) {
-    #footer #brands {
-        grid-template-columns: repeat(3, 1fr);
-    }
+@media (min-width: 507px) and (max-width: 980px) {
+	#footer #brands {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 @media (max-width: 550px) {
 
 }
-@media (min-width: 551px) {
-    #footer #quote {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
-    }
-    #footer #quote footer cite {
-        font-size: 0.64rem;
-    }
-    #footer #boilerplate h2 {
-        font-size: 1.48rem;
-        line-height: 2rem;
-    }
+@media (min-width: 551px) { 
+	.logo-polo,
+	.logo-verizon {
+		height: 1.56rem;
+	}
+	.logo-yahoo {
+		height: 1.6rem;
+	}
+	.logo-davita {
+		height: 1.8rem;
+	}
+	.logo-discovery {
+		height: 1.92rem;
+	}
+	.logo-lincoln {
+		height: 2.2rem;
+	}
+	.logo-nasdaq {
+		height: 2.36rem;
+	}
+	.logo-marriott,
+	.logo-marvel {
+		height: 2.4rem;
+	}
+	.logo-amex,
+	.logo-gap,
+	.logo-schwab {
+		height: 2.8rem;
+	}
+	.logo-mayoclinic {
+		height: 3.32rem;
+	}
+	.logo-hasbro {
+		height: 3.92rem;
+	}
+
+	
+	
+	
+	
+
+
+
+	#footer #quote {
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+	}
+	#footer #quote footer cite {
+		font-size: 0.64rem;
+	}
+	#footer #boilerplate h2 {
+		font-size: 1.48rem;
+		line-height: 2rem;
+	}
 }
 @media (min-width: 551px) and (max-width: 677px) {
 
@@ -268,55 +350,54 @@ body#landing #footer #handcrafted {
 
 }
 @media (min-width: 678px) {
-
+	#banner .container {
+		margin-right: 1.84rem;
+		margin-left: 1.84rem;
+	}
 }
-@media (min-width: 678px) and (max-width: 767px) {
-
+@media (min-width: 678px) and (max-width: 980px) {
+	.logo-verizon {
+		height: 1.36rem;
+	}
+	.logo-yahoo {
+		height: 1.4rem;
+	}
+	.logo-polo {
+		height: 1.64rem;
+	}
+	.logo-davita {
+		height: 1.88rem;
+	}
+	.logo-lincoln {
+		height: 2.16rem;
+	}
+	.logo-discovery {
+		height: 2.2rem;
+	}
+	.logo-marriott {
+		height: 2.32rem;
+	}
+	.logo-marvel,
+	.logo-nasdaq {
+		height: 2.64rem;
+	}
+	.logo-amex,
+	.logo-gap,
+	.logo-schwab {
+		height: 2.88rem;
+	}
+	.logo-mayoclinic {
+		height: 3.32rem;
+	}
+	.logo-hasbro {
+		height: 4.16rem;
+	}
 }
 @media (max-width: 767px) {
 
 }
 @media (min-width: 768px) {
 
-}
-@media (min-width: 768px) and (max-width: 980px) {
-    #footer #brands {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    #footer #brands li:nth-child(12) img {
-        height: 1.28rem;
-    }
-    #footer #brands li:nth-child(10) img {
-        height: 1.2rem;
-    }
-    #footer #brands li:nth-child(11) img {
-        height: 1.44rem;
-    }
-    #footer #brands li:nth-child(2) img {
-        height: 1.6rem;
-    }
-    #footer #brands li:nth-child(5) img {
-        height: 1.6rem;
-    }
-    #footer #brands li:nth-child(6) img {
-        height: 1.8rem;
-    }
-    #footer #brands li:nth-child(9) img {
-        height: 2rem;
-    }
-    #footer #brands li:nth-child(7) img {
-        height: 2.2rem;
-    }
-    #footer #brands li:nth-child(1) img,
-    #footer #brands li:nth-child(3) img {
-        height: 2.6rem;
-    }
-    #footer #brands li:nth-child(8) img {
-        height: 2.8rem;
-    }
-    #footer #brands li:nth-child(4) img {
-        height: 3.4rem;
-    }
 }
 @media (min-width: 768px) and (max-width: 819px) {
 
@@ -334,50 +415,54 @@ body#landing #footer #handcrafted {
 
 }
 @media (min-width: 981px) {
-    #footer #quote {
-        background: linear-gradient(140deg, @blue, @blue-dark);  /*  PMS 3551 C to 308 C */
-        padding-top: 6rem;
-        padding-bottom: 6rem;
-        text-align: left;
-    }
-    #footer #quote > div {
-        width: 50%;
-    }
-    #footer #quote p {
-        font-size: 1.28rem;
-        line-height: 2.6rem;
-    }
-    #footer #quote footer cite {
-        font-size: 0.64rem;
-        font-weight: 400;
-        margin-top: 4rem;
-    }
-    #footer #quote footer cite::after { 
-        content: "";
-    }
-    #footer #boilerplate {
-        margin-right: auto;
-        margin-left: auto;
-        padding: 6rem 0rem !important;
-        width: 50%;
-    }
-    #footer #boilerplate h2 {
-        font-size: 1.54rem;
-        line-height: 2.2rem;
-    }
-    #footer #brands {
-        grid-template-columns: repeat(6, 1fr);
-        margin: 0rem -7.4rem;
-    }
-    #banner {
-        height: 4.8rem;
-        right: 0px;
-        width: 16rem;
-    }
-    #banner p {
-        line-height: 1rem;
-        padding: 0.88rem 0rem;
-    }
+	#footer #quote {
+		background: linear-gradient(140deg, @blue, @blue-dark);  /*  PMS 3551 C to 308 C */
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+		text-align: left;
+	}
+	#footer #quote > div {
+		width: 50%;
+	}
+	#footer #quote p {
+		font-size: 1.28rem;
+		line-height: 2.6rem;
+	}
+	#footer #quote footer cite {
+		font-size: 0.64rem;
+		font-weight: 400;
+		margin-top: 4rem;
+	}
+	#footer #quote footer cite::after { 
+		content: "";
+	}
+	#footer #boilerplate {
+		margin-right: auto;
+		margin-left: auto;
+		padding: 6rem 0rem !important;
+		width: 50%;
+	}
+	#footer #boilerplate h2 {
+		font-size: 1.54rem;
+		line-height: 2.2rem;
+	}
+	#footer #brands {
+		grid-template-columns: repeat(6, 1fr);
+		margin: 0rem -7.4rem;
+	}
+	#banner {
+		height: 4.8rem;
+		right: 0px;
+		width: 16rem;
+	}
+	#banner .container {
+		margin-right: 1.4rem;
+		margin-left: 1.4rem;
+	}
+	#banner p {
+		line-height: 1rem;
+		padding: 0.88rem 0rem;
+	}
 }
 @media (min-width: 981px) and (max-width: 1023px)  {
 

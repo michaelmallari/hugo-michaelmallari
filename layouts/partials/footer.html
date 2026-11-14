@@ -3,129 +3,126 @@
 
 {{ if .IsHome | or .IsSection | or .IsNode }}
 
-            </main>
+			</main>
 
 {{ else }}
 
-            </article>
+			</article>
 
 {{ end }}
 
 
-            <footer id="footer">
-                <blockquote id="quote">
-                    <div><div class="container">
-                        {{ with .Site.Params.footer.quote }}
-                        <p>{{ . }}</p>
-                        {{ else }}
-                        <p>[Placeholder]</p>
-                        {{ end }}
+			<footer id="footer">
+				<blockquote id="quote">
+					<div><div class="container">
+						{{ with .Site.Params.footer.quote }}
+						<p>{{ . }}</p>
+						{{ else }}
+						<p>[Placeholder]</p>
+						{{ end }}
 
-                        {{ with .Site.Params.footer.quoteCitation }}
-                        <footer><cite>{{ . }}</cite></footer>
-                        {{ else }}
-                        <footer><cite>[Placeholder]</cite></footer>
-                        {{ end }}
-                    </div></div>
-                </blockquote>
+						{{ with .Site.Params.footer.quoteCitation }}
+						<footer><cite>{{ . }}</cite></footer>
+						{{ else }}
+						<footer><cite>[Placeholder]</cite></footer>
+						{{ end }}
+					</div></div>
+				</blockquote>
 
 
-                <section id="boilerplate">
-                    <div class="container">
-                        <div class="category">{{ $.Site.Params.focus }}</div>
-                        
-                        <h2>{{ $.Site.Params.author }}, <span>{{ $.Site.Params.suffix }}</span></h2>
+				<section id="boilerplate">
+					<div class="container">
+						<div class="category">{{ $.Site.Params.focus }}</div>
+						
+						<h2>{{ $.Site.Params.author }}, <span>{{ $.Site.Params.suffix }}</span></h2>
 
-                        <span class="hr-major"></span>
+						<span class="hr-major"></span>
 
-                        {{ with .Site.Params.footer.paragraph1 }}
-                        <p>{{ . }}</p>
-                        {{ else }}
-                        <p>[Placeholder]</p>
-                        {{ end }}
+						{{ with .Site.Params.footer.paragraph1 }}
+						<p>{{ . }}</p>
+						{{ else }}
+						<p>[Placeholder]</p>
+						{{ end }}
 
-                        {{ with .Site.Params.footer.paragraph2 }}
-                        <p>{{ . }}</p>
-                        {{ else }}
-                        <p>[Placeholder]</p>
-                        {{ end }}
-                        
-                        <ul id="brands">
-                            <li><img src="/img/logo-amex.png" alt="American Express" title="American Express" class="vertical-middle logo-amex" /></li>
-                            <li><img src="/img/logo-schwab.png" alt="Charles Schwab" title="Charles Schwab" class="vertical-middle logo-schwab" /></li>
-                            <li><img src="/img/logo-discovery.png" alt="Discovery Communications" title="Discovery Communications" class="vertical-middle logo-discovery" /></li>
-                            <li><img src="/img/logo-gap.png" alt="Gap" title="Gap" class="vertical-middle logo-gap" /></li>
-                            <li><img src="/img/logo-hasbro.png" alt="Hasbro" title="Hasbro" class="vertical-middle logo-hasbro" /></li>
-                            <li><img src="/img/logo-lincoln.png" alt="Lincoln Motor Company" title="Lincoln Motor Company" class="vertical-middle logo-lincoln" /></li>
-                            <li><img src="/img/logo-marriott.png" alt="Marriott" title="Marriott" class="vertical-middle logo-marriott" /></li>
-                            <li><img src="/img/logo-marvel.png" alt="Marvel" title="Marvel" class="vertical-middle logo-marvel" /></li>
-                            <li><img src="/img/logo-nasdaq.png" alt="Nasdaq" title="Nasdaq" class="vertical-middle logo-nasdaq" /></li>
-                            <li><img src="/img/logo-polo.png" alt="Polo Ralph Lauren" title="Polo Ralph Lauren" class="vertical-middle logo-polo" /></li>
-                            <li><img src="/img/logo-verizon-2.png" alt="Verizon" title="Verizon" class="vertical-middle logo-verizon" /></li>
-                            <li><img src="h/img/logo-yahoo.png" alt="Yahoo" title="Yahoo" class="vertical-middle logo-yahoo" /></li>
-                        </ul>
+						{{ with .Site.Params.footer.paragraph2 }}
+						<p>{{ . }}</p>
+						{{ else }}
+						<p>[Placeholder]</p>
+						{{ end }}
+						
+						<ul id="brands">
+							<li><img src="/img/logo-amex.png" alt="American Express" title="American Express" class="vertical-middle logo-amex" /></li>
+							<li><img src="/img/logo-schwab.png" alt="Charles Schwab" title="Charles Schwab" class="vertical-middle logo-schwab" /></li>
+							<li><img src="/img/logo-discovery.png" alt="Discovery Communications" title="Discovery Communications" class="vertical-middle logo-discovery" /></li>
+							<li><img src="/img/logo-gap.png" alt="Gap" title="Gap" class="vertical-middle logo-gap" /></li>
+							<li><img src="/img/logo-hasbro.png" alt="Hasbro" title="Hasbro" class="vertical-middle logo-hasbro" /></li>
+							<li><img src="/img/logo-lincoln.png" alt="Lincoln Motor Company" title="Lincoln Motor Company" class="vertical-middle logo-lincoln" /></li>
+							<li><img src="/img/logo-marriott.png" alt="Marriott" title="Marriott" class="vertical-middle logo-marriott" /></li>
+							<li><img src="/img/logo-marvel.png" alt="Marvel" title="Marvel" class="vertical-middle logo-marvel" /></li>
+							<li><img src="/img/logo-nasdaq.png" alt="Nasdaq" title="Nasdaq" class="vertical-middle logo-nasdaq" /></li>
+							<li><img src="/img/logo-polo.png" alt="Polo Ralph Lauren" title="Polo Ralph Lauren" class="vertical-middle logo-polo" /></li>
+							<li><img src="/img/logo-verizon-2.png" alt="Verizon" title="Verizon" class="vertical-middle logo-verizon" /></li>
+							<li><img src="/img/logo-yahoo.png" alt="Yahoo" title="Yahoo" class="vertical-middle logo-yahoo" /></li>
+						</ul>
 
-                        {{ with .Site.Params.footer.paragraph3 }}
-                        <p>{{ . }}</p>
-                        {{ else }}
-                        <p>[Placeholder]</p>
-                        {{ end }}
+						{{ with .Site.Params.footer.paragraph3 }}
+						<p>{{ . }}</p>
+						{{ else }}
+						<p>[Placeholder]</p>
+						{{ end }}
 
-                        {{ with .Site.Params.footer.cta }}
-                            {{ if ge (len .) 1 }}
-                                {{ $cta := index . 0 }}
-                                {{ with $cta.url }}
-                                <a href="{{ . }}" class="btn btn-secondary">
-                                    {{ $cta.copy }}
-                                    {{ with $cta.icon }}&nbsp;<i class="{{ . }}"></i>{{ end }}
-                                </a>
-                                {{ end }}
-                            {{ end }}
-                        {{ end }}
-                        
-                        <!-- <a href="https://www.linkedin.com/mynetwork/discovery-see-all/?usecase=PEOPLE_FOLLOWS&followMember=mmallari" target="_blank" class="btn btn-default">Connect on LinkedIn &nbsp;<i class="fa-brands fa-linkedin"></i></a> -->
-                        
-                        <!-- <span id="hello">or <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7318327852691595265" target="_blank">LinkedIn newsletter</a> &nbsp;<i class="fa-brands fa-linkedin"></i></span> -->
-                        
-                        {{ with .Site.Params.footer.cta }}
-                            {{ if ge (len .) 2 }}
-                                {{ $cta := index . 1 }}
-                                {{ with $cta.url }}
-                                <span id="hello">{{ $cta.preCopy }} <a href="{{ . }}" target="_blank" rel="noopener">{{ $cta.copy }}</a></span>
-                                {{ end }}
-                            {{ end }}
-                        {{ end }}
-                    </div>
-                </section>
+						{{ with .Site.Params.footer.cta }}
+							{{ if ge (len .) 1 }}
+								{{ $cta := index . 0 }}
+								{{ with $cta.url }}
+								<a href="{{ . }}" class="btn btn-secondary">
+									{{ $cta.copy }}
+									{{ with $cta.icon }}&nbsp;<i class="{{ . }}"></i>{{ end }}
+								</a>
+								{{ end }}
+							{{ end }}
+						{{ end }}
+						
+						
+						{{ with .Site.Params.footer.cta }}
+							{{ if ge (len .) 2 }}
+								{{ $cta := index . 1 }}
+								{{ with $cta.url }}
+								<span id="hello">{{ $cta.preCopy }} <a href="{{ . }}" target="_blank" rel="noopener">{{ $cta.copy }}</a></span>
+								{{ end }}
+							{{ end }}
+						{{ end }}
+					</div>
+				</section>
 
 
 
-                {{ with .Site.Params.badges }}
-                <section id="badges">
-                    <div class="container">
-                        <ul>
-                            {{- range . }}
-                            <li><a href="{{ .url }}" target="_blank" rel="noopener"><img src="{{ .image | relURL }}" alt="{{ .title }}" title="{{ .title }}"></a></li>
-                            {{- end }}
-                        </ul>
-                    </div>
-                </section>
-                {{ end }}
+				{{ with .Site.Params.badges }}
+				<section id="badges">
+					<div class="container">
+						<ul>
+							{{- range . }}
+							<li><a href="{{ .url }}" target="_blank" rel="noopener"><img src="{{ .image | relURL }}" alt="{{ .title }}" title="{{ .title }}"></a></li>
+							{{- end }}
+						</ul>
+					</div>
+				</section>
+				{{ end }}
 
 
 
-                <section id="handcrafted">
-                    <div class="container">
-                        <p>Designed and built by Michael&nbsp;Mallari.</p>
-                    </div>
-                </section>
-            </footer>
-        </div>
-        <div id="banner">
-            <div class="container">
-                <p><a href="https://michaelmallari.substack.com/subscribe?utm_source=michaelmallari.bitbucket.io&utm_medium=microsite&utm_campaign=banner&showWelcomeOnShare=true"><span>Get new AI case studies sent to your inbox. Go from informed to first-mover&mdash;fast!</span> <strong>Subscribe &#187;</strong></a></p>
-            </div>
-        </div>
+				<section id="handcrafted">
+					<div class="container">
+						<p>Designed and built by Michael&nbsp;Mallari.</p>
+					</div>
+				</section>
+			</footer>
+		</div>
+		<div id="banner">
+			<div class="container">
+				<p><a href="https://michaelmallari.substack.com/subscribe?utm_source=michaelmallari.bitbucket.io&utm_medium=microsite&utm_campaign=banner&showWelcomeOnShare=true"><span>Get new AI case studies sent to your inbox. Go from informed to first-mover&mdash;fast!</span> <strong>Subscribe &#187;</strong></a></p>
+			</div>
+		</div>
 
 
 
@@ -134,49 +131,49 @@
 
 
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin></script>
-        <script src="{{ "js/functions.min.js" | relURL }}"></script>
-        {{ if .IsHome }}<script src="{{ "js/posts-sticky.min.js" | relURL }}"></script>
-        {{ else if .IsSection }}<script src="{{ "js/posts-category.min.js" | relURL }}"></script>
-        {{ else if .IsNode }}<script src="{{ "js/posts-tag.min.js" | relURL }}"></script>
-        {{ end }}
-        <script type="text/javascript">
-            $(document).ready(function() {
-                {{ if .IsHome }}UpdatePostsStickyLayout(){{ else if .IsSection }}UpdatePostsCategoryLayout(){{ else if .IsNode }}UpdatePostsTagLayout(){{ end }}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin></script>
+		<script src="{{ "js/functions.min.js" | relURL }}"></script>
+		{{ if .IsHome }}<script src="{{ "js/posts-sticky.min.js" | relURL }}"></script>
+		{{ else if .IsSection }}<script src="{{ "js/posts-category.min.js" | relURL }}"></script>
+		{{ else if .IsNode }}<script src="{{ "js/posts-tag.min.js" | relURL }}"></script>
+		{{ end }}
+		<script type="text/javascript">
+			$(document).ready(function() {
+				{{ if .IsHome }}UpdatePostsStickyLayout(){{ else if .IsSection }}UpdatePostsCategoryLayout(){{ else if .IsNode }}UpdatePostsTagLayout(){{ end }}
 
-                // Aside feed: params.asideUrl (any RSS URL; cross-site feeds need CORS), else this site's "free" tag feed
-                rssFeed = {{ .Site.Params.asideUrl | default "/index.xml" }};
+				// Aside feed: params.asideUrl (any RSS URL; cross-site feeds need CORS), else this site's "free" tag feed
+				rssFeed = {{ .Site.Params.asideUrl | default "/index.xml" }};
 
-                fetch(rssFeed)
-                    .then(response => response.text())
-                    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-                    .then(data => {
-                        console.log(data);
-                        const items = Array.from(data.querySelectorAll("item"));        
-                        // Shuffle the array of items
-                        for (let i = items.length - 1; i > 0; i--) {
-                            const j = Math.floor(Math.random() * (i + 1));
-                            [items[i], items[j]] = [items[j], items[i]];
-                        }
-                        // Take the first 4 items
-                        const selectedItems = items.slice(0, 4);
-                        let html = ``;
-                        selectedItems.forEach(el => {
-                            let originalUrl = el.querySelector("link").innerHTML;
-                            let updatedUrl = originalUrl.replace("https://michaelmallari.bitbucket.io/case-study/", "https://michaelmallari.substack.com/p/");
-                            html += `
-                                <li><a href="${updatedUrl}?utm_source=michaelmallari.bitbucket.io&utm_medium=microsite&utm_campaign=aside">${el.querySelector("title").innerHTML}</a></li>
-                            `;
-                            // <li><a href="${el.querySelector("link").innerHTML}">${el.querySelector("title").innerHTML}</a></li>
-                        });
-                        document.getElementById("aside-posts-recent").insertAdjacentHTML("afterbegin", html);
-                });
-            });
+				fetch(rssFeed)
+					.then(response => response.text())
+					.then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+					.then(data => {
+						console.log(data);
+						const items = Array.from(data.querySelectorAll("item"));        
+						// Shuffle the array of items
+						for (let i = items.length - 1; i > 0; i--) {
+							const j = Math.floor(Math.random() * (i + 1));
+							[items[i], items[j]] = [items[j], items[i]];
+						}
+						// Take the first 4 items
+						const selectedItems = items.slice(0, 4);
+						let html = ``;
+						selectedItems.forEach(el => {
+							let originalUrl = el.querySelector("link").innerHTML;
+							let updatedUrl = originalUrl.replace("https://michaelmallari.bitbucket.io/case-study/", "https://michaelmallari.substack.com/p/");
+							html += `
+								<li><a href="${updatedUrl}?utm_source=michaelmallari.bitbucket.io&utm_medium=microsite&utm_campaign=aside">${el.querySelector("title").innerHTML}</a></li>
+							`;
+							// <li><a href="${el.querySelector("link").innerHTML}">${el.querySelector("title").innerHTML}</a></li>
+						});
+						document.getElementById("aside-posts-recent").insertAdjacentHTML("afterbegin", html);
+				});
+			});
 
 
-            $(window).resize(function() {
-                {{ if .IsHome }}UpdatePostsStickyLayout(){{ else if .IsSection }}UpdatePostsCategoryLayout(){{ else if .IsNode }}UpdatePostsTagLayout(){{ end }}
-            }).resize();
-        </script>
-        <script src="{{ "js/highlight/highlight.pack.js" | relURL }}" crossorigin></script>
-        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+			$(window).resize(function() {
+				{{ if .IsHome }}UpdatePostsStickyLayout(){{ else if .IsSection }}UpdatePostsCategoryLayout(){{ else if .IsNode }}UpdatePostsTagLayout(){{ end }}
+			}).resize();
+		</script>
+		<script src="{{ "js/highlight/highlight.pack.js" | relURL }}" crossorigin></script>
+		<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
