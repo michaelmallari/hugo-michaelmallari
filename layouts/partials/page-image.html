@@ -2,21 +2,23 @@
   Image URLs for a page. Call with the page as context:
     {{ $img := partial "page-image.html" . }}  →  $img.image, $img.social
 
-  Front matter:
-    image:    masthead background + post-card thumbnail (file in static/img/)
-    imageUrl: social card (og:image / twitter:image); a file in static/img/ or a
-              full https:// URL. Falls back to `image`.
+  Front matter (each value: a file in static/img/ or a full https:// URL):
+    postImageUrl: main image: masthead background + post-card thumbnail.
+                  `image` is still read as an older name for the same thing.
+    ogImageUrl:   social card only (og:image / twitter:image). Falls back to the
+                  main image.
 
-  Site default when `image` is missing: params.defaultImage, else the theme's
+  Site default when no main image is set: params.defaultImage, else the theme's
   original fallbacks (og-julia-code.jpg; og-michaelmallari-columbia.png for the
   home page's social card).
 
   Returns absolute URLs.
 */ -}}
 {{- $default := site.Params.defaultImage | default "og-julia-code.jpg" -}}
-{{- $image := .Params.image | default $default -}}
-{{- $socialDefault := cond (and .IsHome (not site.Params.defaultImage)) "og-michaelmallari-columbia.png" $image -}}
-{{- $social := .Params.imageUrl | default (cond (isset .Params "image") $image $socialDefault) -}}
+{{- $own := .Params.postImageUrl | default .Params.image -}}
+{{- $image := $own | default $default -}}
+{{- $socialDefault := cond (and .IsHome (not site.Params.defaultImage)) "og-michaelmallari-columbia.png" $default -}}
+{{- $social := .Params.ogImageUrl | default $own | default $socialDefault -}}
 {{- $imageURL := cond (hasPrefix $image "http") $image (printf "img/%s" $image | absURL) -}}
 {{- $socialURL := cond (hasPrefix $social "http") $social (printf "img/%s" $social | absURL) -}}
 {{- return dict "image" $imageURL "social" $socialURL -}}

@@ -1,6 +1,6 @@
 
 	<head prefix="og: http://ogp.me/ns/{{ if .IsPage }}article{{ else }}website{{ end }}#">
-{{- /* Page metadata. The home page reads title/summary/image/imageUrl from
+{{- /* Page metadata. The home page reads title/summary/postImageUrl/ogImageUrl from
       content/_index.md; descriptions fall back to the home summary, then
       params.description. Social image: see page-image.html. */ -}}
 {{- $summary := .Params.summary | default site.Home.Params.summary | default site.Params.description -}}
