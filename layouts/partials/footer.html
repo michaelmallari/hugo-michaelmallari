@@ -102,7 +102,12 @@
 					<div class="container">
 						<ul>
 							{{- range . }}
+							{{- /* url is optional: without it the badge is a plain image */}}
+							{{- if .url }}
 							<li><a href="{{ .url }}" target="_blank" rel="noopener"><img src="{{ .image | relURL }}" alt="{{ .title }}" title="{{ .title }}"></a></li>
+							{{- else }}
+							<li><img src="{{ .image | relURL }}" alt="{{ .title }}" title="{{ .title }}"></li>
+							{{- end }}
 							{{- end }}
 						</ul>
 					</div>
