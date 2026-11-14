@@ -1,11 +1,11 @@
 
-                <header id="masthead" style="background-image: linear-gradient(120deg, rgba(29, 37, 45, 1), rgba(0, 88, 124, 0.8)), url('{{ .Site.BaseURL }}img/{{ if .Params.image }}{{ .Params.image }}{{ else }}og-julia-code.jpg{{ end }}');">
+                <header id="masthead" style="background-image: linear-gradient(120deg, rgba(29, 37, 45, 1), rgba(0, 88, 124, 0.8)), url('{{ (partial "page-image.html" .).image }}');">
 
                     <div class="container">
                         <div class="category">{{ if .IsPage }}{{ .Section | safeHTML }}{{ else if .IsHome}}{{ $.Site.Params.focus | safeHTML }}{{ else }}{{ .Site.Title | safeHTML }}{{ end }}</div>
                         <h1 class="title">{{ .Title | safeHTML }}</h1>
                         <span class="hr-minor"></span>
-                        <p class="excerpt">{{ if .Params.summary }}{{ .Params.summary | safeHTML }}{{ else }}{{ .Site.Params.description | safeHTML }}{{ end }}</p>
+                        <p class="excerpt">{{ .Params.summary | default site.Home.Params.summary | default site.Params.description | safeHTML }}</p>
                     </div>
                 </header>
 

@@ -1,5 +1,10 @@
 
 	<head prefix="og: http://ogp.me/ns/{{ if .IsPage }}article{{ else }}website{{ end }}#">
+{{- /* Page metadata. The home page reads title/summary/image/imageUrl from
+      content/_index.md; descriptions fall back to the home summary, then
+      params.description. Social image: see page-image.html. */ -}}
+{{- $summary := .Params.summary | default site.Home.Params.summary | default site.Params.description -}}
+{{- $imageURL := (partial "page-image.html" .).social -}}
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
@@ -11,8 +16,8 @@
 		<link rel="icon" type="image/png" href="{{ .Site.BaseURL }}img/icon-mm-transparent.png" />
 
 
-		<title>{{ if .IsHome }}{{ .Site.Title | safeHTML }} by {{ $.Site.Params.author }}{{ else }}{{ .Title | safeHTML }} | {{ .Site.Title | safeHTML }} by {{ $.Site.Params.author }}{{ end }}</title>
-		<meta name="description" content="{{ if .Params.summary }}{{ .Params.summary | safeHTML }}{{ else }}{{ .Site.Params.description | safeHTML }}{{ end }}" />
+		<title>{{ if .IsHome }}{{ .Title | safeHTML }} by {{ $.Site.Params.author }}{{ else }}{{ .Title | safeHTML }} | {{ .Site.Title | safeHTML }} by {{ $.Site.Params.author }}{{ end }}</title>
+		<meta name="description" content="{{ $summary | safeHTML }}" />
 		<meta name="author" content="{{ $.Site.Params.author }}" />
 		<link rel="canonical" href="{{ .Permalink }}" />
 		<meta name="robots" content="index, follow" />
@@ -20,17 +25,17 @@
 		
 		{{ if .IsPage }}<meta property="article:published_time" content='{{ .PublishDate.Format "2006-01-02" }}' />{{ end }}
 		<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
-		<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title | safeHTML }} by {{ $.Site.Params.author }}{{ else }}{{ .Title | safeHTML }}{{ end }}" />
-		<meta property="og:description" content="{{ if .Params.summary }}{{ .Params.summary | html }}{{ else }}{{ .Site.Params.description | safeHTML }}{{ end }}" />
+		<meta property="og:title" content="{{ if .IsHome }}{{ .Title | safeHTML }} by {{ $.Site.Params.author }}{{ else }}{{ .Title | safeHTML }}{{ end }}" />
+		<meta property="og:description" content="{{ $summary | html }}" />
 		<meta property="og:url" content="{{ .Permalink }}" />
-		<meta property="og:img" content="{{ .Site.BaseURL }}img/{{ if .IsHome}}og-michaelmallari-columbia.png{{ else }}{{ if .Params.image }}{{ .Params.image }}{{ else }}og-julia-code.jpg{{ end }}{{ end }}" />
+		<meta property="og:image" content="{{ $imageURL }}" />
 
 
 		<meta name="twitter:card" content="{{ if .Params.twitterCard }}{{ .Params.twitterCard }}{{ else }}summary_large_image{{ end }}" />
 		<meta name="twitter:site" content="@MichaelMallari" />
-		<meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title | safeHTML }} by {{ $.Site.Params.author }}{{ else }}{{ .Title | safeHTML }}{{ end }}" />
-		<meta name="twitter:description" content="{{ if .Params.summary }}{{ .Params.summary | safeHTML }}{{ else }}{{ .Site.Params.description | safeHTML }}{{ end }}" />
-		<meta name="twitter:image" content="{{ .Site.BaseURL }}img/{{ if .IsHome}}og-michaelmallari-columbia.png{{ else }}{{ if .Params.image }}{{ .Params.image }}{{ else }}og-julia-code.jpg{{ end }}{{ end }}" />
+		<meta name="twitter:title" content="{{ if .IsHome }}{{ .Title | safeHTML }} by {{ $.Site.Params.author }}{{ else }}{{ .Title | safeHTML }}{{ end }}" />
+		<meta name="twitter:description" content="{{ $summary | safeHTML }}" />
+		<meta name="twitter:image" content="{{ $imageURL }}" />
 
 
 		<link type="text/css" rel="stylesheet" href="{{ "css/styles.min.css" | relURL }}" crossorigin />
