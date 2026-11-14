@@ -1,8 +1,6 @@
-# Hugo Theme: michaelmallari.com
+# Hugo Theme: michaelmallari
 
-![](http://www.columbia.edu/~mm5470/img/og-columbia-edu.png)
-
-Hugo theme for data science & engineering blogging.
+Hugo theme for computer science & data science blogs. Supports Julia, Python, R, C++, and other query languages.
 
 ## Features:
 
@@ -14,10 +12,9 @@ Hugo theme for data science & engineering blogging.
 * Compatible with Hugo 0.80.0 and above
 * **Requires customization**; not tested against [https://github.com/gohugoio/HugoBasicExample](https://github.com/gohugoio/HugoBasicExample)
 
-## Theme for the following Hugo instances:
+## Theme used for the following blogs:
 
-* [**Hybrid Thinking + Doing by Michael Mallari** (www.michaelmallari.com)](https://www.michaelmallari.com)
-* [**Applied Advanced Analytics and AI/ML in Sports by Michael Mallari** (www.columbia.edu/~mm5470)](http://www.columbia.edu/~mm5470)
+* [**LLMs and Agentic AI by Michael Mallari** (www.michaelmallari.com)](https://www.michaelmallari.com)
+* [**Advanced Analytics, ML, RL, and DL by Michael Mallari** (www.columbia.edu/~mm5470)](http://www.columbia.edu/~mm5470)
 * [**AI-First Technical Product Management by Michael Mallari** (michaelmallari.bitbucket.io)](https://michaelmallari.bitbucket.io)
 * [**Applied Computing by Michael Mallari** (michaelmallari.github.io)](https://michaelmallari.github.io)
-* [**Applied Data & Analytics Translation and Storytelling** (michaelmallari.tumblr.com)](https://michaelmallari.tumblr.com)
