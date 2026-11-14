@@ -51,18 +51,18 @@
 						{{ end }}
 						
 						<ul id="brands">
-							<li><img src="/img/logo-amex.png" alt="American Express" title="American Express" class="vertical-middle logo-amex" /></li>
-							<li><img src="/img/logo-schwab.png" alt="Charles Schwab" title="Charles Schwab" class="vertical-middle logo-schwab" /></li>
-							<li><img src="/img/logo-discovery.png" alt="Discovery Communications" title="Discovery Communications" class="vertical-middle logo-discovery" /></li>
-							<li><img src="/img/logo-gap.png" alt="Gap" title="Gap" class="vertical-middle logo-gap" /></li>
-							<li><img src="/img/logo-hasbro.png" alt="Hasbro" title="Hasbro" class="vertical-middle logo-hasbro" /></li>
-							<li><img src="/img/logo-lincoln.png" alt="Lincoln Motor Company" title="Lincoln Motor Company" class="vertical-middle logo-lincoln" /></li>
-							<li><img src="/img/logo-marriott.png" alt="Marriott" title="Marriott" class="vertical-middle logo-marriott" /></li>
-							<li><img src="/img/logo-marvel.png" alt="Marvel" title="Marvel" class="vertical-middle logo-marvel" /></li>
-							<li><img src="/img/logo-nasdaq.png" alt="Nasdaq" title="Nasdaq" class="vertical-middle logo-nasdaq" /></li>
-							<li><img src="/img/logo-polo.png" alt="Polo Ralph Lauren" title="Polo Ralph Lauren" class="vertical-middle logo-polo" /></li>
-							<li><img src="/img/logo-verizon-2.png" alt="Verizon" title="Verizon" class="vertical-middle logo-verizon" /></li>
-							<li><img src="/img/logo-yahoo.png" alt="Yahoo" title="Yahoo" class="vertical-middle logo-yahoo" /></li>
+							<li><img src="{{ "img/logo-amex.png" | absURL }}" alt="American Express" title="American Express" class="vertical-middle logo-amex" /></li>
+							<li><img src="{{ "img/logo-schwab.png" | absURL }}" alt="Charles Schwab" title="Charles Schwab" class="vertical-middle logo-schwab" /></li>
+							<li><img src="{{ "img/logo-discovery.png" | absURL }}" alt="Discovery Communications" title="Discovery Communications" class="vertical-middle logo-discovery" /></li>
+							<li><img src="{{ "img/logo-gap.png" | absURL }}" alt="Gap" title="Gap" class="vertical-middle logo-gap" /></li>
+							<li><img src="{{ "img/logo-hasbro.png" | absURL }}" alt="Hasbro" title="Hasbro" class="vertical-middle logo-hasbro" /></li>
+							<li><img src="{{ "img/logo-lincoln.png" | absURL }}" alt="Lincoln Motor Company" title="Lincoln Motor Company" class="vertical-middle logo-lincoln" /></li>
+							<li><img src="{{ "img/logo-marriott.png" | absURL }}" alt="Marriott" title="Marriott" class="vertical-middle logo-marriott" /></li>
+							<li><img src="{{ "img/logo-marvel.png" | absURL }}" alt="Marvel" title="Marvel" class="vertical-middle logo-marvel" /></li>
+							<li><img src="{{ "img/logo-nasdaq.png" | absURL }}" alt="Nasdaq" title="Nasdaq" class="vertical-middle logo-nasdaq" /></li>
+							<li><img src="{{ "img/logo-polo.png" | absURL }}" alt="Polo Ralph Lauren" title="Polo Ralph Lauren" class="vertical-middle logo-polo" /></li>
+							<li><img src="{{ "img/logo-verizon-2.png" | absURL }}" alt="Verizon" title="Verizon" class="vertical-middle logo-verizon" /></li>
+							<li><img src="{{ "img/logo-yahoo.png" | absURL }}" alt="Yahoo" title="Yahoo" class="vertical-middle logo-yahoo" /></li>
 						</ul>
 
 						{{ with .Site.Params.footer.paragraph3 }}
@@ -104,9 +104,9 @@
 							{{- range . }}
 							{{- /* url is optional: without it the badge is a plain image */}}
 							{{- if .url }}
-							<li><a href="{{ .url }}" target="_blank" rel="noopener"><img src="{{ .image | relURL }}" alt="{{ .title }}" title="{{ .title }}"></a></li>
+							<li><a href="{{ .url }}" target="_blank" rel="noopener"><img src="{{ .image | absURL }}" alt="{{ .title }}" title="{{ .title }}"></a></li>
 							{{- else }}
-							<li><img src="{{ .image | relURL }}" alt="{{ .title }}" title="{{ .title }}"></li>
+							<li><img src="{{ .image | absURL }}" alt="{{ .title }}" title="{{ .title }}"></li>
 							{{- end }}
 							{{- end }}
 						</ul>
@@ -137,10 +137,10 @@
 
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin></script>
-		<script src="{{ "js/functions.min.js" | relURL }}"></script>
-		{{ if .IsHome }}<script src="{{ "js/posts-sticky.min.js" | relURL }}"></script>
-		{{ else if .IsSection }}<script src="{{ "js/posts-category.min.js" | relURL }}"></script>
-		{{ else if .IsNode }}<script src="{{ "js/posts-tag.min.js" | relURL }}"></script>
+		<script src="{{ "js/functions.min.js" | absURL }}"></script>
+		{{ if .IsHome }}<script src="{{ "js/posts-sticky.min.js" | absURL }}"></script>
+		{{ else if .IsSection }}<script src="{{ "js/posts-category.min.js" | absURL }}"></script>
+		{{ else if .IsNode }}<script src="{{ "js/posts-tag.min.js" | absURL }}"></script>
 		{{ end }}
 		<script type="text/javascript">
 			$(document).ready(function() {
@@ -180,5 +180,5 @@
 				{{ if .IsHome }}UpdatePostsStickyLayout(){{ else if .IsSection }}UpdatePostsCategoryLayout(){{ else if .IsNode }}UpdatePostsTagLayout(){{ end }}
 			}).resize();
 		</script>
-		<script src="{{ "js/highlight/highlight.pack.js" | relURL }}" crossorigin></script>
+		<script src="{{ "js/highlight/highlight.pack.js" | absURL }}" crossorigin></script>
 		<script type="text/javascript">hljs.initHighlightingOnLoad();</script>

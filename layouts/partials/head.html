@@ -9,11 +9,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<link rel="apple-touch-icon-precomposed" href="{{ .Site.BaseURL }}img/logo-mm-pms2028c.png" />
-		<link rel="apple-touch-icon" href="{{ .Site.BaseURL }}img/logo-mm-pms2028c.png" />
-		<meta name="msapplication-TileImage" content="{{ .Site.BaseURL }}img/logo-mm-pms2028c.png" />
-		<link rel="shortcut icon" type="image/png" href="{{ .Site.BaseURL }}img/icon-mm-transparent.png" />
-		<link rel="icon" type="image/png" href="{{ .Site.BaseURL }}img/icon-mm-transparent.png" />
+		<link rel="apple-touch-icon-precomposed" href="{{ "img/logo-mm-pms2028c.png" | absURL }}" />
+		<link rel="apple-touch-icon" href="{{ "img/logo-mm-pms2028c.png" | absURL }}" />
+		<meta name="msapplication-TileImage" content="{{ "img/logo-mm-pms2028c.png" | absURL }}" />
+		<link rel="shortcut icon" type="image/png" href="{{ "img/icon-mm-transparent.png" | absURL }}" />
+		<link rel="icon" type="image/png" href="{{ "img/icon-mm-transparent.png" | absURL }}" />
 
 
 		<title>{{ if .IsHome }}{{ .Title | safeHTML }} by {{ $.Site.Params.author }}{{ else }}{{ .Title | safeHTML }} | {{ .Site.Title | safeHTML }} by {{ $.Site.Params.author }}{{ end }}</title>
@@ -38,8 +38,8 @@
 		<meta name="twitter:image" content="{{ $imageURL }}" />
 
 
-		<link type="text/css" rel="stylesheet" href="{{ "css/styles.min.css" | relURL }}" crossorigin />
-		<link type="text/css" rel="stylesheet" href="{{ "js/highlight/styles/solarized-dark.css" | relURL }}" crossorigin />
+		<link type="text/css" rel="stylesheet" href="{{ "css/styles.min.css" | absURL }}" crossorigin />
+		<link type="text/css" rel="stylesheet" href="{{ "js/highlight/styles/solarized-dark.css" | absURL }}" crossorigin />
 		<style type="text/css">
 			@media (max-width: 991px) {
 
