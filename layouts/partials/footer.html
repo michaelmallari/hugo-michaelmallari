@@ -100,22 +100,17 @@
 
 
 
+                {{ with .Site.Params.badges }}
                 <section id="badges">
                     <div class="container">
                         <ul>
-                            <li><a href="https://www.credly.com/badges/7eee2fba-b29a-4c9f-bac9-064f71ef98c7/public_url" target="_blank"><img src="/img/badge-aws-certified-ai-practitioner.png" alt="AWS Certified AI Practitioner" title="AWS Certified AI Practitioner"></a></li>
-                            <li><a href="https://www.credly.com/badges/e6acdd66-2941-4451-a62c-472605e51bb3/public_url" target="_blank"><img src="/img/badge-aws-certified-cloud-practitioner.png" alt="AWS Certified Cloud Practitioner" title="AWS Certified Cloud Practitioner"></a></li>
-                            <li><a href="https://learn.microsoft.com/en-us/users/michaelmallari/credentials/f67e0308314e5458/" target="_blank"><img src="/img/badge-msft-certified-azure-ai-fundamentals.png" alt="Microsoft Certified: Azure AI Fundamentals" title="Microsoft Certified: Azure AI Fundamentals"></a></li>
-                            <li><a href="https://learn.microsoft.com/en-us/users/michaelmallari/credentials/46247b46d01fe2d1/" target="_blank"><img src="/img/badge-msft-certified-azure-data-fundamentals.png" alt="Microsoft Certified: Azure Data Fundamentals" title="Microsoft Certified: Azure Data Fundamentals"></a></li>
-                            <li><a href="https://learn.microsoft.com/en-us/users/michaelmallari/credentials/828f119dd82d9d08/" target="_blank"><img src="/img/badge-msft-certified-azure-fundamentals.png" alt="Microsoft Certified: Azure Fundamentals" title="Microsoft Certified: Azure Fundamentals"></a></li>
-                            <li><a href="https://www.credly.com/badges/64330118-0078-4381-b0eb-49947625467d/public_url" target="_blank"><img src="/img/badge-gcp-generative-ai-leader.png" alt="Google Cloud Certified Generative AI Leader" title="Google Cloud Certified Generative AI Leader"></a></li>
-                            <li><a href="https://www.credly.com/badges/82fcccb8-9b3f-4706-ac8a-cee74a762e03/public_url" target="_blank"><img src="/img/badge-gcp-cloud-digital-leader.png" alt="Google Cloud Certified Cloud Digital Leader" title="Google Cloud Certified Cloud Digital Leader"></a></li>
-                            <li><a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=F67264BED635C65E838C7EE6EEAB1AA8A78717F6C99DD489021398971DA4C77E" target="_blank"><img src="/img/badge-oci-ai-certified-foundations-associate.png" alt="Oracle Cloud Infrastructure 2023 AI Certified Foundations Associate" title="Oracle Cloud Infrastructure 2023 AI Certified Foundations Associate"></a></li>
-                            <li><a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=D3BB05571AEDD24142A6346F23B2A36467B46BCFE36AF5BC4EC81BC992E74E7C" target="_blank"><img src="/img/badge-oci-data-mgmt-certified-foundations-associate.png" alt="Oracle Cloud Data Management 2023 Certified Foundations Associate" title="Oracle Cloud Data Management 2023 Certified Foundations Associate"></a></li>
-                            <li><a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=C9067970B5C6D5D5DC39807B72275BD262DCF76A14740C93A2E0E1F7F090954F" target="_blank"><img src="/img/badge-oci-ai-certified-foundations-associate.png" alt="Oracle Cloud Infrastructure 2023 Certified Foundations Associate" title="Oracle Cloud Infrastructure 2023 Certified Foundations Associate"></a></li>
+                            {{- range . }}
+                            <li><a href="{{ .url }}" target="_blank" rel="noopener"><img src="{{ .image | relURL }}" alt="{{ .title }}" title="{{ .title }}"></a></li>
+                            {{- end }}
                         </ul>
                     </div>
                 </section>
+                {{ end }}
 
 
 
