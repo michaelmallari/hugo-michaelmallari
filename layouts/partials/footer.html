@@ -149,8 +149,8 @@
             $(document).ready(function() {
                 {{ if .IsHome }}UpdatePostsStickyLayout(){{ else if .IsSection }}UpdatePostsCategoryLayout(){{ else if .IsNode }}UpdatePostsTagLayout(){{ end }}
 
-                // rssFeed = "https://www.michaelmallari.com/product/index.xml";
-                rssFeed = "/tags/free/index.xml";
+                // Aside feed: params.asideUrl (any RSS URL; cross-site feeds need CORS), else this site's "free" tag feed
+                rssFeed = {{ .Site.Params.asideUrl | default "/tags/free/index.xml" }};
 
                 fetch(rssFeed)
                     .then(response => response.text())
