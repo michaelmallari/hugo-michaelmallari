@@ -1,0 +1,15 @@
+{{- /* Server-side math: LaTeX between the passthrough delimiters set in the
+      site's hugo.toml (markup.goldmark.extensions.passthrough) is rendered by
+      Hugo's built-in KaTeX at build time — no math JavaScript in the browser.
+      Output is HTML (styled by css/katex/katex.min.css) plus MathML for screen
+      readers and crawlers. Invalid LaTeX fails the build. The "hasMath" flag
+      tells head.html to load the KaTeX stylesheet on this page only. */ -}}
+{{- $opts := dict "output" "htmlAndMathml" "displayMode" (eq .Type "block") -}}
+{{- with try (transform.ToMath .Inner $opts) -}}
+	{{- with .Err -}}
+		{{- errorf "KaTeX could not render this math (%s): %s" $.Position . -}}
+	{{- else -}}
+		{{- .Value -}}
+		{{- $.Page.Store.Set "hasMath" true -}}
+	{{- end -}}
+{{- end -}}

@@ -40,6 +40,19 @@
 
 		<link type="text/css" rel="stylesheet" href="{{ "css/styles.min.css" | absURL }}" crossorigin />
 		<link type="text/css" rel="stylesheet" href="{{ "js/highlight/styles/solarized-dark.css" | absURL }}" crossorigin />
+{{- /* KaTeX styles only on pages whose math was rendered by
+      _markup/render-passthrough.html. .WordCount forces the content to render
+      first, so the hook has set "hasMath" by the time this runs. Self-hosted
+      KaTeX 0.19.1 CSS + woff2 fonts (static/css/katex/); keep the version in
+      step with the KaTeX bundled in Hugo. */ -}}
+{{- $noop := .WordCount -}}
+{{- if .Store.Get "hasMath" }}
+		<link type="text/css" rel="stylesheet" href="{{ "css/katex/katex.min.css" | absURL }}" />
+		<style type="text/css">
+			/* Wide equations scroll sideways instead of widening the page on phones */
+			.katex-display { overflow-x: auto; overflow-y: hidden; padding: 0.25em 0; }
+		</style>
+{{- end }}
 		<style type="text/css">
 			@media (max-width: 991px) {
 
