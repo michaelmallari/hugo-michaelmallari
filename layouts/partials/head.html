@@ -16,9 +16,9 @@
 
 		<title>
 			{{ if not .IsHome }}
-				{{ .Title | safeHTML }} |
+				{{ .Title | safeHTML }} | 
 			{{ end }}
-			{{ .Site.Title | safeHTML }}{{ if .Site.Params.author }} by {{ .Site.Params.author }} {{ end }}{{ if .Site.Params.suffix }} , {{ .Site.Params.suffix | safeHTML}}{{ end }}
+			{{ .Site.Title | safeHTML }}{{ if .Site.Params.author }} by {{ .Site.Params.author }}{{ end }}{{ if .Site.Params.suffix }}, {{ .Site.Params.suffix | safeHTML}}{{ end }}
 		</title>
 		<meta name="description" content="{{ $summary | safeHTML }}" />
 		<meta name="author" content="{{ $.Site.Params.author }}" />
