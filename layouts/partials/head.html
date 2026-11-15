@@ -1,8 +1,6 @@
 
 	<head prefix="og: http://ogp.me/ns/{{ if .IsPage }}article{{ else }}website{{ end }}#">
-{{- /* Page metadata. The home page reads title/summary/postImageUrl/ogImageUrl from
-      content/_index.md; descriptions fall back to the home summary, then
-      params.description. Social image: see page-image.html. */ -}}
+{{- /* Page metadata. The home page reads title/summary/postImageUrl/ogImageUrl from content/_index.md; descriptions fall back to the home summary, then params.description. Social image: see page-image.html. */ -}}
 {{- $summary := .Params.summary | default site.Home.Params.summary | default site.Params.description -}}
 {{- $imageURL := (partial "page-image.html" .).social -}}
 		<meta charset="utf-8" />
@@ -16,7 +14,12 @@
 		<link rel="icon" type="image/png" href="{{ "img/icon-mm-transparent.png" | absURL }}" />
 
 
-		<title>{{ if .IsHome }}{{ .Title | safeHTML }} by {{ $.Site.Params.author }}{{ else }}{{ .Title | safeHTML }} | {{ .Site.Title | safeHTML }} by {{ $.Site.Params.author }}{{ end }}</title>
+		<title>
+			{{ if not .IsHome }}
+				{{ .Title | safeHTML }} |
+			{{ end }}
+			{{ .Site.Title | safeHTML }}{{ if .Site.Params.author }} by {{ .Site.Params.author }} {{ end }}{{ if .Site.Params.suffix }} , {{ .Site.Params.suffix | safeHTML}}{{ end }}
+		</title>
 		<meta name="description" content="{{ $summary | safeHTML }}" />
 		<meta name="author" content="{{ $.Site.Params.author }}" />
 		<link rel="canonical" href="{{ .Permalink }}" />
