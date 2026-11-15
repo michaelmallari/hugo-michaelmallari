@@ -41,6 +41,9 @@ PMS 5445 C #b7c9d3 (RGB: 183, 201, 211)
 
 	--color-white: #fff;
 	--color-off-white: #f5f5f5;
+
+	--font-serif: 'Martel', serif;
+	--font-sans-serif: 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 
@@ -84,19 +87,18 @@ PMS 5445 C #b7c9d3 (RGB: 183, 201, 211)
 
 .serif {
 	font-family: 'Martel', serif;
-	font-weight: 400;
-	letter-spacing: 0.008rem;
+	
+	
 }
 .sans-serif {
 	font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
-	font-weight: 400;
-	letter-spacing: 0.008rem;
 }
 
 
 
 * {
-
+	font-weight: 400;
+	letter-spacing: 0.008rem;
 }
 *:not(pre),
 *:not(code) {
@@ -114,10 +116,10 @@ body {
 		-webkit-font-smoothing: antialiased;
 }
 h1 {
-	.serif();
+	font-family: var(--font-serif);
 	color: var(--color-white);
 	font-size: 1.52rem;
-	letter-spacing: 0px;
+	letter-spacing: 0px !important;
 	line-height: 2.28rem;  // Font size * 1.5
 	margin: 0px;
 }
@@ -125,8 +127,8 @@ h2,
 h2 > span,
 h3,
 h3 > span {
-	.serif();
-	font-weight: 300;
+	font-family: var(--font-serif);
+	font-weight: 300 !important;
 	letter-spacing: 0px;
 	margin: 0px;
 }
@@ -148,9 +150,8 @@ h4,
 h4 > span,
 h5,
 h5 > span {
-	.sans-serif();
+	font-family: var(--font-sans-serif);
 	// color: var(--color-green-dark);
-	font-weight: 400;
 	letter-spacing: 0px !important;
 }
 #content-body > .container h4 {
@@ -165,7 +166,7 @@ h5 > span {
 }
 p,
 li {
-	.serif();
+	font-family: var(--font-serif);
 	color: var(--color-gray-medium);
 	font-size: 0.8rem;
 }
@@ -199,7 +200,6 @@ pre > code,
 pre > code * {
 	font-family: monospace, "Courier New" !important;
 	font-size: 0.72rem;
-	font-weight: 400;
 	letter-spacing: 0px !important;
 	line-height: 1rem !important;
 }
@@ -236,7 +236,7 @@ p > code,
 	color:#000 !important;
 }
 aside {
-	.sans-serif();
+	font-family: var(--font-sans-serif);
 	background: var(--color-white);
 	color: var(--color-gray-dark);
 	font-size: 0.72rem;
@@ -291,13 +291,13 @@ aside {
 }
 a.btn,
 button.btn {
-	.sans-serif();
+	font-family: var(--font-sans-serif);
 	cursor: pointer;
 	display: inline-block;
 	border-radius: 25em;
 	font-size: 0.8rem;
-	font-weight: 600;
-	letter-spacing: -0.008rem;
+	font-weight: 600 !important;
+	letter-spacing: -0.008rem !important;
 	padding: 0.64rem 1.64rem;
 	text-decoration: none;
 	-moz-transition: background 0.24s ease, color 0.24s ease;
@@ -347,12 +347,12 @@ button.btn-secondary:focus {
 	overflow: hidden !important;
 }
 .category {
-	.sans-serif();
+	font-family: var(--font-sans-serif);
 	color: var(--color-blue);
 	display: inline-block;
 	font-size: 0.6rem;
-	font-weight: 600;
-	letter-spacing: 0.08rem;
+	font-weight: 600 !important;
+	letter-spacing: 0.08rem !important;
 	padding-bottom: 0.6rem;
 	text-transform: uppercase;
 }
@@ -516,7 +516,7 @@ button.btn-secondary:focus {
 	}
 	.category {
 		font-size: 0.52rem;
-		letter-spacing: 0.052rem;
+		letter-spacing: 0.052rem !important;
 	}
 }
 @media (max-width: 550px) {
@@ -597,8 +597,7 @@ button.btn-secondary:focus {
 	h4 > span,
 	h5,
 	h5 > span {
-		.sans-serif();
-		font-weight: 400;
+		font-family: var(--font-sans-serif);
 	}
 	p {
 		font-size: 0.76rem;

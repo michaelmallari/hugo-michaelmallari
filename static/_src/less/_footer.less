@@ -21,10 +21,10 @@
 	margin: 0px;
 }
 #footer #quote p {
-	.serif();
+	font-family: var(--font-serif);
 	color: var(--color-white);
 	font-size: 1.12rem;
-	font-weight: 300;
+	font-weight: 300 !important;
 	line-height: 2rem;
 }
 #footer #quote p::before { 
@@ -34,7 +34,7 @@
 	content: "”";
 }
 #footer #quote footer cite {
-	.sans-serif();
+	font-family: var(--font-sans-serif);
 	display: block;
 	font-size: 0.68rem;
 	font-style: normal;
@@ -46,7 +46,6 @@
 #footer #quote footer cite::before,
 #footer #quote footer cite::after { 
 	content: "―";
-	font-weight: 400;
 }
 
 
@@ -183,7 +182,7 @@ body#landing #footer #boilerplate .btn {
 	display: none;
 }
 #footer #hello {
-	.sans-serif();
+	font-family: var(--font-sans-serif);
 	color: var(--color-gray-medium);
 	display: block;
 	font-size: 0.72rem;
@@ -191,7 +190,7 @@ body#landing #footer #boilerplate .btn {
 	text-align: center;
 }
 #footer #hello a {
-	.sans-serif();
+	font-family: var(--font-sans-serif);
 }
 body#landing #footer #hello {
 	display: none;
@@ -203,7 +202,7 @@ body#landing #footer #handcrafted {
 }
 #footer #handcrafted p,
 #footer #handcrafted p * {
-	.sans-serif();
+	font-family: var(--font-sans-serif);
 	font-size: 0.6rem;
 	line-height: 0.84rem;
 	margin-bottom: 1.6rem;
@@ -229,7 +228,7 @@ body#landing #footer #handcrafted {
 	top: 0px !important;
 }
 #banner p {
-	.sans-serif();
+	font-family: var(--font-sans-serif);
 	color: var(--color-white);
 	display: block;
 	font-size: 0.72rem;
@@ -430,7 +429,6 @@ body#landing #footer #handcrafted {
 	}
 	#footer #quote footer cite {
 		font-size: 0.64rem;
-		font-weight: 400;
 		margin-top: 4rem;
 	}
 	#footer #quote footer cite::after { 

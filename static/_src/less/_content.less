@@ -30,7 +30,7 @@ body#home #content #masthead {
 }
 // #content-body *,
 #content #masthead p {
-	.sans-serif();
+	font-family: var(--font-sans-serif);
 	color: var(--color-gray-light);
 	font-size: 0.8rem;
 	line-height: 1.6rem;
@@ -58,7 +58,7 @@ body#home #content #masthead {
 #byline > div,
 #byline > time,
 .updated {
-	.sans-serif();
+	font-family: var(--font-sans-serif);
 	color: var(--color-gray-medium);
 	font-size: 0.72rem;
 }
@@ -117,14 +117,14 @@ width: 100% !important;
 }
 #content-body th,
 #content-body td {
-	.sans-serif();
+	font-family: var(--font-sans-serif);
 	font-size: 0.68rem;
 	padding: 0.6rem 0.8rem;
 }
 #content-body th {
 	background-color: var(--color-blue);
 	color: var(--color-white);
-	font-weight: 700;
+	font-weight: 700 !important;
 }
 #content-body tr:nth-child(even) {
 	background-color: var(--color-white);
@@ -150,11 +150,11 @@ width: 100% !important;
 	display: block;
 }
 #content-body .language-tabs label {
-	.sans-serif();
+	font-family: var(--font-sans-serif);
 	background: var(--color-gray-light);
 	border-top: solid 0.2rem var(--color-gray-light);
 	font-size: 0.72rem;
-	font-weight: 700;
+	font-weight: 700 !important;
 	margin-right: 0.12rem;
 	padding: 0.32rem 0rem 0.52rem 0rem;
 	text-align: center;
@@ -227,7 +227,7 @@ div[id^="appendix-"] li strong {
 #aside a.category {
 	display: block;
 	font-size: 0.8rem;
-	font-weight: 700;
+	font-weight: 700 !important;
 	letter-spacing: -0.01rem;
 	line-height: 0.84rem;
 	margin-top: 0.52rem;
@@ -239,13 +239,12 @@ div[id^="appendix-"] li strong {
 	color: var(--color-orange);
 }
 #aside-posts-recent li {
-	.sans-serif();
+	font-family: var(--font-sans-serif);
 	margin: 2.4rem 0rem 0rem 0rem;
 	padding: 0rem 0rem 0rem 0rem;
 }
 #aside-posts-recent a {
 	font-size: 0.8rem;
-	font-weight: 400;
 	line-height: 0.8rem;
 	overflow-wrap: break-word;
 }
