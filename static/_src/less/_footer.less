@@ -5,8 +5,8 @@
 	text-align: center;
 }
 #footer #quote {
-	background: linear-gradient(120deg, @blue, @blue-dark);  /*  PMS 3551 C to 308 C */
-	color: @white;
+	background: linear-gradient(120deg, var(--color-blue), var(--color-blue-dark));  /*  PMS 3551 C to 308 C */
+	color: var(--color-white);
 	display: block;
 	margin: 0px;
 	padding-top: 4rem;
@@ -22,7 +22,7 @@
 }
 #footer #quote p {
 	.serif();
-	color: @white;
+	color: var(--color-white);
 	font-size: 1.12rem;
 	font-weight: 300;
 	line-height: 2rem;
@@ -70,7 +70,7 @@
 	text-align: left;
 }
 #footer #boilerplate i {
-	color: @blue;
+	color: var(--color-blue);
 }
 
 
@@ -85,7 +85,7 @@
 	padding: 0rem 0rem 2rem 0rem;
 }
 #footer #brands li {
-	background: @white;
+	background: var(--color-white);
 	text-align: center;
 }
 #footer #brands li img {
@@ -184,7 +184,7 @@ body#landing #footer #boilerplate .btn {
 }
 #footer #hello {
 	.sans-serif();
-	color: @gray-medium;
+	color: var(--color-gray-medium);
 	display: block;
 	font-size: 0.72rem;
 	margin-top: 2rem;
@@ -209,7 +209,7 @@ body#landing #footer #handcrafted {
 	margin-bottom: 1.6rem;
 }
 #banner {
-	background: linear-gradient(120deg, @green, @green-dark);
+	background: linear-gradient(120deg, var(--color-green), var(--color-green-dark));
 	box-shadow: 0rem 0.2rem 1rem rgba(29, 37, 45, 0.4);
 	display: block;
 	position: fixed;
@@ -230,7 +230,7 @@ body#landing #footer #handcrafted {
 }
 #banner p {
 	.sans-serif();
-	color: @white;
+	color: var(--color-white);
 	display: block;
 	font-size: 0.72rem;
 	line-height: 0.96rem;
@@ -239,7 +239,7 @@ body#landing #footer #handcrafted {
 }
 #banner p a,
 #banner p a:hover {
-	color: @white !important;
+	color: var(--color-white) !important;
 	text-decoration: none !important;
 }
 
@@ -416,7 +416,7 @@ body#landing #footer #handcrafted {
 }
 @media (min-width: 981px) {
 	#footer #quote {
-		background: linear-gradient(140deg, @blue, @blue-dark);  /*  PMS 3551 C to 308 C */
+		background: linear-gradient(140deg, var(--color-blue), var(--color-blue-dark));  /*  PMS 3551 C to 308 C */
 		padding-top: 6rem;
 		padding-bottom: 6rem;
 		text-align: left;

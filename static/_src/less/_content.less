@@ -20,18 +20,18 @@ body#home #content #masthead {
 	padding: 10rem 0rem 4.8rem 0rem;
 }
 #content #masthead .category {
-	color: @blue;
+	color: var(--color-blue);
 	display: block;
 	line-height: 1.08rem;
 	margin-bottom: 0.4rem;
 }
 #content #masthead h1 {
-	color: @white;
+	color: var(--color-white);
 }
 // #content-body *,
 #content #masthead p {
 	.sans-serif();
-	color: @gray-light;
+	color: var(--color-gray-light);
 	font-size: 0.8rem;
 	line-height: 1.6rem;
 	margin: 0rem 0rem 1rem 0rem;
@@ -41,7 +41,7 @@ body#home #content #masthead {
 	margin: 0rem 0rem 0.8rem 0rem;
 }
 #content-body strong {
-	color: @gray-dark;
+	color: var(--color-gray-dark);
 }
 #content-body p:has(.btn) {
 	text-align: center;
@@ -59,11 +59,11 @@ body#home #content #masthead {
 #byline > time,
 .updated {
 	.sans-serif();
-	color: @gray-medium;
+	color: var(--color-gray-medium);
 	font-size: 0.72rem;
 }
 #byline i {
-	color: @blue;
+	color: var(--color-blue);
 }
 #byline i.fa-hugging-face {
 	background-position: 0% 105%;
@@ -104,7 +104,7 @@ width: 100% !important;
 	overflow-wrap: break-word;
 }
 #content-body hr {
-	background: @blue;
+	background: var(--color-blue);
 	border: none;
 	display: block;
 	height: 0.2rem;
@@ -112,7 +112,7 @@ width: 100% !important;
 	width: 4rem;
 }
 #content-body table {
-	border: 0.04rem solid @gray-light;
+	border: 0.04rem solid var(--color-gray-light);
 	margin-bottom: 2rem;
 }
 #content-body th,
@@ -122,16 +122,16 @@ width: 100% !important;
 	padding: 0.6rem 0.8rem;
 }
 #content-body th {
-	background-color: @blue;
-	color: @white;
+	background-color: var(--color-blue);
+	color: var(--color-white);
 	font-weight: 700;
 }
 #content-body tr:nth-child(even) {
-	background-color: @white;
+	background-color: var(--color-white);
 }
 #content-body tr:hover {
-	background-color: @gray-dark;
-	color: @white;
+	background-color: var(--color-gray-dark);
+	color: var(--color-white);
 }
 #content-body .language-tabs {
 	display: flex;
@@ -151,8 +151,8 @@ width: 100% !important;
 }
 #content-body .language-tabs label {
 	.sans-serif();
-	background: @gray-light;
-	border-top: solid 0.2rem @gray-light;
+	background: var(--color-gray-light);
+	border-top: solid 0.2rem var(--color-gray-light);
 	font-size: 0.72rem;
 	font-weight: 700;
 	margin-right: 0.12rem;
@@ -162,8 +162,8 @@ width: 100% !important;
 }
 #content-body .language-tabs input[type="radio"]:checked + label {
 	background: #002b36;  /*  From highlight.js  */
-	border-top: solid 0.2rem @green;
-	color: @white;
+	border-top: solid 0.2rem var(--color-green);
+	color: var(--color-white);
 }
 div[id^="appendix-"] p,
 div[id^="appendix-"] li {
@@ -197,8 +197,8 @@ div[id^="appendix-"] li strong {
 
 
 #aside {
-	background: @white;
-	color: @gray-medium;
+	background: var(--color-white);
+	color: var(--color-gray-medium);
 	font-size: 0.88rem;
 	line-height: 1.2rem;
 	padding: 2.4rem 0rem 3rem 0rem;
@@ -209,7 +209,7 @@ div[id^="appendix-"] li strong {
 	padding: 0px;
 }
 #aside ul {
-	border-top: solid 0.08rem @gray-light;
+	border-top: solid 0.08rem var(--color-gray-light);
 	list-style: none;
 	margin: 0.32rem 0rem 0rem 0rem;
 	padding: 0px;
@@ -219,7 +219,7 @@ div[id^="appendix-"] li strong {
 	padding: 0px;
 }
 #aside a {
-	color: @gray-dark;
+	color: var(--color-gray-dark);
 	margin: 2.2rem 0rem 0rem 0rem;
 	overflow-wrap: break-word;
 	padding: 0px;
@@ -236,7 +236,7 @@ div[id^="appendix-"] li strong {
 }
 #aside a:hover,
 #aside a:focus {
-	color: @orange;
+	color: var(--color-orange);
 }
 #aside-posts-recent li {
 	.sans-serif();
@@ -264,7 +264,7 @@ form {
 	max-width: 360px;
 }
 .input-wrapper {
-	border: 1px solid @gray-light;
+	border: 1px solid var(--color-gray-light);
 	border-radius: 25rem;
 	display: flex;
 	height: 2.4rem;
@@ -282,7 +282,7 @@ background: none;
 
 	padding: 0rem 0rem 0rem 0rem !important;
 
-color: @gray-dark;
+color: var(--color-gray-dark);
 	width: 100%;
 }
 
@@ -431,7 +431,7 @@ color: @gray-dark;
 		margin: 0rem 0rem 0.76rem 0rem;
 	}
 	#aside {
-		background: @off-white;
+		background: var(--color-off-white);
 		font-size: 0.72rem;
 		line-height: 0.92rem;
 		min-height: 10rem;

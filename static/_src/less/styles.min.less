@@ -19,26 +19,29 @@ PMS 5445 C #b7c9d3 (RGB: 183, 201, 211)
 
 */
 
-@orange: #eb3300; // PMS 2028 C
-@orange-dark: #ca3604; // PMS 2349 C
-@orange-light: #ff7f41; // PMS 164 C
 
-@blue: #00a6c8; // PMS 3551 C
-@blue-dark: #00587c; // PMS 308 C
-@blue-light: #3ccbda; // PMS 2226 C
+:root {
+	--color-orange: #eb3300; // PMS 2028 C
+	--color-orange-dark: #ca3604; // PMS 2349 C
+	--color-orange-light: #ff7f41; // PMS 164 C
 
-@green: #4cae04; // PMS 3501 C
-@green-dark: #257226; // PMS 2273 C
-@green-light: #a7e163; // PMS 2283 C
+	--color-blue: #00a6c8; // PMS 3551 C
+	--color-blue-dark: #00587c; // PMS 308 C
+	--color-blue-light: #3ccbda; // PMS 2226 C
 
-@gray-dark: #1d252d; // PMS 433 C
-@gray-medium: #5b6770; // PMS 431 C
-@gray-light: #b7c9d3; // 5445 C
+	--color-green: #4cae04; // PMS 3501 C
+	--color-green-dark: #257226; // PMS 2273 C
+	--color-green-light: #a7e163; // PMS 2283 C
 
-@highlighter: #fdff32;
+	--color-gray-dark: #1d252d; // PMS 433 C
+	--color-gray-medium: #5b6770; // PMS 431 C
+	--color-gray-light: #b7c9d3; // 5445 C
 
-@white: #fff;
-@off-white: #f5f5f5;
+	--color-highlighter: #fdff32;
+
+	--color-white: #fff;
+	--color-off-white: #f5f5f5;
+}
 
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Martel:200,300,400,700|Overpass+Mono:400,600,700);
@@ -103,7 +106,7 @@ html {
 	font-size: 15px;
 }
 body {
-	background: @off-white;
+	background: var(--color-off-white);
 	margin: 0px;
 	min-width: 320px;
 	padding: 0px;
@@ -112,7 +115,7 @@ body {
 }
 h1 {
 	.serif();
-	color: @white;
+	color: var(--color-white);
 	font-size: 1.52rem;
 	letter-spacing: 0px;
 	line-height: 2.28rem;  // Font size * 1.5
@@ -146,7 +149,7 @@ h4 > span,
 h5,
 h5 > span {
 	.sans-serif();
-	// color: @green-dark;
+	// color: var(--color-green-dark);
 	font-weight: 400;
 	letter-spacing: 0px !important;
 }
@@ -163,7 +166,7 @@ h5 > span {
 p,
 li {
 	.serif();
-	color: @gray-medium;
+	color: var(--color-gray-medium);
 	font-size: 0.8rem;
 }
 p {
@@ -171,20 +174,20 @@ p {
 	margin: 0rem 0rem 1.8rem 0rem;
 }
 a {
-	color: @orange;
-	-moz-text-decoration-color: @gray-light;
-		-webkit-text-decoration-color: @gray-light;
-		text-decoration-color: @gray-light;
+	color: var(--color-orange);
+	-moz-text-decoration-color: var(--color-gray-light);
+		-webkit-text-decoration-color: var(--color-gray-light);
+		text-decoration-color: var(--color-gray-light);
 	-moz-text-decoration-style: dotted;
 		-webkit-text-decoration-style: dotted;
 		text-decoration-style: dotted;
 }
 a:hover,
 a:focus {
-	color: @orange-light;
-	-moz-text-decoration-color: @orange-light;
-		-webkit-text-decoration-color: @orange-light;
-		text-decoration-color: @orange-light;
+	color: var(--color-orange-light);
+	-moz-text-decoration-color: var(--color-orange-light);
+		-webkit-text-decoration-color: var(--color-orange-light);
+		text-decoration-color: var(--color-orange-light);
 	-moz-text-decoration-style: solid;
 		-webkit-text-decoration-style: solid;
 		text-decoration-style: solid;
@@ -202,7 +205,7 @@ pre > code * {
 }
 pre:not(.julia):not(.python):not(.r):not(.sql):not(.html):not(.javascript):not(.js):not(.css):not(.gherkin) > code,
 pre:not(.julia):not(.python):not(.r):not(.sql):not(.html):not(.javascript):not(.js):not(.css):not(.gherkin) > code * {
-	background: @off-white !important;
+	background: var(--color-off-white) !important;
 	color: #777 !important;
 	font-style: italic !important;
 }
@@ -213,12 +216,12 @@ p > code {
 	padding: 0rem 0.2rem;
 }
 .highlight {
-	background: @highlighter;
-	color: @gray-dark;
+	background: var(--color-highlighter);
+	color: var(--color-gray-dark);
 }
 .content-cta {
-	background: @white;
-	color: @gray-medium;
+	background: var(--color-white);
+	color: var(--color-gray-medium);
 	font-size: 1rem;
 	line-height: 1.6rem;
 	padding: 1.2rem 2rem;
@@ -234,8 +237,8 @@ p > code,
 }
 aside {
 	.sans-serif();
-	background: @white;
-	color: @gray-dark;
+	background: var(--color-white);
+	color: var(--color-gray-dark);
 	font-size: 0.72rem;
 	line-height: 1.2rem;
 	margin: 2.2rem 0rem;
@@ -252,7 +255,7 @@ aside {
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-addition {
-	color: @green !important;
+	color: var(--color-green) !important;
 }
 .hljs-number,
 .hljs-string,
@@ -260,17 +263,17 @@ aside {
 .hljs-literal,
 .hljs-doctag,
 .hljs-regexp {
-	color: @blue !important;
+	color: var(--color-blue) !important;
 }
 .hljs-built_in,
 .hljs-deletion {
-	color: @orange !important;
+	color: var(--color-orange) !important;
 }
 .hr-major {
-	background: @orange;  
+	background: var(--color-orange);  
 }
 .hr-minor {
-	background: @blue;
+	background: var(--color-blue);
 }
 .container {
 	margin-right: 2.4rem;
@@ -305,36 +308,36 @@ button.btn {
 }
 a.btn-default,
 button.btn-default {
-	background: @gray-dark;
-	color: @white;
+	background: var(--color-gray-dark);
+	color: var(--color-white);
 }
 a.btn-default:hover,
 a.btn-default:focus,
 button.btn-default:hover,
 button.btn-default:focus {
-	background: @gray-medium;
+	background: var(--color-gray-medium);
 }
 a.btn-primary,
 button.btn-primary {
-	background: @orange;
-	color: @white;
+	background: var(--color-orange);
+	color: var(--color-white);
 }
 a.btn-primary:hover,
 a.btn-primary:focus,
 button.btn-primary:hover,
 button.btn-primary:focus {
-	background: @orange-light;
+	background: var(--color-orange-light);
 }
 a.btn-secondary,
 button.btn-secondary {
-	background: @blue;
-	color: @white;
+	background: var(--color-blue);
+	color: var(--color-white);
 }
 a.btn-secondary:hover,
 a.btn-secondary:focus,
 button.btn-secondary:hover,
 button.btn-secondary:focus {
-	background: @blue-light;
+	background: var(--color-blue-light);
 }
 
 
@@ -345,7 +348,7 @@ button.btn-secondary:focus {
 }
 .category {
 	.sans-serif();
-	color: @blue;
+	color: var(--color-blue);
 	display: inline-block;
 	font-size: 0.6rem;
 	font-weight: 600;
@@ -364,11 +367,11 @@ button.btn-secondary:focus {
 		
 
 .overlay {
-	--color-cmp-overlay: @gray-dark !important;
+	--color-cmp-overlay: var(--color-gray-dark) !important;
 	--feature-overlay-opacity: 0.77 !important;
 }
 #usercentrics-cmp-ui {
-	background: @off-white !important;
+	background: var(--color-off-white) !important;
 	border: none !important;   
 } 
 #usercentrics-cmp-ui .cmp-wrapper,
@@ -378,34 +381,34 @@ button.btn-secondary:focus {
 .cmp,
 .modal-wrapper {
 	direction: ltr;
-	--color-main-primary: @blue !important;
-	--color-main-text: @gray-dark !important;
-	--color-links-anchor: @orange !important;
-	--color-cmp-background: @white !important;
+	--color-main-primary: var(--color-blue) !important;
+	--color-main-text: var(--color-gray-dark) !important;
+	--color-links-anchor: var(--color-orange) !important;
+	--color-cmp-background: var(--color-white) !important;
 	--color-cmp-background-rgb: 245, 245, 245;
-	--color-tabs-container-background: @white !important;
-	--color-tabs-tab-active: @blue !important;;
-	--color-tabs-tab-inactive: @gray-dark !important;
-	--color-main-border: @white !important;
-	--color-cookiebot-logo: @gray-light !important;
-	--color-cookiebot-powered-by: @gray-light !important;
-	--color-cmp-scrollbar-thumb: @gray-light !important;
-	--color-buttons-deny-background: @gray-dark !important;
-	--color-buttons-deny-text: @gray-light !important;
-	--color-buttons-accept-background: @green !important;
-	--color-buttons-accept-text: @white !important;
-	--color-buttons-save-background: @gray-light !important;
-	--color-buttons-save-text: @gray-dark !important;
-	--color-buttons-more-background: @white !important;
-	--color-buttons-more-text: @gray-dark !important;
-	--color-buttons-ok-background: @gray-light !important;
-	--color-buttons-ok-text: @gray-dark !important;
-	--color-toggle-background-active: @blue !important;
-	--color-toggle-handle-active: @white !important;
-	--color-toggle-background-inactive: @gray-light !important;
-	--color-toggle-handle-inactive: @white !important;
-	--color-toggle-background-disabled: @gray-medium !important;
-	--color-toggle-handle-disabled: @white !important;
+	--color-tabs-container-background: var(--color-white) !important;
+	--color-tabs-tab-active: var(--color-blue) !important;;
+	--color-tabs-tab-inactive: var(--color-gray-dark) !important;
+	--color-main-border: var(--color-white) !important;
+	--color-cookiebot-logo: var(--color-gray-light) !important;
+	--color-cookiebot-powered-by: var(--color-gray-light) !important;
+	--color-cmp-scrollbar-thumb: var(--color-gray-light) !important;
+	--color-buttons-deny-background: var(--color-gray-dark) !important;
+	--color-buttons-deny-text: var(--color-gray-light) !important;
+	--color-buttons-accept-background: var(--color-green) !important;
+	--color-buttons-accept-text: var(--color-white) !important;
+	--color-buttons-save-background: var(--color-gray-light) !important;
+	--color-buttons-save-text: var(--color-gray-dark) !important;
+	--color-buttons-more-background: var(--color-white) !important;
+	--color-buttons-more-text: var(--color-gray-dark) !important;
+	--color-buttons-ok-background: var(--color-gray-light) !important;
+	--color-buttons-ok-text: var(--color-gray-dark) !important;
+	--color-toggle-background-active: var(--color-blue) !important;
+	--color-toggle-handle-active: var(--color-white) !important;
+	--color-toggle-background-inactive: var(--color-gray-light) !important;
+	--color-toggle-handle-inactive: var(--color-white) !important;
+	--color-toggle-background-disabled: var(--color-gray-medium) !important;
+	--color-toggle-handle-disabled: var(--color-white) !important;
 	--spacing-xxs: 4px;
 	--spacing-xs: 8px;
 	--spacing-sm: 12px;
@@ -426,7 +429,7 @@ button.btn-secondary:focus {
 	--typography-size-label: 0.75em;
 	--typography-size-link: 0.875em;
 	--typography-size-cb: 1.071em;
-	--color-cmp-overlay: @gray-dark !important;
+	--color-cmp-overlay: var(--color-gray-dark) !important;
 	--feature-overlay-opacity: 0.77 !important;
 }
 
