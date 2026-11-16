@@ -118,7 +118,13 @@
 
 				<section id="handcrafted">
 					<div class="container">
-						<p>Designed and built by Michael&nbsp;Mallari.</p>
+						<p>
+							Designed and built by Michael&nbsp;Mallari.
+							{{ if .Site.Params.footer.architecture }}
+							<br />
+							{{ . }}
+							{{ else }}
+						</p>
 					</div>
 				</section>
 			</footer>
