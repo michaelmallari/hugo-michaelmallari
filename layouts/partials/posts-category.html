@@ -8,7 +8,7 @@
                             </div>
                             <div class="post-details">
                                 <div class="container">
-                                    <div class="category">{{ .Params.topic | safeHTML }}</div>
+                                    <div class="category">{{ .CurrentSection.Title | safeHTML }}</div>
                                     <h2 class="title">{{ .Title | safeHTML }}</h2>
                                     <p class="excerpt">{{ .Params.summary | safeHTML }}</p>
                                 </div>

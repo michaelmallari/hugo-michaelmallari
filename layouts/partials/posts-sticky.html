@@ -30,7 +30,7 @@
                             </div>
                             <div class="post-details">
                                 <div class="container">
-                                    <div class="category">{{ with $p.Params.topic }}{{ . | safeHTML }}{{ else }}{{ $p.CurrentSection.Title }}{{ end }}</div>
+                                    <div class="category">{{ $p.CurrentSection.Title | safeHTML }}</div>
                                     <h2 class="title">{{ $p.Title | safeHTML }}</h2>
                                     <p class="excerpt">{{ $p.Params.summary | safeHTML }}</p>
                                 </div>
