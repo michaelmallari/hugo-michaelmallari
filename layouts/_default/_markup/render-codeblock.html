@@ -1,0 +1,10 @@
+{{- /* Fenced code blocks: emit the same markup as michaelmallari.com
+      (<pre class="LANG"><code>), with no build-time highlighting. The browser's
+      highlight.js colors it with js/highlight/styles/solarized-dark.css, and the
+      theme CSS gives a <pre> with a language class the dark "code" style; a <pre>
+      without one (e.g. program output, an indented block) gets the light "output"
+      style. Aliases map to the names highlight.js and the CSS expect. */ -}}
+{{- $aliases := dict "py" "python" "c++" "cpp" "cxx" "cpp" "cu" "cuda" "sh" "bash" "zsh" "bash" "yml" "yaml" -}}
+{{- $lang := lower .Type -}}
+{{- with index $aliases $lang }}{{ $lang = . }}{{ end -}}
+<pre{{ with $lang }} class="{{ . }}"{{ end }}><code{{ with $lang }} class="language-{{ . }}"{{ end }}>{{ .Inner }}</code></pre>
