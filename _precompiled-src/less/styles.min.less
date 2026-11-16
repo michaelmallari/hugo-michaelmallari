@@ -343,8 +343,17 @@ button.btn-secondary:focus {
 
 
 
-.disable-scroll {
-	overflow: hidden !important;
+/* Off-canvas menu open (functions.js): lock the page underneath. <body> is
+   pinned at the current scroll offset (its inline top is set by the script),
+   which also stops iOS Safari from scrolling it. */
+html.nav-open {
+	overflow: hidden;
+}
+html.nav-open body {
+	left: 0px;
+	overflow: hidden;
+	position: fixed;
+	right: 0px;
 }
 .category {
 	font-family: var(--font-sans-serif);

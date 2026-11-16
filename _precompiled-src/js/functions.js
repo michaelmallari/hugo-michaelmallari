@@ -85,6 +85,35 @@
 
     window.MM = { viewportWidth, viewportHeight, px, all, size, setSize, outerHeight, onReady, onResize, sizePostCards };
 
+    // Off-canvas menu (up to 1111px wide). While it is open the page underneath
+    // is locked in place: <html class="nav-open"> pins <body> at its current
+    // scroll position (CSS), so the Menu/Close button stays beside the drawer
+    // instead of scrolling away. Closing restores the scroll position.
+    let lockedScrollY = 0;
+
+    function setMenuOpen(open) {
+        const nav = document.querySelector('#header #nav');
+        const button = document.querySelector('#hamburger-menu');
+        if (!nav || nav.classList.contains('expanded') === open) return;
+
+        if (open) {
+            lockedScrollY = window.scrollY;
+            document.body.style.top = px(-lockedScrollY);
+        }
+        nav.classList.toggle('expanded', open);
+        document.documentElement.classList.toggle('nav-open', open);
+        if (button) {
+            button.classList.toggle('toggle-hamburger-menu-close', open);
+            button.setAttribute('aria-expanded', String(open));
+        }
+        if (!open) {
+            document.body.style.top = '';
+            window.scrollTo({ top: lockedScrollY, behavior: 'instant' });
+        }
+    }
+
+    const menuIsOpen = () => document.querySelector('#header #nav')?.classList.contains('expanded') ?? false;
+
     // Off-canvas navigation: full viewport height, parked just off the right edge
     function updateNavPrimary() {
         const nav = document.querySelector('#header #nav');
@@ -126,8 +155,9 @@
         if (width <= 1111) {
             if (navInner) navInner.classList.add('container');
             updateNavPrimary();
-        } else if (navInner) {
-            navInner.classList.remove('container');
+        } else {
+            if (navInner) navInner.classList.remove('container');
+            setMenuOpen(false);  // desktop width shows the regular navigation
         }
     }
 
@@ -144,10 +174,12 @@
 
     onReady(() => {
         all('.toggle-hamburger-menu').forEach((button) => {
-            button.addEventListener('click', () => {
-                document.querySelector('#header #nav')?.classList.toggle('expanded');
-                document.querySelector('#hamburger-menu')?.classList.toggle('toggle-hamburger-menu-close');
-            });
+            button.setAttribute('aria-controls', 'nav');
+            button.setAttribute('aria-expanded', 'false');
+            button.addEventListener('click', () => setMenuOpen(!menuIsOpen()));
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') setMenuOpen(false);
         });
         updateLayout();
     });
