@@ -136,49 +136,35 @@
 
 
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin></script>
 		<script src="{{ "js/functions.min.js" | absURL }}"></script>
 		{{ if .IsHome }}<script src="{{ "js/posts-sticky.min.js" | absURL }}"></script>
 		{{ else if .IsSection }}<script src="{{ "js/posts-category.min.js" | absURL }}"></script>
-		{{ else if .IsNode }}<script src="{{ "js/posts-tag.min.js" | absURL }}"></script>
 		{{ end }}
-		<script type="text/javascript">
-			$(document).ready(function() {
-				{{ if .IsHome }}UpdatePostsStickyLayout(){{ else if .IsSection }}UpdatePostsCategoryLayout(){{ else if .IsNode }}UpdatePostsTagLayout(){{ end }}
-
-				// Aside feed: params.asideUrl (any RSS URL; cross-site feeds need CORS), else this site's "free" tag feed
-				rssFeed = {{ .Site.Params.asideUrl | default "/index.xml" }};
-
+		<script>
+			// Aside feed: params.asideUrl (any RSS URL; cross-site feeds need CORS), else this site's feed.
+			// Shows 4 random items.
+			(() => {
+				const list = document.getElementById("aside-posts-recent");
+				if (!list) return;
+				const rssFeed = {{ .Site.Params.asideUrl | default "/index.xml" }};
 				fetch(rssFeed)
 					.then(response => response.text())
-					.then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+					.then(str => new DOMParser().parseFromString(str, "text/xml"))
 					.then(data => {
-						console.log(data);
-						const items = Array.from(data.querySelectorAll("item"));        
-						// Shuffle the array of items
+						const items = Array.from(data.querySelectorAll("item"));
 						for (let i = items.length - 1; i > 0; i--) {
 							const j = Math.floor(Math.random() * (i + 1));
 							[items[i], items[j]] = [items[j], items[i]];
 						}
-						// Take the first 4 items
-						const selectedItems = items.slice(0, 4);
-						let html = ``;
-						selectedItems.forEach(el => {
-							let originalUrl = el.querySelector("link").innerHTML;
-							let updatedUrl = originalUrl.replace("https://michaelmallari.bitbucket.io/case-study/", "https://michaelmallari.substack.com/p/");
-							html += `
-								<li><a href="${updatedUrl}?utm_source=michaelmallari.bitbucket.io&utm_medium=microsite&utm_campaign=aside">${el.querySelector("title").innerHTML}</a></li>
-							`;
-							// <li><a href="${el.querySelector("link").innerHTML}">${el.querySelector("title").innerHTML}</a></li>
-						});
-						document.getElementById("aside-posts-recent").insertAdjacentHTML("afterbegin", html);
-				});
-			});
-
-
-			$(window).resize(function() {
-				{{ if .IsHome }}UpdatePostsStickyLayout(){{ else if .IsSection }}UpdatePostsCategoryLayout(){{ else if .IsNode }}UpdatePostsTagLayout(){{ end }}
-			}).resize();
+						const html = items.slice(0, 4).map(el => {
+							const originalUrl = el.querySelector("link").textContent;
+							const updatedUrl = originalUrl.replace("https://michaelmallari.bitbucket.io/case-study/", "https://michaelmallari.substack.com/p/");
+							return `<li><a href="${updatedUrl}?utm_source=michaelmallari.bitbucket.io&utm_medium=microsite&utm_campaign=aside">${el.querySelector("title").innerHTML}</a></li>`;
+						}).join("");
+						list.insertAdjacentHTML("afterbegin", html);
+					})
+					.catch(() => {});  // feed unavailable: leave the list empty
+			})();
 		</script>
 		<script src="{{ "js/highlight/highlight.pack.js" | absURL }}" crossorigin></script>
-		<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+		<script>hljs.highlightAll();</script>
