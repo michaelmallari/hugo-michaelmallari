@@ -1,0 +1,201 @@
+/*
+ * Web app modal (partials/webapp-modal.html). Plain CSS processed by Hugo, so
+ * it is separate from the hand-compiled LESS in _precompiled-src/.
+ * Uses the theme's :root variables, with fallbacks.
+ */
+
+/* ---------- call to action in the post (shortcode `webapp`) ---------- */
+.webapp-cta {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1rem;
+	margin: 2rem 0;
+}
+.webapp-cta__note {
+	color: var(--color-gray-medium, #5b6770);
+	font-family: var(--font-sans-serif, sans-serif);
+	font-size: 0.8rem;
+}
+.webapp-open,
+.webapp-modal__btn {
+	background: var(--color-orange-dark, #ca3604);
+	border: 0;
+	border-radius: 999px;
+	color: var(--color-white, #fff);
+	cursor: pointer;
+	font-family: var(--font-sans-serif, sans-serif);
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.2;
+	padding: 0.75rem 1.4rem;
+}
+.webapp-open:hover,
+.webapp-modal__btn:hover {
+	background: var(--color-gray-dark, #1d252d);
+}
+.webapp-open:focus-visible,
+.webapp-modal button:focus-visible {
+	outline: 3px solid var(--color-blue, #00a6c8);
+	outline-offset: 2px;
+}
+
+/* ---------- the dialog ---------- */
+html.webapp-modal-open {
+	overflow: hidden; /* no page scroll behind the modal */
+}
+.webapp-modal {
+	background: var(--color-white, #fff);
+	border: 0;
+	border-radius: 12px;
+	box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+	color: var(--color-gray-dark, #1d252d);
+	font-family: var(--font-sans-serif, sans-serif);
+	height: calc(100dvh - 2rem);
+	max-height: none;
+	max-width: none;
+	padding: 0;
+	width: min(100vw - 2rem, 1440px);
+}
+.webapp-modal[open] {
+	display: flex;
+	flex-direction: column;
+}
+.webapp-modal::backdrop {
+	background: rgba(29, 37, 45, 0.75);
+}
+@media (max-width: 600px) {
+	.webapp-modal {
+		border-radius: 0;
+		height: 100dvh;
+		width: 100vw;
+	}
+}
+
+.webapp-modal__bar {
+	align-items: center;
+	border-bottom: 1px solid var(--color-gray-light, #b7c9d3);
+	display: flex;
+	flex: 0 0 auto;
+	gap: 1rem;
+	padding: 0.6rem 0.6rem 0.6rem 1.25rem;
+}
+.webapp-modal__title {
+	flex: 1 1 auto;
+	font-size: 1rem;
+	font-weight: 600;
+	margin: 0;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.webapp-modal__account {
+	align-items: center;
+	color: var(--color-gray-medium, #5b6770);
+	display: flex;
+	font-size: 0.85rem;
+	gap: 0.75rem;
+	white-space: nowrap;
+}
+.webapp-modal__account[hidden] {
+	display: none;
+}
+.webapp-modal__link {
+	background: none;
+	border: 0;
+	color: var(--color-blue-dark, #00587c);
+	cursor: pointer;
+	font: inherit;
+	padding: 0.25rem;
+	text-decoration: underline;
+}
+.webapp-modal__close {
+	background: none;
+	border: 0;
+	border-radius: 8px;
+	color: var(--color-gray-dark, #1d252d);
+	cursor: pointer;
+	font-size: 1.75rem;
+	height: 2.5rem;
+	line-height: 1;
+	width: 2.5rem;
+}
+.webapp-modal__close:hover {
+	background: var(--color-off-white, #f5f5f5);
+}
+@media (max-width: 600px) {
+	.webapp-modal__account-name {
+		display: none;
+	}
+}
+
+.webapp-modal__body {
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow: auto;
+	position: relative;
+}
+.webapp-modal__app {
+	height: 100%;
+}
+.webapp-modal__panel {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	min-height: 100%;
+	padding: 2rem 1.25rem;
+}
+.webapp-modal__panel[hidden],
+.webapp-modal__app[hidden] {
+	display: none;
+}
+.webapp-modal__card {
+	max-width: 30rem;
+	text-align: center;
+}
+.webapp-modal__card h3 {
+	font-size: 1.4rem;
+	margin: 0 0 0.75rem;
+}
+.webapp-modal__card p {
+	font-size: 1rem;
+	line-height: 1.5;
+	margin: 0 0 1rem;
+}
+.webapp-modal__actions {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+	margin: 1.5rem auto 1rem;
+	max-width: 20rem;
+}
+.webapp-modal__btn--secondary {
+	background: var(--color-off-white, #f5f5f5);
+	color: var(--color-gray-dark, #1d252d);
+}
+.webapp-modal__btn--secondary:hover {
+	background: var(--color-gray-light, #b7c9d3);
+}
+.webapp-modal__note {
+	color: var(--color-orange-dark, #ca3604);
+}
+.webapp-modal__fine {
+	color: var(--color-gray-medium, #5b6770);
+	font-size: 0.8rem !important;
+}
+.webapp-modal__spinner {
+	animation: webapp-spin 0.9s linear infinite;
+	border: 3px solid var(--color-gray-light, #b7c9d3);
+	border-radius: 50%;
+	border-top-color: var(--color-orange-dark, #ca3604);
+	height: 2rem;
+	margin: 0 auto 1rem;
+	width: 2rem;
+}
+@keyframes webapp-spin {
+	to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+	.webapp-modal__spinner { animation-duration: 3s; }
+}

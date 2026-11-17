@@ -166,5 +166,8 @@
 					.catch(() => {});  // feed unavailable: leave the list empty
 			})();
 		</script>
+		{{- if .Store.Get "webapp" }}
+		{{- partial "webapp-modal.html" . }}
+		{{- end }}
 		<script src="{{ "js/highlight/highlight.pack.js" | absURL }}" crossorigin></script>
 		<script>hljs.highlightAll();</script>

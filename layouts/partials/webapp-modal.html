@@ -1,0 +1,42 @@
+{{- /*
+  Web app modal: styles + script, included by footer.html only on pages that
+  use the `webapp` shortcode. The TypeScript is compiled by Hugo (js.Build),
+  so no Node/npm is needed. Site config (all values are public IDs):
+
+    [params.webapp]
+      tenantSubdomain = "…"          # Entra External ID: https://<this>.ciamlogin.com/
+      clientId        = "…"          # SPA app registration
+      apiScope        = "api://…/access_as_user"
+      apiBaseUrl      = "https://…"  # backend; web apps load from <apiBaseUrl>/app/<slug>.js
+      apiBaseUrlDev   = "http://localhost:1993"   # used by `hugo server`
+      [[params.webapp.providers]]    # one sign-in button each (default: email)
+        label      = "Continue with Google"
+        domainHint = "Google"        # optional: skip Entra's provider choice
+
+  The popup lands on /auth-redirect.html (static/), which must be registered
+  as an SPA redirect URI for each origin.
+*/ -}}
+{{- with site.Params.webapp -}}
+	{{- $api := .apiBaseUrl -}}
+	{{- if and hugo.IsServer .apiBaseUrlDev }}{{ $api = .apiBaseUrlDev }}{{ end -}}
+	{{- $providers := slice -}}
+	{{- range .providers | default (slice (dict "label" "Continue with email")) -}}
+		{{- $providers = $providers | append (dict "label" .label "domainHint" (.domainhint | default "")) -}}
+	{{- end -}}
+	{{- $params := dict
+		"tenantSubdomain" .tenantSubdomain
+		"clientId" .clientId
+		"apiScope" .apiScope
+		"apiBaseUrl" (strings.TrimSuffix "/" $api)
+		"redirectUri" ("auth-redirect.html" | absURL)
+		"providers" $providers
+	-}}
+	{{- $css := resources.Get "css/webapp-modal.css" | minify | fingerprint -}}
+		<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
+	{{- $opts := dict "params" $params "target" "es2020" "format" "iife" "minify" (not hugo.IsServer) -}}
+	{{- if hugo.IsServer }}{{ $opts = merge $opts (dict "sourceMap" "inline") }}{{ end -}}
+	{{- $js := resources.Get "js/webapp-modal.ts" | js.Build $opts | fingerprint -}}
+		<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{- else -}}
+	{{- errorf "The `webapp` shortcode is used on %s, but [params.webapp] is missing from the site config." $.Page.RelPermalink -}}
+{{- end -}}

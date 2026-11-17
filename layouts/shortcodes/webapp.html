@@ -1,0 +1,18 @@
+{{- /*
+  Button that opens the post's web app in the sign-in modal.
+
+    {{< webapp >}}                                   slug = the page's slug
+    {{< webapp slug="hello" label="Explore the data" >}}
+
+  In a Quarto .qmd, escape it with triple braces: {{{< webapp >}}}
+  The modal script and styles load only on pages that use this shortcode
+  (see partials/webapp-modal.html). Site config: [params.webapp].
+*/ -}}
+{{- $slug := .Get "slug" | default .Page.Params.slug | default .Page.File.ContentBaseName -}}
+{{- $label := .Get "label" | default "Explore the interactive version" -}}
+{{- $title := .Get "title" | default .Page.Title -}}
+{{- .Page.Store.Set "webapp" true -}}
+<p class="webapp-cta">
+	<button type="button" class="webapp-open" data-webapp-slug="{{ $slug }}" data-webapp-title="{{ $title }}">{{ $label }}</button>
+	<span class="webapp-cta__note">Free account required</span>
+</p>
