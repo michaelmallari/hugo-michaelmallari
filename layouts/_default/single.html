@@ -15,7 +15,10 @@
 							
 							<time class="byline-time">{{ dateFormat "Monday, January 2, 2006" .Params.date }}</time>
 							
-							<div class="byline-notes">{{ if .Params.bylineNotes }}{{ .Params.bylineNotes }}{{ end }} {{ if .Params.postImageSrc }}Photo Credit: <a href="{{ .Params.postImageSrc }}" target="_blank">{{ .Params.postImageSrc }}</a>{{ end }}</div>
+							{{- /* bylineNotes: a key into site params.bylineNotes (e.g. "migrated"), so shared notes live once in the site config; any other value is shown as written. */ -}}
+							{{- $bylineNotes := .Params.bylineNotes -}}
+							{{- with $bylineNotes }}{{ with site.Params.bylineNotes }}{{ with index . (lower $bylineNotes) }}{{ $bylineNotes = . }}{{ end }}{{ end }}{{ end }}
+							<div class="byline-notes">{{ with $bylineNotes }}{{ . }}{{ end }} {{ if .Params.postImageSrc }}Photo Credit: <a href="{{ .Params.postImageSrc }}" target="_blank">{{ .Params.postImageSrc }}</a>{{ end }}</div>
 						</div>
 
 {{- .Content -}}
