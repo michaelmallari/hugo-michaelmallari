@@ -75,7 +75,7 @@
 							{{ if ge (len .) 1 }}
 								{{ $cta := index . 0 }}
 								{{ with $cta.url }}
-								<a href="{{ . }}" class="btn btn-secondary">
+								<a href="{{ . }}" class="btn btn-primary">
 									{{ $cta.copy }}
 									{{ with $cta.icon }}&nbsp;<i class="{{ . }}"></i>{{ end }}
 								</a>
