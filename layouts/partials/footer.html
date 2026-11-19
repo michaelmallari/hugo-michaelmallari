@@ -125,7 +125,9 @@
 		</div>
 		<div id="banner">
 			<div class="container">
-				<p><a href="https://michaelmallari.substack.com/subscribe?utm_source=michaelmallari.bitbucket.io&utm_medium=microsite&utm_campaign=banner&showWelcomeOnShare=true"><span>Get new AI case studies sent to your inbox. Go from informed to first-mover&mdash;fast!</span> <strong>Subscribe &#187;</strong></a></p>
+				{{/* Persistent CTA (slides in on scroll). Set per site in params.banner (copy, cta, url); unset = the defaults below. */}}
+				{{ $banner := .Site.Params.banner | default dict }}
+				<p><a href="{{ $banner.url | default "https://michaelmallari.substack.com/subscribe?utm_source=michaelmallari.bitbucket.io&utm_medium=microsite&utm_campaign=banner&showWelcomeOnShare=true" }}"><span>{{ $banner.copy | default "Get new AI case studies sent to your inbox. Go from informed to first-mover&mdash;fast!" | safeHTML }}</span> <strong>{{ $banner.cta | default "Subscribe &#187;" | safeHTML }}</strong></a></p>
 			</div>
 		</div>
 
