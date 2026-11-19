@@ -15,6 +15,6 @@ Hugo theme for computer science & data science blogs. Supports Julia, Python, R,
 ## Theme used for the following blogs:
 
 * [**Applied AI Engineering by Michael Mallari, MS, MBA** (www.michaelmallari.com)](https://www.michaelmallari.com)
-* [**Applied Machine Learning by Michael Mallari, MS, MBA** (www.columbia.edu/~mm5470)](http://www.columbia.edu/~mm5470)
+* [**Applied Machine Learning by Michael Mallari, MS, MBA** (www.columbia.edu/~mm5470)](https://www.columbia.edu/~mm5470)
 * [**AI-First Technical Product Management by Michael Mallari, MS, MBA** (michaelmallari.bitbucket.io)](https://michaelmallari.bitbucket.io)
 * [**Applied Computing by Michael Mallari, MS, MBA** (michaelmallari.github.io)](https://michaelmallari.github.io)
