@@ -1,0 +1,18 @@
+{{- /*
+	Adds this site's UTM tags to a link that leaves the site for another of the owner's properties.
+	Tags come from params.utm in the site's hugo.toml (source, medium, campaign); utm_content
+	names the placement on the page (banner, aside, footer-button, footer-link) and is set by the caller.
+	Call: partial "utm-url.html" (dict "url" $url "content" "banner")
+	With "url" empty, returns only the query string (for links built in JavaScript).
+	params.utm unset: returns the URL unchanged ("" for the query string).
+*/ -}}
+{{- $url := .url | default "" -}}
+{{- with site.Params.utm -}}
+	{{- $query := querify "utm_source" .source "utm_medium" .medium "utm_campaign" .campaign "utm_content" $.content -}}
+	{{- if $url -}}
+		{{- $url = printf "%s%s%s" $url (cond (strings.Contains $url "?") "&" "?") $query -}}
+	{{- else -}}
+		{{- $url = $query -}}
+	{{- end -}}
+{{- end -}}
+{{- return $url -}}
