@@ -1,8 +1,9 @@
 {{- /*
-	Adds this site's UTM tags to a link that leaves the site for another of the owner's properties.
+	Adds this site's UTM tags to a link the theme builds itself (today: the aside list, built in JavaScript).
 	Tags come from params.utm in the site's hugo.toml (source, medium, campaign); utm_content
-	names the placement on the page (banner, aside, footer-button, footer-link) and is set by the caller.
-	Call: partial "utm-url.html" (dict "url" $url "content" "banner")
+	names the placement on the page (e.g. aside) and is set by the caller.
+	Links written in hugo.toml (banner, footer CTAs) are used as written: tag them there.
+	Call: partial "utm-url.html" (dict "url" $url "content" "aside")
 	With "url" empty, returns only the query string (for links built in JavaScript).
 	params.utm unset: returns the URL unchanged ("" for the query string).
 */ -}}

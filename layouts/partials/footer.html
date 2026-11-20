@@ -75,8 +75,7 @@
 							{{ if ge (len .) 1 }}
 								{{ $cta := index . 0 }}
 								{{ with $cta.url }}
-								{{/* utm = true in the CTA: add params.utm tags (see utm-url.html) */}}
-								<a href="{{ if $cta.utm }}{{ partial "utm-url.html" (dict "url" . "content" "footer-button") }}{{ else }}{{ . }}{{ end }}" class="btn btn-primary">
+								<a href="{{ . }}" class="btn btn-primary">
 									{{ $cta.copy }}
 									{{ with $cta.icon }}&nbsp;<i class="{{ . }}"></i>{{ end }}
 								</a>
@@ -89,7 +88,7 @@
 							{{ if ge (len .) 2 }}
 								{{ $cta := index . 1 }}
 								{{ with $cta.url }}
-								<span id="hello">{{ $cta.preCopy }} <a href="{{ if $cta.utm }}{{ partial "utm-url.html" (dict "url" . "content" "footer-link") }}{{ else }}{{ . }}{{ end }}" target="_blank" rel="noopener">{{ $cta.copy }}</a></span>
+								<span id="hello">{{ $cta.preCopy }} <a href="{{ . }}" target="_blank" rel="noopener">{{ $cta.copy }}</a></span>
 								{{ end }}
 							{{ end }}
 						{{ end }}
@@ -126,12 +125,9 @@
 		</div>
 		<div id="banner">
 			<div class="container">
-				{{/* Persistent CTA (slides in on scroll). Set per site in params.banner (copy, cta, url); unset = the defaults below.
-				     params.banner.url gets the params.utm tags (utm-url.html); the default URL keeps its own. */}}
+				{{/* Persistent CTA (slides in on scroll). Set per site in params.banner (copy, cta, url); unset = the defaults below. */}}
 				{{ $banner := .Site.Params.banner | default dict }}
-				{{ $bannerUrl := "https://michaelmallari.substack.com/subscribe?utm_source=michaelmallari.bitbucket.io&utm_medium=microsite&utm_campaign=banner&showWelcomeOnShare=true" }}
-				{{ with $banner.url }}{{ $bannerUrl = partial "utm-url.html" (dict "url" . "content" "banner") }}{{ end }}
-				<p><a href="{{ $bannerUrl }}"><span>{{ $banner.copy | default "Get new AI case studies sent to your inbox. Go from informed to first-mover&mdash;fast!" | safeHTML }}</span> <strong>{{ $banner.cta | default "Subscribe &#187;" | safeHTML }}</strong></a></p>
+				<p><a href="{{ $banner.url | default "https://michaelmallari.substack.com/subscribe?utm_source=michaelmallari.bitbucket.io&utm_medium=microsite&utm_campaign=banner&showWelcomeOnShare=true" }}"><span>{{ $banner.copy | default "Get new AI case studies sent to your inbox. Go from informed to first-mover&mdash;fast!" | safeHTML }}</span> <strong>{{ $banner.cta | default "Subscribe &#187;" | safeHTML }}</strong></a></p>
 			</div>
 		</div>
 
